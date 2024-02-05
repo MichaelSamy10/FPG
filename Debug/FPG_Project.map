@@ -3396,12 +3396,14 @@ Discarded input sections
  .group         0x00000000        0xc ./src/main.o
  .group         0x00000000        0xc ./src/main.o
  .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
  .text          0x00000000        0x0 ./src/main.o
  .data          0x00000000        0x0 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
  .debug_macro   0x00000000      0xa6c ./src/main.o
  .debug_macro   0x00000000       0x1c ./src/main.o
  .debug_macro   0x00000000       0x1c ./src/main.o
+ .debug_macro   0x00000000       0xd6 ./src/main.o
  .group         0x00000000        0xc ./src/stm32f4xx_hal_msp.o
  .group         0x00000000        0xc ./src/stm32f4xx_hal_msp.o
  .group         0x00000000        0xc ./src/stm32f4xx_hal_msp.o
@@ -4421,7 +4423,7 @@ END GROUP
  .debug_abbrev  0x0000284e       0x45 ./src/main.o
  .debug_abbrev  0x00002893      0x1b1 ./src/stm32f4xx_hal_msp.o
 
-.debug_line     0x00000000     0x7dd2
+.debug_line     0x00000000     0x7df9
  *(.debug_line)
  .debug_line    0x00000000      0xb34 ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_line    0x00000b34      0xc2b ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
@@ -4442,8 +4444,8 @@ END GROUP
  .debug_line    0x0000658a      0x1c8 ./src/MCAL/MEXTI/MEXTI_program.o
  .debug_line    0x00006752      0x28a ./src/MCAL/MDMA/MDMA_program.o
  .debug_line    0x000069dc      0x9c9 ./src/_initialize_hardware.o
- .debug_line    0x000073a5       0x63 ./src/main.o
- .debug_line    0x00007408      0x9ca ./src/stm32f4xx_hal_msp.o
+ .debug_line    0x000073a5       0x8a ./src/main.o
+ .debug_line    0x0000742f      0x9ca ./src/stm32f4xx_hal_msp.o
 
 .debug_frame    0x00000000     0x10e0
  *(.debug_frame)
@@ -4481,7 +4483,7 @@ END GROUP
  .debug_frame   0x00001090       0x30 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
  .debug_frame   0x000010c0       0x20 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-msizer.o)
 
-.debug_str      0x00000000    0x7423a
+.debug_str      0x00000000    0x7449b
  *(.debug_str)
  .debug_str     0x00000000    0x6fc6d ./system/src/stm32f4-hal/stm32f4xx_hal.o
                               0x700a1 (size before relaxing)
@@ -4521,9 +4523,9 @@ END GROUP
                                0x332d (size before relaxing)
  .debug_str     0x000741be       0x31 ./src/_initialize_hardware.o
                               0x6f929 (size before relaxing)
- .debug_str     0x000741ef        0xe ./src/main.o
-                               0x2ea6 (size before relaxing)
- .debug_str     0x000741fd       0x3d ./src/stm32f4xx_hal_msp.o
+ .debug_str     0x000741ef      0x26f ./src/main.o
+                               0x3107 (size before relaxing)
+ .debug_str     0x0007445e       0x3d ./src/stm32f4xx_hal_msp.o
                               0x6f67a (size before relaxing)
 
 .debug_loc      0x00000000     0x1ace
@@ -4583,7 +4585,7 @@ OUTPUT(FPG_Project.elf elf32-littlearm)
  .debug_ranges  0x00000620       0x10 ./src/main.o
  .debug_ranges  0x00000630       0x28 ./src/stm32f4xx_hal_msp.o
 
-.debug_macro    0x00000000    0x15111
+.debug_macro    0x00000000    0x1511a
  .debug_macro   0x00000000      0x532 ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_macro   0x00000532      0xa6c ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_macro   0x00000f9e      0x289 ./system/src/stm32f4-hal/stm32f4xx_hal.o
@@ -4720,5 +4722,5 @@ OUTPUT(FPG_Project.elf elf32-littlearm)
  .debug_macro   0x000146ca       0x3a ./src/MCAL/MDMA/MDMA_program.o
  .debug_macro   0x00014704       0x22 ./src/MCAL/MDMA/MDMA_program.o
  .debug_macro   0x00014726      0x4e4 ./src/_initialize_hardware.o
- .debug_macro   0x00014c0a       0x23 ./src/main.o
- .debug_macro   0x00014c2d      0x4e4 ./src/stm32f4xx_hal_msp.o
+ .debug_macro   0x00014c0a       0x2c ./src/main.o
+ .debug_macro   0x00014c36      0x4e4 ./src/stm32f4xx_hal_msp.o
