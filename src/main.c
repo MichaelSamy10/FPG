@@ -3,7 +3,7 @@
 
 int main()
 {
- /*ayaaaaaaaaaaaaaaa*/
+
 	while(1)
 	{
 

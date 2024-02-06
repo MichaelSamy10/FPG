@@ -21,6 +21,7 @@ RM := rm -rf
 -include src/MCAL/MGPIO/subdir.mk
 -include src/MCAL/MEXTI/subdir.mk
 -include src/MCAL/MDMA/subdir.mk
+-include src/HAL/IR/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk

@@ -3207,6 +3207,21 @@ Discarded input sections
  .debug_macro   0x00000000      0xa6c ./src/MCAL/MDMA/MDMA_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/MDMA/MDMA_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/MDMA/MDMA_program.o
+ .group         0x00000000        0xc ./src/HAL/IR/IR_program.o
+ .text          0x00000000        0x0 ./src/HAL/IR/IR_program.o
+ .data          0x00000000        0x0 ./src/HAL/IR/IR_program.o
+ .bss           0x00000000        0x0 ./src/HAL/IR/IR_program.o
+ .debug_info    0x00000000       0x21 ./src/HAL/IR/IR_program.o
+ .debug_abbrev  0x00000000       0x13 ./src/HAL/IR/IR_program.o
+ .debug_aranges
+                0x00000000       0x18 ./src/HAL/IR/IR_program.o
+ .debug_macro   0x00000000       0x11 ./src/HAL/IR/IR_program.o
+ .debug_macro   0x00000000      0xa6c ./src/HAL/IR/IR_program.o
+ .debug_line    0x00000000       0x3b ./src/HAL/IR/IR_program.o
+ .debug_str     0x00000000     0x2d24 ./src/HAL/IR/IR_program.o
+ .comment       0x00000000       0x7f ./src/HAL/IR/IR_program.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/HAL/IR/IR_program.o
  .group         0x00000000        0xc ./src/_initialize_hardware.o
  .group         0x00000000        0xc ./src/_initialize_hardware.o
  .group         0x00000000        0xc ./src/_initialize_hardware.o
@@ -3669,6 +3684,7 @@ LOAD ./src/MCAL/MNVIC/MNVIC_program.o
 LOAD ./src/MCAL/MGPIO/MGPIO_program.o
 LOAD ./src/MCAL/MEXTI/MEXTI_program.o
 LOAD ./src/MCAL/MDMA/MDMA_program.o
+LOAD ./src/HAL/IR/IR_program.o
 LOAD ./src/_initialize_hardware.o
 LOAD ./src/_write.o
 LOAD ./src/main.o

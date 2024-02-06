@@ -27,6 +27,7 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+src/HAL/IR \
 src/MCAL/MDMA \
 src/MCAL/MEXTI \
 src/MCAL/MGPIO \
