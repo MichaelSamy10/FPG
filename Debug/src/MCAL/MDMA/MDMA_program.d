@@ -1,12 +1,11 @@
 src/MCAL/MDMA/MDMA_program.o: ../src/MCAL/MDMA/MDMA_program.c \
- ../src/MCAL/MDMA/../../LIB/STD_TYPES.h \
- ../src/MCAL/MDMA/../../LIB/BIT_MATH.h ../src/MCAL/MDMA/MDMA_interface.h \
- ../src/MCAL/MDMA/MDMA_private.h ../src/MCAL/MDMA/MDMA_config.h \
- ../src/MCAL/MDMA/MDMA_register.h
+ f:\arm\fpg\src\lib\std_types.h f:\arm\fpg\src\lib\bit_math.h \
+ ../src/MCAL/MDMA/MDMA_interface.h ../src/MCAL/MDMA/MDMA_private.h \
+ ../src/MCAL/MDMA/MDMA_config.h ../src/MCAL/MDMA/MDMA_register.h
 
-../src/MCAL/MDMA/../../LIB/STD_TYPES.h:
+f:\arm\fpg\src\lib\std_types.h:
 
-../src/MCAL/MDMA/../../LIB/BIT_MATH.h:
+f:\arm\fpg\src\lib\bit_math.h:
 
 ../src/MCAL/MDMA/MDMA_interface.h:
 
