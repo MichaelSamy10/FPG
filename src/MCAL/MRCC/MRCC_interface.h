@@ -32,7 +32,7 @@ peri		: for the developer in MCAL only not for the user
 #define		MRCC_USART1_EN			4
 
 /******************************	user defined DATA TYPES		******************************/
-/***************	RCC Bus NAME		***************/
+/***************	RCC Bus NAME	 ***************/
 typedef enum{
 	MRCC_AHB1	=0,
 	MRCC_AHB1LP	  ,
