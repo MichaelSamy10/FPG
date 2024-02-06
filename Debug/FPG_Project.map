@@ -3056,10 +3056,10 @@ Discarded input sections
  .text.MRCC_voidEnablePeripheralClock
                 0x00000000       0xb0 ./src/MCAL/MRCC/MRCC_program.o
  .text.MRCC_voidDisablePeripheralClock
-                0x00000000       0x68 ./src/MCAL/MRCC/MRCC_program.o
+                0x00000000       0xc0 ./src/MCAL/MRCC/MRCC_program.o
  .debug_info    0x00000000      0x14e ./src/MCAL/MRCC/MRCC_program.o
  .debug_abbrev  0x00000000       0x97 ./src/MCAL/MRCC/MRCC_program.o
- .debug_loc     0x00000000      0x278 ./src/MCAL/MRCC/MRCC_program.o
+ .debug_loc     0x00000000      0x340 ./src/MCAL/MRCC/MRCC_program.o
  .debug_aranges
                 0x00000000       0x30 ./src/MCAL/MRCC/MRCC_program.o
  .debug_ranges  0x00000000       0x20 ./src/MCAL/MRCC/MRCC_program.o
@@ -3067,12 +3067,12 @@ Discarded input sections
  .debug_macro   0x00000000      0xa6c ./src/MCAL/MRCC/MRCC_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/MRCC/MRCC_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/MRCC/MRCC_program.o
- .debug_macro   0x00000000       0x4c ./src/MCAL/MRCC/MRCC_program.o
+ .debug_macro   0x00000000       0x52 ./src/MCAL/MRCC/MRCC_program.o
  .debug_macro   0x00000000       0x64 ./src/MCAL/MRCC/MRCC_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/MRCC/MRCC_program.o
  .debug_macro   0x00000000       0x8e ./src/MCAL/MRCC/MRCC_program.o
- .debug_line    0x00000000      0x107 ./src/MCAL/MRCC/MRCC_program.o
- .debug_str     0x00000000     0x36c2 ./src/MCAL/MRCC/MRCC_program.o
+ .debug_line    0x00000000      0x10a ./src/MCAL/MRCC/MRCC_program.o
+ .debug_str     0x00000000     0x36d5 ./src/MCAL/MRCC/MRCC_program.o
  .comment       0x00000000       0x7f ./src/MCAL/MRCC/MRCC_program.o
  .debug_frame   0x00000000       0x40 ./src/MCAL/MRCC/MRCC_program.o
  .ARM.attributes
