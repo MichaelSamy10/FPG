@@ -119,7 +119,6 @@ void MRCC_voidEnablePeripheralClock(Bus_NAME_t Copy_u8BusName,u8 Copy_u8Peripher
 /*****************************************************************************************/
 void MRCC_voidDisablePeripheralClock(Bus_NAME_t Copy_udtBusName,u8 Copy_u8PeripheralNUM){
 	switch (Copy_udtBusName){
-<<<<<<< HEAD
 			case MRCC_AHB1:	 CLR_BIT(MRCC_AHB1ENR,Copy_u8PeripheralNUM);break;	/*Disable Peripheral on the AHB1 BUS*/
 			case MRCC_AHB2:	 CLR_BIT(MRCC_AHB2ENR,Copy_u8PeripheralNUM);break;	/*Disable Peripheral on the AHB2 BUS*/
 			case MRCC_APB1:	 CLR_BIT(MRCC_APB1ENR,Copy_u8PeripheralNUM);break;	/*Disable Peripheral on the APB1 BUS*/
@@ -129,16 +128,5 @@ void MRCC_voidDisablePeripheralClock(Bus_NAME_t Copy_udtBusName,u8 Copy_u8Periph
 			case MRCC_APB1LP:CLR_BIT(MRCC_APB1LPENR,Copy_u8PeripheralNUM);	break;     /*enable Peripheral on the APB1LP BUS*/
 			case MRCC_APB2LP:CLR_BIT(MRCC_APB2LPENR,Copy_u8PeripheralNUM);	break;     /*enable Peripheral on the APB2LP BUS*/
 	}
-=======
-			case MRCC_AHB1:	CLR_BIT(MRCC_AHB1ENR,Copy_u8PeripheralNUM);break;	/*Disable Peripheral on the AHB1 BUS*/
-			case MRCC_AHB2:	CLR_BIT(MRCC_AHB2ENR,Copy_u8PeripheralNUM);break;	/*Disable Peripheral on the AHB2 BUS*/
-			case MRCC_APB1:	CLR_BIT(MRCC_APB1ENR,Copy_u8PeripheralNUM);break;	/*Disable Peripheral on the APB1 BUS*/
-			case MRCC_APB2:	CLR_BIT(MRCC_APB2ENR,Copy_u8PeripheralNUM);break;	/*Disable Peripheral on the APB2 BUS*/
-			case MRCC_AHB1LP:CLR_BIT(MRCC_AHB1LPENR,Copy_u8PeripheralNUM);	break;     /*enable Peripheral on the AHB1LP BUS*/
-			case MRCC_AHB2LP:CLR_BIT(MRCC_AHB2LPENR,Copy_u8PeripheralNUM);	break;     /*enable Peripheral on the AHB2LP BUS*/
-			case MRCC_APB1LP:CLR_BIT(MRCC_APB1LPENR,Copy_u8PeripheralNUM);	break;     /*enable Peripheral on the APB1LP BUS*/
-			case MRCC_APB2LP:CLR_BIT(MRCC_APB2LPENR,Copy_u8PeripheralNUM);	break;     /*enable Peripheral on the APB2LP BUS*/
-		}
->>>>>>> refs/remotes/origin/master
 }
 
