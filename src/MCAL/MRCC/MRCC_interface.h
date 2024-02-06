@@ -14,26 +14,31 @@ peri		: for the developer in MCAL only not for the user
 /*********************************************/
 /******************************	user defined MACROS		******************************/
 
-/***************	RCC Peripheral ID		***************/
+/***************	RCC Peripheral IDs		***************/
 
+/*	AHB1  peripherals */
 #define		MRCC_GPIOA_EN			0
 #define		MRCC_GPIOB_EN			1
 #define		MRCC_GPIOC_EN			2
 #define		MRCC_GPIOD_EN			3
 #define		MRCC_GPIOE_EN			4
 #define		MRCC_GPIOH_EN			7
-
-
 #define		MRCC_CRC_EN				12
 #define		MRCC_DMA1_EN			21
 #define		MRCC_DMA2_EN			22
+/*	APB1  peripherals */
+#define		MRCC_TIM2_EN			0
+#define		MRCC_TIM3_EN			1
+#define		MRCC_TIM4_EN			2
+#define		MRCC_TIM5_EN			3
 
+/*	APB2 Peripherals*/
 #define		MRCC_SYSCFG_EN			14
 #define		MRCC_USART1_EN			4
 #define 	MRCC_FLITFLP_EN			15
 
 /******************************	user defined DATA TYPES		******************************/
-/***************	RCC Bus NAME		***************/
+/***************	RCC Bus NAME	 ***************/
 typedef enum{
 	MRCC_AHB1	=0,
 	MRCC_AHB1LP	  ,
