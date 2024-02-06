@@ -3056,7 +3056,7 @@ Discarded input sections
  .text.MRCC_voidEnablePeripheralClock
                 0x00000000       0xb0 ./src/MCAL/MRCC/MRCC_program.o
  .text.MRCC_voidDisablePeripheralClock
-                0x00000000       0xb8 ./src/MCAL/MRCC/MRCC_program.o
+                0x00000000       0xc0 ./src/MCAL/MRCC/MRCC_program.o
  .debug_info    0x00000000      0x14e ./src/MCAL/MRCC/MRCC_program.o
  .debug_abbrev  0x00000000       0x97 ./src/MCAL/MRCC/MRCC_program.o
  .debug_loc     0x00000000      0x340 ./src/MCAL/MRCC/MRCC_program.o
