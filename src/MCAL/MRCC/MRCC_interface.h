@@ -14,7 +14,7 @@ peri		: for the developer in MCAL only not for the user
 /*********************************************/
 /******************************	user defined MACROS		******************************/
 
-/***************	RCC Peripheral ID		***************/
+/***************	RCC Peripheral IDs		***************/
 
 #define		MRCC_GPIOA_EN			0
 #define		MRCC_GPIOB_EN			1
