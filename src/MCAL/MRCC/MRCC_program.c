@@ -93,7 +93,7 @@ void MRCC_voidInitializeSystemClock(void){
 /* 										   connect to the peripheral					 */
 /* 						@ Copy_u8PeripheralNUM: the number of the bit corresponding to 	 */
 /* 											peripheral in the enable control register	 */
-/* @PreRequsteis :->	@ RCC system Clock must be initialized					 		 */
+/* @PreRequsteis :->	@ RCC  system Clock must be initialized					 		 */
 /*****************************************************************************************/
 void MRCC_voidEnablePeripheralClock(Bus_NAME_t Copy_u8BusName,u8 Copy_u8PeripheralNUM){
 	switch (Copy_u8BusName){
