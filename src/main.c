@@ -8,7 +8,7 @@
 
 int main()
 {
-	/* Init System Clock */
+	/* Init System Clock  */
 	MRCC_voidInitializeSystemClock();
 	/* Enable PORTA Clock */
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOA_EN);
