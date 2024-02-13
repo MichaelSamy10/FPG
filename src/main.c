@@ -22,7 +22,7 @@ int main()
 	DCMOTOR_voidSetSpeed(DCMOTOR_2,2000,1500);
 
 	DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
-	DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
+	DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 
 	/* Init Systick*/
 	MSTK_voidIntialize();
