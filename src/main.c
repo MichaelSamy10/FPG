@@ -27,7 +27,6 @@ int main()
 	/* Init Systick*/
 	MSTK_voidIntialize();
 
-
 	//MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
 	//MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
 	//MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8OUTPUT);
