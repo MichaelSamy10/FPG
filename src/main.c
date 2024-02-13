@@ -10,7 +10,6 @@
 
 int main()
 {
-<<<<<<< HEAD
 
 	/* Init System Clock  */
 	MRCC_voidInitializeSystemClock();
@@ -46,9 +45,6 @@ int main()
 
 
 
-=======
-	/* Edit Timer */
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG/
 	while(1)
 	{
 

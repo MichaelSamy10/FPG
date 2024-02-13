@@ -29,6 +29,7 @@ CPP_DEPS :=
 SUBDIRS := \
 src/HAL/DCMOTOR \
 src/HAL/LCD \
+src/MCAL/MADC \
 src/MCAL/MDMA \
 src/MCAL/MEXTI \
 src/MCAL/MGPIO \
