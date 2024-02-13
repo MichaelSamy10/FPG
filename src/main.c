@@ -3,7 +3,7 @@
 
 int main()
 {
-
+	/* edit main */
 	while(1)
 	{
 
