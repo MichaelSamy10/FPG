@@ -38,6 +38,6 @@ typedef struct
 }ADC_t;
 
 
-#define MADC      ((volatile ADC_t *)(ADC_BASE_ADDRESS))
+#define ADC      ((volatile ADC_t *)(ADC_BASE_ADDRESS))
 
 #endif /* MADC_REGISTER_H_ */

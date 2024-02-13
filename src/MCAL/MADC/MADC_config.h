@@ -9,5 +9,4 @@
 #define MADC_CONFIG_H_
 
 
-
 #endif /* MADC_CONFIG_H_ */
