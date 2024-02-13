@@ -10,7 +10,6 @@
 
 int main()
 {
-	/* add Comment*/
 	/* Init System Clock  */
 	MRCC_voidInitializeSystemClock();
 	/* Enable PORTA Clock */
