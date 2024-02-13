@@ -5,7 +5,7 @@
 #include "MCAL/MGPIO/MGPIO_interface.h"
 #include "MCAL/MSTK/MSTK_interface.h"
 #include "HAL/LCD/LCD_interface.h"
-//#include "MCAL/MTIM2_5/MTIM2_5_interface.h"
+#include "MCAL/MTIM2_5/MTIM2_5_interface.h"
 #include "HAL/DCMOTOR/DCMOTOR_interface.h"
 
 int main()
