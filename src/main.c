@@ -8,7 +8,7 @@
 
 int main()
 {
-	/* Edit Timer */
+	/* Edit Timer*/
 	while(1)
 	{
 
