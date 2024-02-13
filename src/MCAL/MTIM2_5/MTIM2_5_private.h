@@ -30,13 +30,21 @@
 #define CCRM1_CC2S0			8
 #define CCRM1_CC2S1			9
 #define CCRM1_OC2PE			11
-
+#define CCRM1_OC2M_14		14
+#define CCRM1_OC2M_13		13
+#define CCRM1_OC2M_12		12
 #define CCRM2_CC3S0			0
 #define CCRM2_CC3S1			1
 #define CCRM2_OC3PE			3
+#define CCRM2_OC3M_6		6
+#define CCRM2_OC3M_5		5
+#define CCRM2_OC3M_4		4
 #define CCRM2_CC4S0			8
 #define CCRM2_CC4S1			9
 #define CCRM2_OC4PE			11
+#define CCRM2_OC4M_14		14
+#define CCRM2_OC4M_13		13
+#define CCRM2_OC4M_12		12
 /*---------------------------*/
 #define CCER_CC4E			12
 #define CCER_CC3E			8
