@@ -10,8 +10,8 @@
 
 /***************	TIM2_5 Files include	***************/
 /*Standard LIBS*/
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../../LIB/STD_TYPES.h"
+#include "../../LIB/BIT_MATH.h"
 /*RCC files*/
 #include "MTIM2_5_interface.h"
 #include "MTIM2_5_private.h"
@@ -235,15 +235,15 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 		switch (Copy_udtTimerNumber){
 		case MTIM_2:
 			switch(Copy_udtPWMchannel){
-			case MTIM2_5_ch1:   MTIM3->PSC=Copy_u16PRESCALER;
-								MTIM3->ARR=Copy_u16Frequancy;
-								MTIM3->CCR1=Copy_DutyCycle;
-								SET_BIT(MTIM3->CCMR1,CCRM1_OC1M_6);
-								SET_BIT(MTIM3->CCMR1,CCRM1_OC1M_5);
-								CLR_BIT(MTIM3->CCMR1,CCRM1_OC1M_4);
-								SET_BIT(MTIM3->CCMR1,CCRM1_OC1PE);
-								SET_BIT(MTIM3->CCER,CCER_CC1E);
-								SET_BIT(MTIM3->CR1,CR1_CEN);
+			case MTIM2_5_ch1:   MTIM2->PSC=Copy_u16PRESCALER;
+								MTIM2->ARR=Copy_u16Frequancy;
+								MTIM2->CCR1=Copy_DutyCycle;
+								SET_BIT(MTIM2->CCMR1,CCRM1_OC1M_6);
+								SET_BIT(MTIM2->CCMR1,CCRM1_OC1M_5);
+								CLR_BIT(MTIM2->CCMR1,CCRM1_OC1M_4);
+								SET_BIT(MTIM2->CCMR1,CCRM1_OC1PE);
+								SET_BIT(MTIM2->CCER,CCER_CC1E);
+								SET_BIT(MTIM2->CR1,CR1_CEN);
 								break;
 			case MTIM2_5_ch2:
 							  break;
@@ -256,8 +256,16 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 		break;
 		case MTIM_3:
 			switch(Copy_udtPWMchannel){
-			case MTIM2_5_ch1:
-				 break;
+			case MTIM2_5_ch1:   MTIM3->PSC=Copy_u16PRESCALER;
+								MTIM3->ARR=Copy_u16Frequancy;
+								MTIM3->CCR1=Copy_DutyCycle;
+								SET_BIT(MTIM3->CCMR1,CCRM1_OC1M_6);
+								SET_BIT(MTIM3->CCMR1,CCRM1_OC1M_5);
+								CLR_BIT(MTIM3->CCMR1,CCRM1_OC1M_4);
+								SET_BIT(MTIM3->CCMR1,CCRM1_OC1PE);
+								SET_BIT(MTIM3->CCER,CCER_CC1E);
+								SET_BIT(MTIM3->CR1,CR1_CEN);
+								break;
 			case MTIM2_5_ch2:
 		    	  break;
 			case MTIM2_5_ch3:
@@ -268,8 +276,16 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 			break;
 		case MTIM_4:
 			switch(Copy_udtPWMchannel){
-			case MTIM2_5_ch1:
-				 break;
+			case MTIM2_5_ch1:   MTIM4->PSC=Copy_u16PRESCALER;
+								MTIM4->ARR=Copy_u16Frequancy;
+								MTIM4->CCR1=Copy_DutyCycle;
+						SET_BIT(MTIM4->CCMR1,CCRM1_OC1M_6);
+						SET_BIT(MTIM4->CCMR1,CCRM1_OC1M_5);
+						CLR_BIT(MTIM4->CCMR1,CCRM1_OC1M_4);
+						SET_BIT(MTIM4->CCMR1,CCRM1_OC1PE);
+						SET_BIT(MTIM4->CCER,CCER_CC1E);
+						SET_BIT(MTIM4->CR1,CR1_CEN);
+								break;
 			case MTIM2_5_ch2:
 			     break;
 			case MTIM2_5_ch3:
@@ -281,15 +297,17 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 		case MTIM_5:
 			switch(Copy_udtPWMchannel){
 			case MTIM2_5_ch1:
-				 break;
-			case MTIM2_5_ch2:
-			  break;
-			case MTIM2_5_ch3:
-			  break;
-			case MTIM2_5_ch4:
-			  break;
-			}
-			break;
+								MTIM5->PSC=Copy_u16PRESCALER;
+								MTIM5->ARR=Copy_u16Frequancy;
+								MTIM5->CCR1=Copy_DutyCycle;
+						SET_BIT(MTIM5->CCMR1,CCRM1_OC1M_6);
+						SET_BIT(MTIM5->CCMR1,CCRM1_OC1M_5);
+						CLR_BIT(MTIM5->CCMR1,CCRM1_OC1M_4);
+						SET_BIT(MTIM5->CCMR1,CCRM1_OC1PE);
+						SET_BIT(MTIM5->CCER,CCER_CC1E);
+						SET_BIT(MTIM5->CR1,CR1_CEN);
+								break;
+		}
 	}
 }
 
