@@ -41,11 +41,13 @@ void TIM2_5_voidTimerStart(MTIMx_NUMBER_t Copy_udtTimerNumber);
 void TIM2_5_voidTimerStop(MTIMx_NUMBER_t Copy_udtTimerNumber);
 
 void TIM2_5_voidEnableInterrupt(MTIMx_NUMBER_t Copy_udtTimerNumber);
+
 void TIM2_5_voidDisableInterrupt(MTIMx_NUMBER_t Copy_udtTimerNumber);
 
 void TIM2_5_voidSetBusyWait(MTIMx_NUMBER_t Copy_udtTimerNumber,u32 Copy_u16TickNum);
 
 void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel);
 
-void MTIM2_5_SetPWM(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel,u16 Copy_u16Frequancy,u16 Copy_DutyCycle);
+void MTIM2_5_voidSetPWM(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel,u16 Copy_u16Frequency,u16 Copy_DutyCycle);
+
 #endif /* MTIM2_5_MTIM2_5_INTERFACE_H_ */
