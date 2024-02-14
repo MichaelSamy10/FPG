@@ -18,11 +18,11 @@ int main()
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOB_EN);
 
 	DCMOTOR_voidInit();
-	DCMOTOR_voidSetSpeed(DCMOTOR_1,2000,1500);
-	DCMOTOR_voidSetSpeed(DCMOTOR_2,2000,1500);
-
 	DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 	DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
+
+	DCMOTOR_voidSetSpeed(DCMOTOR_1,2000,1500);
+	DCMOTOR_voidSetSpeed(DCMOTOR_2,2000,1500);
 
 	/* Init Systick*/
 	MSTK_voidIntialize();
