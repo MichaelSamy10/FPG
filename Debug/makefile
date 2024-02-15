@@ -21,6 +21,7 @@ RM := rm -rf
 -include src/MCAL/MGPIO/subdir.mk
 -include src/MCAL/MEXTI/subdir.mk
 -include src/MCAL/MDMA/subdir.mk
+-include src/MCAL/I2C/subdir.mk
 -include src/HAL/IR/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
@@ -57,38 +58,38 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_FLASH += \
-FPG_Project.hex \
+FPG.hex \
 
 SECONDARY_SIZE += \
-FPG_Project.siz \
+FPG.siz \
 
 
 # All Target
-all: FPG_Project.elf secondary-outputs
+all: FPG.elf secondary-outputs
 
 # Tool invocations
-FPG_Project.elf: $(OBJS) $(USER_OBJS)
+FPG.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross ARM GNU C++ Linker'
-	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"FPG_Project.map" --specs=nano.specs -o "FPG_Project.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"FPG.map" --specs=nano.specs -o "FPG.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-FPG_Project.hex: FPG_Project.elf
+FPG.hex: FPG.elf
 	@echo 'Invoking: Cross ARM GNU Create Flash Image'
-	arm-none-eabi-objcopy -O ihex "FPG_Project.elf"  "FPG_Project.hex"
+	arm-none-eabi-objcopy -O ihex "FPG.elf"  "FPG.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-FPG_Project.siz: FPG_Project.elf
+FPG.siz: FPG.elf
 	@echo 'Invoking: Cross ARM GNU Print Size'
-	arm-none-eabi-size --format=berkeley "FPG_Project.elf"
+	arm-none-eabi-size --format=berkeley "FPG.elf"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(SECONDARY_FLASH)$(SECONDARY_SIZE)$(ASM_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(CPP_DEPS) FPG_Project.elf
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(SECONDARY_FLASH)$(SECONDARY_SIZE)$(ASM_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(CPP_DEPS) FPG.elf
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_FLASH) $(SECONDARY_SIZE)

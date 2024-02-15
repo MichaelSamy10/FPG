@@ -32,17 +32,39 @@
 
 // ----------------------------------------------------------------------------
 
-#define TIMER_FREQUENCY_HZ (1000u)
+class Timer
+{
+public:
+  typedef uint32_t ticks_t;
+  static constexpr ticks_t FREQUENCY_HZ = 1000u;
 
-typedef uint32_t timer_ticks_t;
+private:
+  static volatile ticks_t ms_delayCount;
 
-extern volatile timer_ticks_t timer_delayCount;
+public:
+  // Default constructor
+  Timer() = default;
 
-extern void
-timer_start (void);
+  inline void
+  start(void)
+  {
+    // Use SysTick as reference for the delay loops.
+    SysTick_Config(SystemCoreClock / FREQUENCY_HZ);
+  }
 
-extern void
-timer_sleep (timer_ticks_t ticks);
+  static void
+  sleep(ticks_t ticks);
+
+  inline static void
+  tick(void)
+  {
+    // Decrement to zero the counter used by the delay routine.
+    if (ms_delayCount != 0u)
+      {
+        --ms_delayCount;
+      }
+  }
+};
 
 // ----------------------------------------------------------------------------
 

@@ -8,11 +8,10 @@
 #include"BIT_MATH.h"
 #include"STD_TYPES.h"
 #include"I2C_interface.h"
-#include"MRCC_interface.h"
-#include"MRCC_register.h"
+#include"../MRCC/MRCC_interface.h"
 #include"I2C_register.h"
-#include"MGPIO_interface.h"
-#include"MGPIO_register.h"
+#include"../MGPIO/MGPIO_interface.h"
+
 
 
 u8 temp=0;
@@ -20,7 +19,7 @@ u8 value=0;
 	void I2C_Master_init(unsigned long SCL_Clock)
 	{
 		 //join I2C as a master mode
-		          MRCC_APB1ENR |= (1<<21);  // enable I2C CLOCK
+		        MRCC_voidEnablePeripheralClock()  MRCC_APB1ENR |= (1<<21);  // enable I2C CLOCK
 		          MRCC_AHB1ENR |= (1<<1);  // Enable GPIOB CLOCK
 		          // Configure the I2C PINs for ALternate Functions
 		          //PB8 and PB9 are connected to I2C1_SCL and I2C1_SDA

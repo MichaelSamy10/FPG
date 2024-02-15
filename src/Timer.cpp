@@ -25,43 +25,40 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef BLINKLED_H_
-#define BLINKLED_H_
+#include "Timer.h"
+#include "cortexm/ExceptionHandlers.h"
 
 // ----------------------------------------------------------------------------
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wpadded"
+#if defined(USE_HAL_DRIVER)
+extern "C" void HAL_IncTick(void);
+#endif
 
-class BlinkLed
+// ----------------------------------------------------------------------------
+
+volatile Timer::ticks_t Timer::ms_delayCount;
+
+// ----------------------------------------------------------------------------
+
+void
+Timer::sleep(ticks_t ticks)
 {
-public:
-  BlinkLed (unsigned int port, unsigned int bit, bool active_low);
+  ms_delayCount = ticks;
 
-  void
-  powerUp ();
+  // Busy wait until the SysTick decrements the counter to zero.
+  while (ms_delayCount != 0u)
+    ;
+}
 
-  void
-  turnOn ();
+// ----- SysTick_Handler() ----------------------------------------------------
 
-  void
-  turnOff ();
-
-  void
-  toggle ();
-
-  bool
-  isOn ();
-
-private:
-  unsigned int fPortNumber;
-  unsigned int fBitNumber;
-  unsigned int fBitMask;
-  bool fIsActiveLow;
-};
-
-#pragma GCC diagnostic pop
+extern "C" void
+SysTick_Handler(void)
+{
+#if defined(USE_HAL_DRIVER)
+  HAL_IncTick();
+#endif
+  Timer::tick();
+}
 
 // ----------------------------------------------------------------------------
-
-#endif // BLINKLED_H_
