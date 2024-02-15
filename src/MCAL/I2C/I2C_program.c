@@ -23,7 +23,7 @@ u8 value=0;
 		          MRCC_AHB1ENR |= (1<<1);  // Enable GPIOB CLOCK
 		          // Configure the I2C PINs for ALternate Functions
 		          //PB8 and PB9 are connected to I2C1_SCL and I2C1_SDA
-		          MGPIOB_MODER |= (1<<16)|(1<<18);
+		        MGPIO_voidSetPinMode(MGPIO_u8PORTB,8,MGPIO_u8OUTPUT);  MGPIOB_MODER |= (1<<16)|(1<<18);
 		          MGPIOB_OTYPER |= ((1<<8) | (1<<9));
 		          MGPIOB_OSPEEDR |= ((3<<16) | (3<<18));
 		          MGPIOB_PUPDR |= ((1<<16) | (1<<18));
