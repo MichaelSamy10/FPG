@@ -18,7 +18,7 @@
 #define		 MTIM4_CMODE	MTIM_CUP
 #define 	 MTIM5_CMODE	MTIM_CUP
 
-/********************************************/
+/*********************************************/
 #define TIM2_PRESCALER    0
 #define TIM3_PRESCALER    0
 #define TIM4_PRESCALER    0

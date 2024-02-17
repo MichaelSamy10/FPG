@@ -21,7 +21,7 @@ typedef enum{
  MTIM_4		,
  MTIM_5
 }MTIMx_NUMBER_t;
-/***************	TIM2_5 select PWM Channel NUMBER ***************/
+/***************	TIM2_5 select PWM Channel NUMBER ****************/
 typedef enum{
 	MTIM2_5_ch1,
 	MTIM2_5_ch2,
