@@ -20,7 +20,7 @@
 #define 	CR1_DIR			4
 /*enable bit*/
 #define 	CR1_CEN			0
-/*---------------------------*/
+/*----------------------------*/
 #define CCRM1_CC1S0			0
 #define CCRM1_CC1S1			1
 #define CCRM1_IC1PSC3		3
