@@ -11,7 +11,7 @@
  * COUNNTER/TIMER mode
  * options->
  * 			1- MTIM_CUP
- * 			2- MTIM_CDOWN
+ * 	**		2- MTIM_CDOWN
  */
 #define 	 MTIM2_CMODE	MTIM_CUP
 #define 	 MTIM3_CMODE	MTIM_CUP
