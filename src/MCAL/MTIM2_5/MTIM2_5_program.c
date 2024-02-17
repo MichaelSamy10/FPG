@@ -1,10 +1,10 @@
 /*
- * MTIM2_5_program.c
- *
- *  Created on: Jan 31, 2024
- *      Author: BROTHERS
- */
-
+Author		: Muhammed Sherif Attia
+date		: 17/2/2024
+version		: 1.0.0
+description : MTIM2_5_program.c -> Function impel
+peri		: for the developer in MCAL only not for the user
+*/
 /**********************************************/
 /************************************************/
 
@@ -12,20 +12,20 @@
 /*Standard LIBS*/
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
-/*RCC files*/
+/*TIM 2_5 files*/
 #include "MTIM2_5_interface.h"
 #include "MTIM2_5_private.h"
 #include "MTIM2_5_config.h"
 #include "MTIM2_5_register.h"
 
 
-
+/******** global variables *******/
 static void(*MTIM3_pvCallBack)(void)=NULL;
 static void(*MTIM4_pvCallBack)(void)=NULL;
 static void(*MTIM5_pvCallBack)(void)=NULL;
 /*********************************************/
 /*********************************************/
-u32 Global_ReturnValue=0;
+
 /***************	TIM2_5 Functions Implementations	***************/
 
 
@@ -770,6 +770,184 @@ void MTIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel
 	}
 
 }
+
+
+void TIM2_5_voidEnable_ICU_Interrupt(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
+	switch (Copy_udtTimerNumber){
+			case MTIM_2: switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:		SET_BIT(MTIM2->CR1,DIER_CC1IE);	break;   /*ENABLE INTERRUPT for TIM2 ICU CH 1*/
+							case MTIM2_5_ch2:		SET_BIT(MTIM2->CR1,DIER_CC2IE);	break;   /*ENABLE INTERRUPT for TIM2 ICU CH 2*/
+							case MTIM2_5_ch3:		SET_BIT(MTIM2->CR1,DIER_CC3IE);	break;   /*ENABLE INTERRUPT for TIM2 ICU CH 3*/
+							case MTIM2_5_ch4:		SET_BIT(MTIM2->CR1,DIER_CC4IE);	break;   /*ENABLE INTERRUPT for TIM2 ICU CH 4*/
+				}
+				break;
+			case MTIM_3 :switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:		SET_BIT(MTIM3->CR1,DIER_CC1IE);	break;    /**ENABLE INTERRUPT for TIM3 ICU CH 1*/
+							case MTIM2_5_ch2:		SET_BIT(MTIM3->CR1,DIER_CC2IE);	break;    /**ENABLE INTERRUPT for TIM3 ICU CH 2*/
+							case MTIM2_5_ch3:		SET_BIT(MTIM3->CR1,DIER_CC3IE);	break;    /**ENABLE INTERRUPT for TIM3 ICU CH 3*/
+							case MTIM2_5_ch4:		SET_BIT(MTIM3->CR1,DIER_CC4IE);	break;    /**ENABLE INTERRUPT for TIM3 ICU CH 4*/
+				}
+				break;
+
+			case MTIM_4 : switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:		SET_BIT(MTIM4->CR1,DIER_CC1IE);	break;    /**ENABLE INTERRUPT for TIM4 ICU CH 1*/
+							case MTIM2_5_ch2:		SET_BIT(MTIM4->CR1,DIER_CC2IE);	break;    /**ENABLE INTERRUPT for TIM4 ICU CH 2*/
+							case MTIM2_5_ch3:		SET_BIT(MTIM4->CR1,DIER_CC3IE);	break;    /**ENABLE INTERRUPT for TIM4 ICU CH 3*/
+							case MTIM2_5_ch4:		SET_BIT(MTIM4->CR1,DIER_CC4IE);	break;    /**ENABLE INTERRUPT for TIM4 ICU CH 4*/
+				}
+				break;
+			case MTIM_5 : switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:		SET_BIT(MTIM5->CR1,DIER_CC1IE);	break;     /**ENABLE INTERRUPT for TIM5 ICU CH 1*/
+							case MTIM2_5_ch2:		SET_BIT(MTIM5->CR1,DIER_CC2IE);	break;     /**ENABLE INTERRUPT for TIM5 ICU CH 2*/
+							case MTIM2_5_ch3:		SET_BIT(MTIM5->CR1,DIER_CC3IE);	break;     /**ENABLE INTERRUPT for TIM5 ICU CH 3*/
+							case MTIM2_5_ch4:		SET_BIT(MTIM5->CR1,DIER_CC4IE);	break;     /**ENABLE INTERRUPT for TIM5 ICU CH 4*/
+				}
+				break;
+	}
+}
+
+void TIM2_5_voidDisable_ICU_Interrupt(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
+	switch (Copy_udtTimerNumber){
+			case MTIM_2: switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:		CLR_BIT(MTIM2->CR1,DIER_CC1IE);	break;   /*DISABLE INTERRUPT for TIM2 ICU CH 1*/
+							case MTIM2_5_ch2:		CLR_BIT(MTIM2->CR1,DIER_CC2IE);	break;   /*DISABLE INTERRUPT for TIM2 ICU CH 2*/
+							case MTIM2_5_ch3:		CLR_BIT(MTIM2->CR1,DIER_CC3IE);	break;   /*DISABLE INTERRUPT for TIM2 ICU CH 3*/
+							case MTIM2_5_ch4:		CLR_BIT(MTIM2->CR1,DIER_CC4IE);	break;   /*DISABLE INTERRUPT for TIM2 ICU CH 4*/
+				}
+				break;
+			case MTIM_3 :switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:		CLR_BIT(MTIM3->CR1,DIER_CC1IE);	break;    /*DISABLE INTERRUPT for TIM3 ICU CH 1*/
+							case MTIM2_5_ch2:		CLR_BIT(MTIM3->CR1,DIER_CC2IE);	break;    /*DISABLE INTERRUPT for TIM3 ICU CH 2*/
+							case MTIM2_5_ch3:		CLR_BIT(MTIM3->CR1,DIER_CC3IE);	break;    /*DISABLE INTERRUPT for TIM3 ICU CH 3*/
+							case MTIM2_5_ch4:		CLR_BIT(MTIM3->CR1,DIER_CC4IE);	break;    /*DISABLE INTERRUPT for TIM3 ICU CH 4*/
+				}
+				break;
+
+			case MTIM_4 : switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:		CLR_BIT(MTIM4->CR1,DIER_CC1IE);	break;    /*DISABLE INTERRUPT for TIM4 ICU CH 1*/
+							case MTIM2_5_ch2:		CLR_BIT(MTIM4->CR1,DIER_CC2IE);	break;    /*DISABLE INTERRUPT for TIM4 ICU CH 2*/
+							case MTIM2_5_ch3:		CLR_BIT(MTIM4->CR1,DIER_CC3IE);	break;    /*DISABLE INTERRUPT for TIM4 ICU CH 3*/
+							case MTIM2_5_ch4:		CLR_BIT(MTIM4->CR1,DIER_CC4IE);	break;    /*DISABLE INTERRUPT for TIM4 ICU CH 4*/
+				}
+				break;
+			case MTIM_5 : switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:		CLR_BIT(MTIM5->CR1,DIER_CC1IE);	break;     /*DISABLE INTERRUPT for TIM5 ICU CH 1*/
+							case MTIM2_5_ch2:		CLR_BIT(MTIM5->CR1,DIER_CC2IE);	break;     /*DISABLE INTERRUPT for TIM5 ICU CH 2*/
+							case MTIM2_5_ch3:		CLR_BIT(MTIM5->CR1,DIER_CC3IE);	break;     /*DISABLE INTERRUPT for TIM5 ICU CH 3*/
+							case MTIM2_5_ch4:		CLR_BIT(MTIM5->CR1,DIER_CC4IE);	break;     /*DISABLE INTERRUPT for TIM5 ICU CH 4*/
+				}
+				break;
+	}
+}
+
+void MTIM2_5_ChangICUpolaritiy(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel,MTIM2_5_polarity Copy_udtPolarity){
+switch (Copy_udtPolarity){
+case MTIM_RisingEdge:
+	switch (Copy_udtTimerNumber){
+			case MTIM_2: switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:	CLR_BIT(MTIM2->CCER,CCER_CC1P); CLR_BIT(MTIM2->CCER,CCER_CC1NP); break;
+							case MTIM2_5_ch2:	CLR_BIT(MTIM2->CCER,CCER_CC2P); CLR_BIT(MTIM2->CCER,CCER_CC2NP); break;
+							case MTIM2_5_ch3:	CLR_BIT(MTIM2->CCER,CCER_CC3P); CLR_BIT(MTIM2->CCER,CCER_CC3NP); break;
+							case MTIM2_5_ch4:	CLR_BIT(MTIM2->CCER,CCER_CC4P); CLR_BIT(MTIM2->CCER,CCER_CC4NP); break;
+				}
+				break;
+			case MTIM_3 :switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:	CLR_BIT(MTIM3->CCER,CCER_CC1P); CLR_BIT(MTIM3->CCER,CCER_CC1NP); break;
+							case MTIM2_5_ch2:	CLR_BIT(MTIM3->CCER,CCER_CC2P); CLR_BIT(MTIM3->CCER,CCER_CC2NP); break;
+							case MTIM2_5_ch3:	CLR_BIT(MTIM3->CCER,CCER_CC3P); CLR_BIT(MTIM3->CCER,CCER_CC3NP); break;
+							case MTIM2_5_ch4:	CLR_BIT(MTIM3->CCER,CCER_CC4P); CLR_BIT(MTIM3->CCER,CCER_CC4NP); break;
+				}
+				break;
+
+			case MTIM_4 : switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:		CLR_BIT(MTIM4->CCER,CCER_CC1P); CLR_BIT(MTIM4->CCER,CCER_CC1NP); break;
+							case MTIM2_5_ch2:		CLR_BIT(MTIM4->CCER,CCER_CC2P); CLR_BIT(MTIM4->CCER,CCER_CC2NP); break;
+							case MTIM2_5_ch3:		CLR_BIT(MTIM4->CCER,CCER_CC3P); CLR_BIT(MTIM4->CCER,CCER_CC3NP); break;
+							case MTIM2_5_ch4:		CLR_BIT(MTIM4->CCER,CCER_CC4P); CLR_BIT(MTIM4->CCER,CCER_CC4NP); break;
+				}
+				break;
+			case MTIM_5 : switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:		CLR_BIT(MTIM5->CCER,CCER_CC1P); CLR_BIT(MTIM5->CCER,CCER_CC1NP); break;
+							case MTIM2_5_ch2:		CLR_BIT(MTIM5->CCER,CCER_CC2P); CLR_BIT(MTIM5->CCER,CCER_CC2NP); break;
+							case MTIM2_5_ch3:		CLR_BIT(MTIM5->CCER,CCER_CC3P); CLR_BIT(MTIM5->CCER,CCER_CC3NP); break;
+							case MTIM2_5_ch4:		CLR_BIT(MTIM5->CCER,CCER_CC4P); CLR_BIT(MTIM5->CCER,CCER_CC4NP); break;
+				}
+				break;
+	}
+	break;
+	case MTIM_FallingEdge:
+		switch (Copy_udtTimerNumber){
+				case MTIM_2: switch (Copy_udtICUchannel){
+								case MTIM2_5_ch1:  SET_BIT(MTIM2->CCER,CCER_CC1P); CLR_BIT(MTIM2->CCER,CCER_CC1NP); break;
+								case MTIM2_5_ch2:  SET_BIT(MTIM2->CCER,CCER_CC2P); CLR_BIT(MTIM2->CCER,CCER_CC2NP); break;
+								case MTIM2_5_ch3:  SET_BIT(MTIM2->CCER,CCER_CC3P); CLR_BIT(MTIM2->CCER,CCER_CC3NP); break;
+								case MTIM2_5_ch4:  SET_BIT(MTIM2->CCER,CCER_CC4P); CLR_BIT(MTIM2->CCER,CCER_CC4NP); break;
+					}
+					break;
+				case MTIM_3 :switch (Copy_udtICUchannel){
+								case MTIM2_5_ch1:	SET_BIT(MTIM3->CCER,CCER_CC1P); CLR_BIT(MTIM3->CCER,CCER_CC1NP); break;
+								case MTIM2_5_ch2:	SET_BIT(MTIM3->CCER,CCER_CC2P); CLR_BIT(MTIM3->CCER,CCER_CC2NP); break;
+								case MTIM2_5_ch3:	SET_BIT(MTIM3->CCER,CCER_CC3P); CLR_BIT(MTIM3->CCER,CCER_CC3NP); break;
+								case MTIM2_5_ch4:	SET_BIT(MTIM3->CCER,CCER_CC4P); CLR_BIT(MTIM3->CCER,CCER_CC4NP); break;
+					}
+					break;
+
+				case MTIM_4 : switch (Copy_udtICUchannel){
+								case MTIM2_5_ch1:	SET_BIT(MTIM4->CCER,CCER_CC1P); CLR_BIT(MTIM4->CCER,CCER_CC1NP); break;
+								case MTIM2_5_ch2:	SET_BIT(MTIM4->CCER,CCER_CC2P); CLR_BIT(MTIM4->CCER,CCER_CC2NP); break;
+								case MTIM2_5_ch3:	SET_BIT(MTIM4->CCER,CCER_CC3P); CLR_BIT(MTIM4->CCER,CCER_CC3NP); break;
+								case MTIM2_5_ch4:	SET_BIT(MTIM4->CCER,CCER_CC4P); CLR_BIT(MTIM4->CCER,CCER_CC4NP); break;
+					}
+					break;
+				case MTIM_5 : switch (Copy_udtICUchannel){
+								case MTIM2_5_ch1:   SET_BIT(MTIM5->CCER,CCER_CC1P); CLR_BIT(MTIM5->CCER,CCER_CC1NP); break;
+								case MTIM2_5_ch2:   SET_BIT(MTIM5->CCER,CCER_CC2P); CLR_BIT(MTIM5->CCER,CCER_CC2NP); break;
+								case MTIM2_5_ch3:   SET_BIT(MTIM5->CCER,CCER_CC3P); CLR_BIT(MTIM5->CCER,CCER_CC3NP); break;
+								case MTIM2_5_ch4:   SET_BIT(MTIM5->CCER,CCER_CC4P); CLR_BIT(MTIM5->CCER,CCER_CC4NP); break;
+					}
+					break;
+		}
+		break;
+}
+}
+
+u32 MTIM2_5_u32ReturnICUvalue(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
+	u32 Local_RetVALUE=0;
+	switch (Copy_udtTimerNumber){
+			case MTIM_2: switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:	Local_RetVALUE=MTIM2->CCR1	; break;
+							case MTIM2_5_ch2:	Local_RetVALUE=MTIM2->CCR2	; break;
+							case MTIM2_5_ch3:	Local_RetVALUE=MTIM2->CCR3	; break;
+							case MTIM2_5_ch4:	Local_RetVALUE=MTIM2->CCR4	; break;
+				}
+				break;
+			case MTIM_3 :switch (Copy_udtICUchannel){
+							case MTIM2_5_ch1:	Local_RetVALUE=MTIM3->CCR1	; break;
+							case MTIM2_5_ch2:	Local_RetVALUE=MTIM3->CCR2	; break;
+							case MTIM2_5_ch3:	Local_RetVALUE=MTIM3->CCR3	; break;
+							case MTIM2_5_ch4:	Local_RetVALUE=MTIM3->CCR4	; break;
+				}
+				break;
+
+			case MTIM_4 : switch (Copy_udtICUchannel){
+						case MTIM2_5_ch1:	Local_RetVALUE=MTIM4->CCR1	; break;
+						case MTIM2_5_ch2:	Local_RetVALUE=MTIM4->CCR2	; break;
+						case MTIM2_5_ch3:	Local_RetVALUE=MTIM4->CCR3	; break;
+						case MTIM2_5_ch4:	Local_RetVALUE=MTIM4->CCR4	; break;
+				}
+				break;
+			case MTIM_5 : switch (Copy_udtICUchannel){
+						case MTIM2_5_ch1:	Local_RetVALUE=MTIM5->CCR1	; break;
+						case MTIM2_5_ch2:	Local_RetVALUE=MTIM5->CCR2	; break;
+						case MTIM2_5_ch3:	Local_RetVALUE=MTIM5->CCR3	; break;
+						case MTIM2_5_ch4:	Local_RetVALUE=MTIM5->CCR4	; break;
+				}
+				break;
+
+	}
+	return Local_RetVALUE;
+}
+
 
 void MTIM3_setCALLBACK(void (*Copy_pvCallBACK)(void)){
 	MTIM3_pvCallBack=Copy_pvCallBACK;

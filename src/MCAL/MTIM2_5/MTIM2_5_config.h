@@ -1,10 +1,10 @@
 /*
- * MTIM_2_5_config.h
- *
- *  Created on: Jan 31, 2024
- *      Author: BROTHERS
- */
-
+Author		: Muhammed Sherif Attia
+date		: 17/2/2024
+version		: 1.0.0
+description : MTIM2_5_config.h -> pre build config File
+peri		: for the developer in MCAL only not for the user
+*/
 #ifndef MTIM2_5_MTIM2_5_CONFIG_H_
 #define MTIM2_5_MTIM2_5_CONFIG_H_
 /*

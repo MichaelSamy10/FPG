@@ -1,10 +1,10 @@
 /*
- * MTIM2_5_private.h
- *
- *  Created on: Jan 31, 2024
- *      Author: BROTHERS
- */
-/**/
+Author		: Muhammed Sherif Attia
+date		: 17/2/2024
+version		: 1.0.0
+description : MTIM2_5_private.h -> Private data File
+peri		: for the developer in MCAL only not for the user
+*/
 #ifndef MTIM2_5_MTIM2_5_PRIVATE_H_
 #define MTIM2_5_MTIM2_5_PRIVATE_H_
 
@@ -58,14 +58,14 @@
 #define CCRM2_OC4M_13		13
 #define CCRM2_OC4M_12		12
 /*---------------------------*/
-#define CCER_CC4P			15
-#define CCER_CC4NP			13
+#define CCER_CC4P			13
+#define CCER_CC4NP			15
 #define CCER_CC4E			12
-#define CCER_CC3P			11
-#define CCER_CC3NP			9
+#define CCER_CC3P			9
+#define CCER_CC3NP			11
 #define CCER_CC3E			8
-#define CCER_CC2P			7
-#define	CCER_CC2NP			5
+#define CCER_CC2P			5
+#define	CCER_CC2NP			7
 #define CCER_CC2E			4
 #define CCER_CC1NP			3
 #define CCER_CC1P			1
