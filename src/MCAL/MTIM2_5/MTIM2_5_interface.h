@@ -48,4 +48,10 @@ void TIM2_5_voidSetBusyWait(MTIMx_NUMBER_t Copy_udtTimerNumber,u32 Copy_u16TickN
 void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel);
 
 void MTIM2_5_SetPWM(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel,u16 Copy_u16PRESCALER,u16 Copy_u16Frequancy,u16 Copy_DutyCycle);
+
+void MTIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel);
+
+void MTIM3_setCALLBACK(void (*Copy_pvCallBACK)(void));
+void MTIM4_setCALLBACK(void (*Copy_pvCallBACK)(void));
+void MTIM5_setCALLBACK(void (*Copy_pvCallBACK)(void));
 #endif /* MTIM2_5_MTIM2_5_INTERFACE_H_ */
