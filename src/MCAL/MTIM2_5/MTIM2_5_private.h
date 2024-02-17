@@ -84,4 +84,5 @@
 /**********************************************/
 #define 	MTIM_CUP			1
 #define		MTIM_CDOWN			2
+/**************************/
 #endif /* MTIM2_5_MTIM2_5_PRIVATE_H_ */
