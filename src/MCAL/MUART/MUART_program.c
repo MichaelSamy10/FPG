@@ -61,13 +61,13 @@ void MUSART_voidDisable(void){
 	CLR_BIT(MUSART1->CR1,13);
 }
 
-void MUSART_voidSendString(u8 *Copy_pu8Ddata){
-	u8 L_u8SizeOfArray = (sizeof(Copy_pu8Ddata)/sizeof(Copy_pu8Ddata[0]));
-	for(u8 L_u8iterrator=0;L_u8iterrator<L_u8SizeOfArray;L_u8iterrator++){
-		MUSART1->DR=Copy_pu8Ddata[L_u8iterrator];
-		while(GET_BIT(MUSART1->SR,7)==0){
-				asm("NOP");
-			}
+void MUSART_voidSendString(u8 *Copy_pu8Data){
+	u8 L_u8Iterator=0;
+	while ( Copy_pu8Data[L_u8Iterator] != '\0')
+	{
+		MUSART1->DR = Copy_pu8Data[L_u8Iterator];
+		while( GET_BIT(MUSART1->SR,7) == 0 );
+		L_u8Iterator++;
 	}
 }
 
