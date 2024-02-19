@@ -534,9 +534,16 @@ void MTIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel
 			SET_BIT(MTIM3->CCER,CCER_CC1NP);
 			/*enable capture on the corresponding PIN*/
 			SET_BIT(MTIM3->CCER,CCER_CC1E);
+
+			/* Set prescaler 16 */
+			MTIM3->PSC = 15;
+			MTIM3->ARR=65535;
+
 			/*enable interrupt*/
 			SET_BIT(MTIM3->DIER,DIER_CC1IE);
-			 break;
+			/*enable timer to start ICU*/
+			SET_BIT(MTIM3->CR1,CR1_CEN);
+			break;
 		case MTIM2_5_ch2:
 			/*Select ICU*/
 			CLR_BIT(MTIM3->CCMR1,CCRM1_CC2S1);
@@ -949,6 +956,7 @@ u32 MTIM2_5_u32ReturnICUvalue(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_cha
 }
 
 
+
 void MTIM3_setCALLBACK(void (*Copy_pvCallBACK)(void)){
 	MTIM3_pvCallBack=Copy_pvCallBACK;
 }
@@ -964,7 +972,7 @@ void TIM2_IRQHandler(void){
 }
 
 void TIM3_IRQHandler(void){
-	MTIM3_pvCallBack();
+		MTIM3_pvCallBack();
 }
 void TIM4_IRQHandler(void){
 	MTIM4_pvCallBack();
