@@ -1020,32 +1020,32 @@ switch (Copy_udtPolarity){
 case MTIM_RisingEdge:
 	switch (Copy_udtTimerNumber){
 			case MTIM_2: switch (Copy_udtICUchannel){
-							case MTIM2_5_ch1:	CLR_BIT(MTIM2->CCER,CCER_CC1P); CLR_BIT(MTIM2->CCER,CCER_CC1NP); break;
-							case MTIM2_5_ch2:	CLR_BIT(MTIM2->CCER,CCER_CC2P); CLR_BIT(MTIM2->CCER,CCER_CC2NP); break;
-							case MTIM2_5_ch3:	CLR_BIT(MTIM2->CCER,CCER_CC3P); CLR_BIT(MTIM2->CCER,CCER_CC3NP); break;
-							case MTIM2_5_ch4:	CLR_BIT(MTIM2->CCER,CCER_CC4P); CLR_BIT(MTIM2->CCER,CCER_CC4NP); break;
+							case MTIM2_5_ch1:	CLR_BIT(MTIM2->CCER,CCER_CC1P); CLR_BIT(MTIM2->CCER,CCER_CC1NP); break;  /*Set timer2 ICU  sense mode as rising edge */
+							case MTIM2_5_ch2:	CLR_BIT(MTIM2->CCER,CCER_CC2P); CLR_BIT(MTIM2->CCER,CCER_CC2NP); break;  /*Set timer2 ICU  sense mode as rising edge */
+							case MTIM2_5_ch3:	CLR_BIT(MTIM2->CCER,CCER_CC3P); CLR_BIT(MTIM2->CCER,CCER_CC3NP); break;  /*Set timer2 ICU  sense mode as rising edge */
+							case MTIM2_5_ch4:	CLR_BIT(MTIM2->CCER,CCER_CC4P); CLR_BIT(MTIM2->CCER,CCER_CC4NP); break;  /*Set timer2 ICU  sense mode as rising edge */
 				}
 				break;
 			case MTIM_3 :switch (Copy_udtICUchannel){
-							case MTIM2_5_ch1:	CLR_BIT(MTIM3->CCER,CCER_CC1P); CLR_BIT(MTIM3->CCER,CCER_CC1NP); break;
-							case MTIM2_5_ch2:	CLR_BIT(MTIM3->CCER,CCER_CC2P); CLR_BIT(MTIM3->CCER,CCER_CC2NP); break;
-							case MTIM2_5_ch3:	CLR_BIT(MTIM3->CCER,CCER_CC3P); CLR_BIT(MTIM3->CCER,CCER_CC3NP); break;
-							case MTIM2_5_ch4:	CLR_BIT(MTIM3->CCER,CCER_CC4P); CLR_BIT(MTIM3->CCER,CCER_CC4NP); break;
+							case MTIM2_5_ch1:	CLR_BIT(MTIM3->CCER,CCER_CC1P); CLR_BIT(MTIM3->CCER,CCER_CC1NP); break;  /*Set timer3 ICU  sense mode as rising edge */
+							case MTIM2_5_ch2:	CLR_BIT(MTIM3->CCER,CCER_CC2P); CLR_BIT(MTIM3->CCER,CCER_CC2NP); break;  /*Set timer3 ICU  sense mode as rising edge */
+							case MTIM2_5_ch3:	CLR_BIT(MTIM3->CCER,CCER_CC3P); CLR_BIT(MTIM3->CCER,CCER_CC3NP); break;  /*Set timer3 ICU  sense mode as rising edge */
+							case MTIM2_5_ch4:	CLR_BIT(MTIM3->CCER,CCER_CC4P); CLR_BIT(MTIM3->CCER,CCER_CC4NP); break;  /*Set timer3 ICU  sense mode as rising edge */
 				}
 				break;
 
 			case MTIM_4 : switch (Copy_udtICUchannel){
-							case MTIM2_5_ch1:		CLR_BIT(MTIM4->CCER,CCER_CC1P); CLR_BIT(MTIM4->CCER,CCER_CC1NP); break;
-							case MTIM2_5_ch2:		CLR_BIT(MTIM4->CCER,CCER_CC2P); CLR_BIT(MTIM4->CCER,CCER_CC2NP); break;
-							case MTIM2_5_ch3:		CLR_BIT(MTIM4->CCER,CCER_CC3P); CLR_BIT(MTIM4->CCER,CCER_CC3NP); break;
-							case MTIM2_5_ch4:		CLR_BIT(MTIM4->CCER,CCER_CC4P); CLR_BIT(MTIM4->CCER,CCER_CC4NP); break;
+							case MTIM2_5_ch1:		CLR_BIT(MTIM4->CCER,CCER_CC1P); CLR_BIT(MTIM4->CCER,CCER_CC1NP); break;  /*Set timer4 ICU  sense mode as rising edge */
+							case MTIM2_5_ch2:		CLR_BIT(MTIM4->CCER,CCER_CC2P); CLR_BIT(MTIM4->CCER,CCER_CC2NP); break;  /*Set timer4 ICU  sense mode as rising edge */
+							case MTIM2_5_ch3:		CLR_BIT(MTIM4->CCER,CCER_CC3P); CLR_BIT(MTIM4->CCER,CCER_CC3NP); break;  /*Set timer4 ICU  sense mode as rising edge */
+							case MTIM2_5_ch4:		CLR_BIT(MTIM4->CCER,CCER_CC4P); CLR_BIT(MTIM4->CCER,CCER_CC4NP); break;  /*Set timer4 ICU  sense mode as rising edge */
 				}
 				break;
 			case MTIM_5 : switch (Copy_udtICUchannel){
-							case MTIM2_5_ch1:		CLR_BIT(MTIM5->CCER,CCER_CC1P); CLR_BIT(MTIM5->CCER,CCER_CC1NP); break;
-							case MTIM2_5_ch2:		CLR_BIT(MTIM5->CCER,CCER_CC2P); CLR_BIT(MTIM5->CCER,CCER_CC2NP); break;
-							case MTIM2_5_ch3:		CLR_BIT(MTIM5->CCER,CCER_CC3P); CLR_BIT(MTIM5->CCER,CCER_CC3NP); break;
-							case MTIM2_5_ch4:		CLR_BIT(MTIM5->CCER,CCER_CC4P); CLR_BIT(MTIM5->CCER,CCER_CC4NP); break;
+							case MTIM2_5_ch1:		CLR_BIT(MTIM5->CCER,CCER_CC1P); CLR_BIT(MTIM5->CCER,CCER_CC1NP); break;  /*Set timer5 ICU  sense mode as rising edge */
+							case MTIM2_5_ch2:		CLR_BIT(MTIM5->CCER,CCER_CC2P); CLR_BIT(MTIM5->CCER,CCER_CC2NP); break;  /*Set timer5 ICU  sense mode as rising edge */
+							case MTIM2_5_ch3:		CLR_BIT(MTIM5->CCER,CCER_CC3P); CLR_BIT(MTIM5->CCER,CCER_CC3NP); break;  /*Set timer5 ICU  sense mode as rising edge */
+							case MTIM2_5_ch4:		CLR_BIT(MTIM5->CCER,CCER_CC4P); CLR_BIT(MTIM5->CCER,CCER_CC4NP); break;  /*Set timer5 ICU  sense mode as rising edge */
 				}
 				break;
 	}
@@ -1053,32 +1053,32 @@ case MTIM_RisingEdge:
 	case MTIM_FallingEdge:
 		switch (Copy_udtTimerNumber){
 				case MTIM_2: switch (Copy_udtICUchannel){
-								case MTIM2_5_ch1:  SET_BIT(MTIM2->CCER,CCER_CC1P); CLR_BIT(MTIM2->CCER,CCER_CC1NP); break;
-								case MTIM2_5_ch2:  SET_BIT(MTIM2->CCER,CCER_CC2P); CLR_BIT(MTIM2->CCER,CCER_CC2NP); break;
-								case MTIM2_5_ch3:  SET_BIT(MTIM2->CCER,CCER_CC3P); CLR_BIT(MTIM2->CCER,CCER_CC3NP); break;
-								case MTIM2_5_ch4:  SET_BIT(MTIM2->CCER,CCER_CC4P); CLR_BIT(MTIM2->CCER,CCER_CC4NP); break;
+								case MTIM2_5_ch1:  SET_BIT(MTIM2->CCER,CCER_CC1P); CLR_BIT(MTIM2->CCER,CCER_CC1NP); break;   /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch2:  SET_BIT(MTIM2->CCER,CCER_CC2P); CLR_BIT(MTIM2->CCER,CCER_CC2NP); break;   /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch3:  SET_BIT(MTIM2->CCER,CCER_CC3P); CLR_BIT(MTIM2->CCER,CCER_CC3NP); break;   /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch4:  SET_BIT(MTIM2->CCER,CCER_CC4P); CLR_BIT(MTIM2->CCER,CCER_CC4NP); break;   /*Set timer3 ICU  sense mode as falling edge */
 					}
 					break;
 				case MTIM_3 :switch (Copy_udtICUchannel){
-								case MTIM2_5_ch1:	SET_BIT(MTIM3->CCER,CCER_CC1P); CLR_BIT(MTIM3->CCER,CCER_CC1NP); break;
-								case MTIM2_5_ch2:	SET_BIT(MTIM3->CCER,CCER_CC2P); CLR_BIT(MTIM3->CCER,CCER_CC2NP); break;
-								case MTIM2_5_ch3:	SET_BIT(MTIM3->CCER,CCER_CC3P); CLR_BIT(MTIM3->CCER,CCER_CC3NP); break;
-								case MTIM2_5_ch4:	SET_BIT(MTIM3->CCER,CCER_CC4P); CLR_BIT(MTIM3->CCER,CCER_CC4NP); break;
+								case MTIM2_5_ch1:	SET_BIT(MTIM3->CCER,CCER_CC1P); CLR_BIT(MTIM3->CCER,CCER_CC1NP); break;   /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch2:	SET_BIT(MTIM3->CCER,CCER_CC2P); CLR_BIT(MTIM3->CCER,CCER_CC2NP); break;   /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch3:	SET_BIT(MTIM3->CCER,CCER_CC3P); CLR_BIT(MTIM3->CCER,CCER_CC3NP); break;   /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch4:	SET_BIT(MTIM3->CCER,CCER_CC4P); CLR_BIT(MTIM3->CCER,CCER_CC4NP); break;   /*Set timer3 ICU  sense mode as falling edge */
 					}
 					break;
 
 				case MTIM_4 : switch (Copy_udtICUchannel){
-								case MTIM2_5_ch1:	SET_BIT(MTIM4->CCER,CCER_CC1P); CLR_BIT(MTIM4->CCER,CCER_CC1NP); break;
-								case MTIM2_5_ch2:	SET_BIT(MTIM4->CCER,CCER_CC2P); CLR_BIT(MTIM4->CCER,CCER_CC2NP); break;
-								case MTIM2_5_ch3:	SET_BIT(MTIM4->CCER,CCER_CC3P); CLR_BIT(MTIM4->CCER,CCER_CC3NP); break;
-								case MTIM2_5_ch4:	SET_BIT(MTIM4->CCER,CCER_CC4P); CLR_BIT(MTIM4->CCER,CCER_CC4NP); break;
+								case MTIM2_5_ch1:	SET_BIT(MTIM4->CCER,CCER_CC1P); CLR_BIT(MTIM4->CCER,CCER_CC1NP); break;     /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch2:	SET_BIT(MTIM4->CCER,CCER_CC2P); CLR_BIT(MTIM4->CCER,CCER_CC2NP); break;     /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch3:	SET_BIT(MTIM4->CCER,CCER_CC3P); CLR_BIT(MTIM4->CCER,CCER_CC3NP); break;     /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch4:	SET_BIT(MTIM4->CCER,CCER_CC4P); CLR_BIT(MTIM4->CCER,CCER_CC4NP); break;     /*Set timer3 ICU  sense mode as falling edge */
 					}
 					break;
 				case MTIM_5 : switch (Copy_udtICUchannel){
-								case MTIM2_5_ch1:   SET_BIT(MTIM5->CCER,CCER_CC1P); CLR_BIT(MTIM5->CCER,CCER_CC1NP); break;
-								case MTIM2_5_ch2:   SET_BIT(MTIM5->CCER,CCER_CC2P); CLR_BIT(MTIM5->CCER,CCER_CC2NP); break;
-								case MTIM2_5_ch3:   SET_BIT(MTIM5->CCER,CCER_CC3P); CLR_BIT(MTIM5->CCER,CCER_CC3NP); break;
-								case MTIM2_5_ch4:   SET_BIT(MTIM5->CCER,CCER_CC4P); CLR_BIT(MTIM5->CCER,CCER_CC4NP); break;
+								case MTIM2_5_ch1:   SET_BIT(MTIM5->CCER,CCER_CC1P); CLR_BIT(MTIM5->CCER,CCER_CC1NP); break;     /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch2:   SET_BIT(MTIM5->CCER,CCER_CC2P); CLR_BIT(MTIM5->CCER,CCER_CC2NP); break;     /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch3:   SET_BIT(MTIM5->CCER,CCER_CC3P); CLR_BIT(MTIM5->CCER,CCER_CC3NP); break;     /*Set timer3 ICU  sense mode as falling edge */
+								case MTIM2_5_ch4:   SET_BIT(MTIM5->CCER,CCER_CC4P); CLR_BIT(MTIM5->CCER,CCER_CC4NP); break;     /*Set timer3 ICU  sense mode as falling edge */
 					}
 					break;
 		}
@@ -1099,37 +1099,37 @@ u32 TIM2_5_u32ReturnICUvalue(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_chan
 	u32 Local_RetVALUE=0;
 	switch (Copy_udtTimerNumber){
 			case MTIM_2: switch (Copy_udtICUchannel){
-							case MTIM2_5_ch1:	Local_RetVALUE=MTIM2->CCR1	; break;
-							case MTIM2_5_ch2:	Local_RetVALUE=MTIM2->CCR2	; break;
-							case MTIM2_5_ch3:	Local_RetVALUE=MTIM2->CCR3	; break;
-							case MTIM2_5_ch4:	Local_RetVALUE=MTIM2->CCR4	; break;
+							case MTIM2_5_ch1:	Local_RetVALUE=MTIM2->CCR1	; break;     /*get the value from the CCRx register*/
+							case MTIM2_5_ch2:	Local_RetVALUE=MTIM2->CCR2	; break;     /*get the value from the CCRx register*/
+							case MTIM2_5_ch3:	Local_RetVALUE=MTIM2->CCR3	; break;     /*get the value from the CCRx register*/
+							case MTIM2_5_ch4:	Local_RetVALUE=MTIM2->CCR4	; break;     /*get the value from the CCRx register*/
 				}
 				break;
 			case MTIM_3 :switch (Copy_udtICUchannel){
-							case MTIM2_5_ch1:	Local_RetVALUE=MTIM3->CCR1	; break;
-							case MTIM2_5_ch2:	Local_RetVALUE=MTIM3->CCR2	; break;
-							case MTIM2_5_ch3:	Local_RetVALUE=MTIM3->CCR3	; break;
-							case MTIM2_5_ch4:	Local_RetVALUE=MTIM3->CCR4	; break;
+							case MTIM2_5_ch1:	Local_RetVALUE=MTIM3->CCR1	; break;     /*get the value from the CCRx register*/
+							case MTIM2_5_ch2:	Local_RetVALUE=MTIM3->CCR2	; break;     /*get the value from the CCRx register*/
+							case MTIM2_5_ch3:	Local_RetVALUE=MTIM3->CCR3	; break;     /*get the value from the CCRx register*/
+							case MTIM2_5_ch4:	Local_RetVALUE=MTIM3->CCR4	; break;     /*get the value from the CCRx register*/
 				}
 				break;
 
 			case MTIM_4 : switch (Copy_udtICUchannel){
-						case MTIM2_5_ch1:	Local_RetVALUE=MTIM4->CCR1	; break;
-						case MTIM2_5_ch2:	Local_RetVALUE=MTIM4->CCR2	; break;
-						case MTIM2_5_ch3:	Local_RetVALUE=MTIM4->CCR3	; break;
-						case MTIM2_5_ch4:	Local_RetVALUE=MTIM4->CCR4	; break;
+						case MTIM2_5_ch1:	Local_RetVALUE=MTIM4->CCR1	; break;         /*get the value from the CCRx register*/
+						case MTIM2_5_ch2:	Local_RetVALUE=MTIM4->CCR2	; break;         /*get the value from the CCRx register*/
+						case MTIM2_5_ch3:	Local_RetVALUE=MTIM4->CCR3	; break;         /*get the value from the CCRx register*/
+						case MTIM2_5_ch4:	Local_RetVALUE=MTIM4->CCR4	; break;         /*get the value from the CCRx register*/
 				}
 				break;
 			case MTIM_5 : switch (Copy_udtICUchannel){
-						case MTIM2_5_ch1:	Local_RetVALUE=MTIM5->CCR1	; break;
-						case MTIM2_5_ch2:	Local_RetVALUE=MTIM5->CCR2	; break;
-						case MTIM2_5_ch3:	Local_RetVALUE=MTIM5->CCR3	; break;
-						case MTIM2_5_ch4:	Local_RetVALUE=MTIM5->CCR4	; break;
+						case MTIM2_5_ch1:	Local_RetVALUE=MTIM5->CCR1	; break;         /*get the value from the CCRx register*/
+						case MTIM2_5_ch2:	Local_RetVALUE=MTIM5->CCR2	; break;         /*get the value from the CCRx register*/
+						case MTIM2_5_ch3:	Local_RetVALUE=MTIM5->CCR3	; break;         /*get the value from the CCRx register*/
+						case MTIM2_5_ch4:	Local_RetVALUE=MTIM5->CCR4	; break;         /*get the value from the CCRx register*/
 				}
 				break;
 
 	}
-	return Local_RetVALUE;
+	return Local_RetVALUE;	/*return the captured value*/
 }
 
 
@@ -1143,7 +1143,7 @@ u32 TIM2_5_u32ReturnICUvalue(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_chan
 /*						@ timer interrupt must be enabled in NVIC								  */
 /**************************************************************************************************/
 void MTIM3_setCALLBACK(void (*Copy_pvCallBACK)(void)){
-	MTIM3_pvCallBack=Copy_pvCallBACK;
+	MTIM3_pvCallBack=Copy_pvCallBACK;	/*Set the ISR for TIMER 3 interrupt*/
 }
 /**************************************************************************************************/
 /* @Name  	  :->		@ MTIM4_setCALLBACK												 		  */
@@ -1155,7 +1155,7 @@ void MTIM3_setCALLBACK(void (*Copy_pvCallBACK)(void)){
 /*						@ timer interrupt must be enabled in NVIC								  */
 /**************************************************************************************************/
 void MTIM4_setCALLBACK(void (*Copy_pvCallBACK)(void)){
-	MTIM4_pvCallBack=Copy_pvCallBACK;
+	MTIM4_pvCallBack=Copy_pvCallBACK;  /*Set the ISR for TIMER 4 interrupt*/
 }
 /**************************************************************************************************/
 /* @Name  	  :->		@ MTIM5_setCALLBACK												 		  */
@@ -1167,7 +1167,7 @@ void MTIM4_setCALLBACK(void (*Copy_pvCallBACK)(void)){
 /*						@ timer interrupt must be enabled in NVIC								  */
 /**************************************************************************************************/
 void MTIM5_setCALLBACK(void (*Copy_pvCallBACK)(void)){
-	MTIM5_pvCallBack=Copy_pvCallBACK;
+	MTIM5_pvCallBack=Copy_pvCallBACK;        /*Set the ISR for TIMER 5 interrupt*/
 }
 /*******************************************************************************************/
 /*******************************************************************************************/
