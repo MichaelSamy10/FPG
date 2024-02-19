@@ -28,7 +28,14 @@ static void(*MTIM5_pvCallBack)(void)=NULL;
 
 /***************	TIM2_5 Functions Implementations	***************/
 
-
+/*****************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_voidInitialize											 */
+/* @Brief 	  :->		@ used to initialize selected timer(2:5) as GP timer	 		 */
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 */
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 */
+/*						@ timer must be enabled with RCC								 */
+/*						@ timer count mode must be PreConfiged							 */
+/*****************************************************************************************/
 void TIM2_5_voidInitialize(MTIMx_NUMBER_t Copy_udtTimerNumber){
 	switch (Copy_udtTimerNumber){
 				case MTIM_2:
@@ -112,7 +119,14 @@ void TIM2_5_voidInitialize(MTIMx_NUMBER_t Copy_udtTimerNumber){
 					break;
 					}
 }
-
+/*****************************************************************************************/
+/* @Name  	  :->		@ TIM2_5TIM2_5_voidTimerStart									 */
+/* @Brief 	  :->		@ used to Start count in selected timer(2:5) as GP timer	 	 */
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 */
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 */
+/*						@ timer must be enabled with RCC								 */
+/*						@ timer count mode must be initialized 							 */
+/*****************************************************************************************/
 void TIM2_5_voidTimerStart(MTIMx_NUMBER_t Copy_udtTimerNumber){
 	switch (Copy_udtTimerNumber){
 			case MTIM_2:
@@ -133,7 +147,14 @@ void TIM2_5_voidTimerStart(MTIMx_NUMBER_t Copy_udtTimerNumber){
 				}
 
 }
-
+/*****************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_voidTimerStop											 */
+/* @Brief 	  :->		@ used to Stop count in selected timer(2:5) as GP timer	 		 */
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 */
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 */
+/*						@ timer must be enabled with RCC								 */
+/*						@ timer count mode must be initialized 							 */
+/*****************************************************************************************/
 void TIM2_5_voidTimerStop(MTIMx_NUMBER_t Copy_udtTimerNumber){
 	switch (Copy_udtTimerNumber){
 			case MTIM_2: CLR_BIT(MTIM2->CR1,CR1_CEN);
@@ -152,7 +173,14 @@ void TIM2_5_voidTimerStop(MTIMx_NUMBER_t Copy_udtTimerNumber){
 
 
 
-
+/*****************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_voidEnableInterrupt									 */
+/* @Brief 	  :->		@ used to enable timer mode interrupt					 		 */
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 */
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 */
+/*						@ timer must be enabled with RCC								 */
+/*						@ timer count mode must be initialized 							 */
+/*****************************************************************************************/
 void TIM2_5_voidEnableInterrupt(MTIMx_NUMBER_t Copy_udtTimerNumber){
 	switch (Copy_udtTimerNumber){
 			case MTIM_2: SET_BIT(MTIM2->CR1,DIER_TIE);
@@ -167,6 +195,14 @@ void TIM2_5_voidEnableInterrupt(MTIMx_NUMBER_t Copy_udtTimerNumber){
 						break;
 				}
 }
+/*****************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_voidDisableInterrupt									 */
+/* @Brief 	  :->		@ used to Disable timer mode interrupt					 		 */
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 */
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 */
+/*						@ timer must be enabled with RCC								 */
+/*						@ timer count mode must be initialized 							 */
+/*****************************************************************************************/
 void TIM2_5_voidDisableInterrupt(MTIMx_NUMBER_t Copy_udtTimerNumber){
 	switch (Copy_udtTimerNumber){
 			case MTIM_2: CLR_BIT(MTIM2->CR1,DIER_TIE);
@@ -182,7 +218,15 @@ void TIM2_5_voidDisableInterrupt(MTIMx_NUMBER_t Copy_udtTimerNumber){
 						break;
 				}
 }
-
+/*********************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_voidSetBusyWait										 	 */
+/* @Brief 	  :->		@ used to set timer delay using pooling method			 		 	 */
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 	 */
+/*						@ Copy_u32TickNum: the corresponding ticktime representing delay time*/
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		  	 */
+/*						@ timer must be enabled with RCC								 	 */
+/*						@ timer count mode must be initialized 							 	 */
+/*********************************************************************************************/
 void TIM2_5_voidSetBusyWait(MTIMx_NUMBER_t Copy_udtTimerNumber,u32 Copy_u32TickNum){
 	switch (Copy_udtTimerNumber){
 	case MTIM_2:
@@ -235,14 +279,22 @@ void TIM2_5_voidSetBusyWait(MTIMx_NUMBER_t Copy_udtTimerNumber,u32 Copy_u32TickN
 		break;
 	}
 	}
-
+/*****************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_voidPWM_Init											 */
+/* @Brief 	  :->		@ used to initialize selected timer(2:5) as PWM source	 		 */
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 */
+/*						@ Copy_udtPWMchannel: Channel that generates the PWM signal		 */
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 */
+/*						@ timer must be enabled with RCC								 */
+/*						@ PWM preScaler must be PreConfiged in config file				 */
+/*****************************************************************************************/
 void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel){
 		switch (Copy_udtTimerNumber){
 		case MTIM_3:
 			switch(Copy_udtPWMchannel){
 			case MTIM2_5_ch1:
 				/*set the preScaler value in the preScaler register*/
-				MTIM3->PSC=TIM3_PRESCALER;
+				MTIM3->PSC=TIM3_PWM_PRESCALER;
 				/*select the pwm mode*/
 				SET_BIT(MTIM3->CCMR1,CCRM1_OC1M_6);
 				SET_BIT(MTIM3->CCMR1,CCRM1_OC1M_5);
@@ -254,7 +306,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 				 break;
 			case MTIM2_5_ch2:
 				/*set the preScaler value in the preScaler register*/
-				MTIM3->PSC=TIM3_PRESCALER;
+				MTIM3->PSC=TIM3_PWM_PRESCALER;
 				/*select the pwm mode*/
 				SET_BIT(MTIM3->CCMR1,CCRM1_OC2M_14);
 				SET_BIT(MTIM3->CCMR1,CCRM1_OC2M_13);
@@ -266,7 +318,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 		    	  break;
 			case MTIM2_5_ch3:
 				/*set the preScaler value in the preScaler register*/
-				MTIM3->PSC=TIM3_PRESCALER;
+				MTIM3->PSC=TIM3_PWM_PRESCALER;
 				/*select the pwm mode*/
 				SET_BIT(MTIM3->CCMR2,CCRM2_OC3M_6);
 				SET_BIT(MTIM3->CCMR2,CCRM2_OC3M_5);
@@ -278,7 +330,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 				break;
 			case MTIM2_5_ch4:
 				/*set the preScaler value in the preScaler register*/
-				MTIM3->PSC=TIM3_PRESCALER;
+				MTIM3->PSC=TIM3_PWM_PRESCALER;
 				/*select the pwm mode*/
 				SET_BIT(MTIM3->CCMR2,CCRM2_OC4M_14);
 				SET_BIT(MTIM3->CCMR2,CCRM2_OC4M_13);
@@ -294,7 +346,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 			switch(Copy_udtPWMchannel){
 				case MTIM2_5_ch1:
 					/*set the preScaler value in the preScaler register*/
-					MTIM4->PSC=TIM4_PRESCALER;
+					MTIM4->PSC=TIM4_PWM_PRESCALER;
 					/*select the pwm mode*/
 					SET_BIT(MTIM4->CCMR1,CCRM1_OC1M_6);
 					SET_BIT(MTIM4->CCMR1,CCRM1_OC1M_5);
@@ -306,7 +358,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 					 break;
 				case MTIM2_5_ch2:
 					/*set the preScaler value in the preScaler register*/
-					MTIM4->PSC=TIM4_PRESCALER;
+					MTIM4->PSC=TIM4_PWM_PRESCALER;
 					/*select the pwm mode*/
 					SET_BIT(MTIM4->CCMR1,CCRM1_OC2M_14);
 					SET_BIT(MTIM4->CCMR1,CCRM1_OC2M_13);
@@ -318,7 +370,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 			    	  break;
 				case MTIM2_5_ch3:
 					/*set the preScaler value in the preScaler register*/
-					MTIM4->PSC=TIM4_PRESCALER;
+					MTIM4->PSC=TIM4_PWM_PRESCALER;
 					/*select the pwm mode*/
 					SET_BIT(MTIM4->CCMR2,CCRM2_OC3M_6);
 					SET_BIT(MTIM4->CCMR2,CCRM2_OC3M_5);
@@ -330,7 +382,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 					break;
 				case MTIM2_5_ch4:
 					/*set the preScaler value in the preScaler register*/
-					MTIM4->PSC=TIM4_PRESCALER;
+					MTIM4->PSC=TIM4_PWM_PRESCALER;
 					/*select the pwm mode*/
 					SET_BIT(MTIM4->CCMR2,CCRM2_OC4M_14);
 					SET_BIT(MTIM4->CCMR2,CCRM2_OC4M_13);
@@ -346,7 +398,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 			switch(Copy_udtPWMchannel){
 				case MTIM2_5_ch1:
 					/*set the preScaler value in the preScaler register*/
-					MTIM5->PSC=TIM5_PRESCALER;
+					MTIM5->PSC=TIM5_PWM_PRESCALER;
 					/*select the pwm mode*/
 					SET_BIT(MTIM5->CCMR1,CCRM1_OC1M_6);
 					SET_BIT(MTIM5->CCMR1,CCRM1_OC1M_5);
@@ -358,7 +410,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 					 break;
 				case MTIM2_5_ch2:
 					/*set the preScaler value in the preScaler register*/
-					MTIM5->PSC=TIM5_PRESCALER;
+					MTIM5->PSC=TIM5_PWM_PRESCALER;
 					/*select the pwm mode*/
 					SET_BIT(MTIM5->CCMR1,CCRM1_OC2M_14);
 					SET_BIT(MTIM5->CCMR1,CCRM1_OC2M_13);
@@ -370,7 +422,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 			    	  break;
 				case MTIM2_5_ch3:
 					/*set the preScaler value in the preScaler register*/
-					MTIM5->PSC=TIM5_PRESCALER;
+					MTIM5->PSC=TIM5_PWM_PRESCALER;
 					/*select the pwm mode*/
 					SET_BIT(MTIM5->CCMR2,CCRM2_OC3M_6);
 					SET_BIT(MTIM5->CCMR2,CCRM2_OC3M_5);
@@ -382,7 +434,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 					break;
 				case MTIM2_5_ch4:
 					/*set the preScaler value in the preScaler register*/
-					MTIM5->PSC=TIM5_PRESCALER;
+					MTIM5->PSC=TIM5_PWM_PRESCALER;
 					/*select the pwm mode*/
 					SET_BIT(MTIM5->CCMR2,CCRM2_OC4M_14);
 					SET_BIT(MTIM5->CCMR2,CCRM2_OC4M_13);
@@ -398,7 +450,19 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 }
 
 
-
+/*********************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_voidSetPWM													 */
+/* @Brief 	  :->		@ used to SET PWM duty cycle selected timer(2:5) as PWM source	 	 */
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer					 */
+/*						@ Copy_udtPWMchannel: Channel that generates the PWM signal		 	 */
+/*						@ Copy_u16Frequency: PWM frequancy								 	 */
+/*						@ Copy_DutyCycle: signal duty cycle 							 	 */
+/* @PreRequsteis :->	@ RCC MUST be initialized								 			 */
+/*						@ timer must be enabled with RCC									 */
+/*						@ timer must be initialized as PWM									 */
+/*						@ PWM preScaler must be PreConfiged in config file					 */
+/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func */
+/*********************************************************************************************/
 void TIM2_5_voidSetPWM(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel,u16 Copy_u16Frequency,u16 Copy_DutyCycle){
 switch(Copy_udtTimerNumber){
 case MTIM_3:
@@ -512,7 +576,16 @@ case MTIM_5:
 	}
 }
 
-
+/********************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_voidICU_init											 	*/
+/* @Brief 	  :->		@ used to initialize selected timer(2:5) as ICU source	 		 	*/
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 	*/
+/*						@ Copy_udtICUchannel: Channel that captures the Input value		 	*/
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 	*/
+/*						@ timer must be enabled with RCC								 	*/
+/*						@ ICU preScaler must be PreConfiged in config file				  	*/
+/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func*/
+/********************************************************************************************/
 void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
 	switch (Copy_udtTimerNumber){
 	case MTIM_3:
@@ -535,10 +608,10 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 			/*enable capture on the corresponding PIN*/
 			SET_BIT(MTIM3->CCER,CCER_CC1E);
 
-			/* Set prescaler 16 */
-			MTIM3->PSC = 15;
+			/* Set prescaler  */
+			MTIM3->PSC = TIM3_ICU_PRESCALER;
 			/* Set Preload */
-			MTIM3->ARR=65535;
+			MTIM3->ARR=TIM3_ICU_ARRval;
 
 			/*enable interrupt*/
 			SET_BIT(MTIM3->DIER,DIER_CC1IE);
@@ -562,8 +635,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 			SET_BIT(MTIM3->CCER,CCER_CC2P);
 			/*enable capture on the corresponding PIN*/
 			SET_BIT(MTIM3->CCER,CCER_CC2E);
+			/* Set prescaler  */
+			MTIM3->PSC = TIM3_ICU_PRESCALER;
+			/* Set Preload */
+			MTIM3->ARR=TIM3_ICU_ARRval;
 			/*enable interrupt*/
 			SET_BIT(MTIM3->DIER,DIER_CC2IE);
+			/*enable timer to start ICU*/
+			SET_BIT(MTIM3->CR1,CR1_CEN);
 			 break;
 		case MTIM2_5_ch3:
 				/*Select ICU*/
@@ -582,8 +661,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 				SET_BIT(MTIM3->CCER,CCER_CC3P);
 				/*enable capture on the corresponding PIN*/
 				SET_BIT(MTIM3->CCER,CCER_CC3E);
+				/* Set prescaler  */
+				MTIM3->PSC = TIM3_ICU_PRESCALER;
+				/* Set Preload */
+				MTIM3->ARR=TIM3_ICU_ARRval;
 				/*enable interrupt*/
 				SET_BIT(MTIM3->DIER,DIER_CC3IE);
+				/*enable timer to start ICU*/
+				SET_BIT(MTIM3->CR1,CR1_CEN);
 				 break;
 			case MTIM2_5_ch4:
 				/*Select ICU*/
@@ -602,8 +687,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 				SET_BIT(MTIM3->CCER,CCER_CC4P);
 				/*enable capture on the corresponding PIN*/
 				SET_BIT(MTIM3->CCER,CCER_CC4E);
+				/* Set prescaler  */
+				MTIM3->PSC = TIM3_ICU_PRESCALER;
+				/* Set Preload */
+				MTIM3->ARR=TIM3_ICU_ARRval;
 				/*enable interrupt*/
 				SET_BIT(MTIM3->DIER,DIER_CC4IE);
+				/*enable timer to start ICU*/
+				SET_BIT(MTIM3->CR1,CR1_CEN);
 				 break;
 }
 		break;
@@ -626,8 +717,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 				SET_BIT(MTIM4->CCER,CCER_CC1NP);
 				/*enable capture on the corresponding PIN*/
 				SET_BIT(MTIM4->CCER,CCER_CC1E);
+				/* Set prescaler  */
+				MTIM4->PSC = TIM4_ICU_PRESCALER;
+				/* Set Preload */
+				MTIM4->ARR=TIM4_ICU_ARRval;
 				/*enable interrupt*/
 				SET_BIT(MTIM4->DIER,DIER_CC1IE);
+				/*enable timer to start ICU*/
+				SET_BIT(MTIM4->CR1,CR1_CEN);
 				 break;
 			case MTIM2_5_ch2:
 				/*Select ICU*/
@@ -646,8 +743,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 				SET_BIT(MTIM4->CCER,CCER_CC2P);
 				/*enable capture on the corresponding PIN*/
 				SET_BIT(MTIM4->CCER,CCER_CC2E);
+				/* Set prescaler  */
+				MTIM4->PSC = TIM4_ICU_PRESCALER;
+				/* Set Preload */
+				MTIM4->ARR=TIM4_ICU_ARRval;
 				/*enable interrupt*/
 				SET_BIT(MTIM4->DIER,DIER_CC2IE);
+				/*enable timer to start ICU*/
+				SET_BIT(MTIM4->CR1,CR1_CEN);
 				 break;
 			case MTIM2_5_ch3:
 					/*Select ICU*/
@@ -666,8 +769,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 					SET_BIT(MTIM4->CCER,CCER_CC3P);
 					/*enable capture on the corresponding PIN*/
 					SET_BIT(MTIM4->CCER,CCER_CC3E);
+					/* Set prescaler  */
+					MTIM4->PSC = TIM4_ICU_PRESCALER;
+					/* Set Preload */
+					MTIM4->ARR=TIM4_ICU_ARRval;
 					/*enable interrupt*/
 					SET_BIT(MTIM4->DIER,DIER_CC3IE);
+					/*enable timer to start ICU*/
+					SET_BIT(MTIM4->CR1,CR1_CEN);
 					 break;
 				case MTIM2_5_ch4:
 					/*Select ICU*/
@@ -686,8 +795,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 					SET_BIT(MTIM4->CCER,CCER_CC4P);
 					/*enable capture on the corresponding PIN*/
 					SET_BIT(MTIM4->CCER,CCER_CC4E);
+					/* Set prescaler  */
+					MTIM4->PSC = TIM4_ICU_PRESCALER;
+					/* Set Preload */
+					MTIM4->ARR=TIM4_ICU_ARRval;
 					/*enable interrupt*/
 					SET_BIT(MTIM4->DIER,DIER_CC4IE);
+					/*enable timer to start ICU*/
+					SET_BIT(MTIM4->CR1,CR1_CEN);
 					 break;
 	}
 			break;
@@ -710,8 +825,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 					SET_BIT(MTIM5->CCER,CCER_CC1NP);
 					/*enable capture on the corresponding PIN*/
 					SET_BIT(MTIM5->CCER,CCER_CC1E);
+					/* Set prescaler  */
+					MTIM5->PSC = TIM5_ICU_PRESCALER;
+					/* Set Preload */
+					MTIM5->ARR=TIM5_ICU_ARRval;
 					/*enable interrupt*/
 					SET_BIT(MTIM5->DIER,DIER_CC1IE);
+					/*enable timer to start ICU*/
+					SET_BIT(MTIM5->CR1,CR1_CEN);
 					 break;
 				case MTIM2_5_ch2:
 					/*Select ICU*/
@@ -730,8 +851,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 					SET_BIT(MTIM5->CCER,CCER_CC2P);
 					/*enable capture on the corresponding PIN*/
 					SET_BIT(MTIM5->CCER,CCER_CC2E);
+					/* Set prescaler  */
+					MTIM5->PSC = TIM5_ICU_PRESCALER;
+					/* Set Preload */
+					MTIM5->ARR=TIM5_ICU_ARRval;
 					/*enable interrupt*/
 					SET_BIT(MTIM5->DIER,DIER_CC2IE);
+					/*enable timer to start ICU*/
+					SET_BIT(MTIM5->CR1,CR1_CEN);
 					 break;
 				case MTIM2_5_ch3:
 						/*Select ICU*/
@@ -750,8 +877,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 						SET_BIT(MTIM5->CCER,CCER_CC3P);
 						/*enable capture on the corresponding PIN*/
 						SET_BIT(MTIM5->CCER,CCER_CC3E);
+						/* Set prescaler  */
+						MTIM5->PSC = TIM5_ICU_PRESCALER;
+						/* Set Preload */
+						MTIM5->ARR=TIM5_ICU_ARRval;
 						/*enable interrupt*/
 						SET_BIT(MTIM5->DIER,DIER_CC3IE);
+						/*enable timer to start ICU*/
+						SET_BIT(MTIM5->CR1,CR1_CEN);
 						 break;
 					case MTIM2_5_ch4:
 						/*Select ICU*/
@@ -770,8 +903,14 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 						SET_BIT(MTIM5->CCER,CCER_CC4P);
 						/*enable capture on the corresponding PIN*/
 						SET_BIT(MTIM5->CCER,CCER_CC4E);
+						/* Set prescaler  */
+						MTIM5->PSC = TIM5_ICU_PRESCALER;
+						/* Set Preload */
+						MTIM5->ARR=TIM5_ICU_ARRval;
 						/*enable interrupt*/
 						SET_BIT(MTIM5->DIER,DIER_CC4IE);
+						/*enable timer to start ICU*/
+						SET_BIT(MTIM5->CR1,CR1_CEN);
 						 break;
 		}
 				break;
@@ -779,7 +918,16 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 
 }
 
-
+/********************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_voidEnable_ICU_Interrupt								 	*/
+/* @Brief 	  :->		@ used to enable ICU interrupt on timer(2:5) 						*/
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 	*/
+/*						@ Copy_udtICUchannel: Channel that captures the Input value		 	*/
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 	*/
+/*						@ timer must be enabled with RCC								 	*/
+/*						@ Timer must be initialized as icu								  	*/
+/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func*/
+/********************************************************************************************/
 void TIM2_5_voidEnable_ICU_Interrupt(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
 	switch (Copy_udtTimerNumber){
 			case MTIM_2: switch (Copy_udtICUchannel){
@@ -813,7 +961,16 @@ void TIM2_5_voidEnable_ICU_Interrupt(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_
 				break;
 	}
 }
-
+/********************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_voidDisable_ICU_Interrupt								 	*/
+/* @Brief 	  :->		@ used to disable ICU interrupt on timer(2:5) 						*/
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 	*/
+/*						@ Copy_udtICUchannel: Channel that captures the Input value		 	*/
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 	*/
+/*						@ timer must be enabled with RCC								 	*/
+/*						@ Timer must be initialized as icu								  	*/
+/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func*/
+/********************************************************************************************/
 void TIM2_5_voidDisable_ICU_Interrupt(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
 	switch (Copy_udtTimerNumber){
 			case MTIM_2: switch (Copy_udtICUchannel){
@@ -847,7 +1004,17 @@ void TIM2_5_voidDisable_ICU_Interrupt(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5
 				break;
 	}
 }
-
+/********************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_ChangICUpolaritiy										 	*/
+/* @Brief 	  :->		@ used to change ICU sense polarity during runtime					*/
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 	*/
+/*						@ Copy_udtICUchannel: Channel that captures the Input value		 	*/
+/*						@ Copy_udtPolarity: sense polarity for the ICU channel				*/
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 	*/
+/*						@ timer must be enabled with RCC								 	*/
+/*						@ Timer must be initialized as icu								  	*/
+/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func*/
+/********************************************************************************************/
 void TIM2_5_ChangICUpolaritiy(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel,MTIM2_5_polarity Copy_udtPolarity){
 switch (Copy_udtPolarity){
 case MTIM_RisingEdge:
@@ -918,7 +1085,16 @@ case MTIM_RisingEdge:
 		break;
 }
 }
-
+/********************************************************************************************/
+/* @Name  	  :->		@ TIM2_5_u32ReturnICUvalue										 	*/
+/* @Brief 	  :->		@ used to return the capture value in the CCRx register				*/
+/* @parameters   :-> 	@ Copy_udtTimerNumber: the number of the used timer				 	*/
+/*						@ Copy_udtICUchannel: Channel that captures the Input value		 	*/
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 	*/
+/*						@ timer must be enabled with RCC								 	*/
+/*						@ Timer must be initialized as icu								  	*/
+/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func*/
+/********************************************************************************************/
 u32 TIM2_5_u32ReturnICUvalue(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
 	u32 Local_RetVALUE=0;
 	switch (Copy_udtTimerNumber){
@@ -957,17 +1133,48 @@ u32 TIM2_5_u32ReturnICUvalue(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_chan
 }
 
 
-
+/**************************************************************************************************/
+/* @Name  	  :->		@ MTIM3_setCALLBACK												 		  */
+/* @Brief 	  :->		@ used to set the ISR for timer	3 interrupts							  */
+/* @parameters   :-> 	@ Copy_pvCallBACK: pointer to the function to be excuted at interrupt fire*/
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 		  */
+/*						@ timer must be enabled with RCC								 		  */
+/*						@ Timer must interrupt must be enabled							  		  */
+/*						@ timer interrupt must be enabled in NVIC								  */
+/**************************************************************************************************/
 void MTIM3_setCALLBACK(void (*Copy_pvCallBACK)(void)){
 	MTIM3_pvCallBack=Copy_pvCallBACK;
 }
+/**************************************************************************************************/
+/* @Name  	  :->		@ MTIM4_setCALLBACK												 		  */
+/* @Brief 	  :->		@ used to set the ISR for timer 4 interrupts							  */
+/* @parameters   :-> 	@ Copy_pvCallBACK: pointer to the function to be excuted at interrupt fire*/
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 		  */
+/*						@ timer must be enabled with RCC								 		  */
+/*						@ Timer must interrupt must be enabled							  		  */
+/*						@ timer interrupt must be enabled in NVIC								  */
+/**************************************************************************************************/
 void MTIM4_setCALLBACK(void (*Copy_pvCallBACK)(void)){
 	MTIM4_pvCallBack=Copy_pvCallBACK;
 }
+/**************************************************************************************************/
+/* @Name  	  :->		@ MTIM5_setCALLBACK												 		  */
+/* @Brief 	  :->		@ used to set the ISR for timer 5 interrupts						      */
+/* @parameters   :-> 	@ Copy_pvCallBACK: pointer to the function to be excuted at interrupt fire*/
+/* @PreRequsteis :->	@ RCC MUST be initialized								 		 		  */
+/*						@ timer must be enabled with RCC								 		  */
+/*						@ Timer must interrupt must be enabled							  		  */
+/*						@ timer interrupt must be enabled in NVIC								  */
+/**************************************************************************************************/
 void MTIM5_setCALLBACK(void (*Copy_pvCallBACK)(void)){
 	MTIM5_pvCallBack=Copy_pvCallBACK;
 }
-/*******************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+/************************Interrupt handlers for timers 2:5**********************************/
+
 void TIM2_IRQHandler(void){
 
 }

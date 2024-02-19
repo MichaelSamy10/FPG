@@ -19,8 +19,30 @@ peri		: for the developer in MCAL only not for the user
 #define 	 MTIM5_CMODE	MTIM_CUP
 
 /**********************************************/
-#define TIM2_PRESCALER    0
-#define TIM3_PRESCALER    0
-#define TIM4_PRESCALER    0
-#define TIM5_PRESCALER    0
+/*
+ * set the prescaler value for PWM mode->
+ *
+ */
+#define TIM2_PWM_PRESCALER    0
+#define TIM3_PWM_PRESCALER    0
+#define TIM4_PWM_PRESCALER    0
+#define TIM5_PWM_PRESCALER    0
+
+/**********************************************/
+/*
+ * set the preScaler value for ICU mode->
+ *
+ */
+#define TIM2_ICU_PRESCALER    15
+#define TIM3_ICU_PRESCALER    15
+#define TIM4_ICU_PRESCALER    15
+#define TIM5_ICU_PRESCALER    15
+/*
+ * set the ARR value for PWM mode->
+ *
+ */
+#define TIM2_ICU_ARRval    65535
+#define TIM3_ICU_ARRval    65535
+#define TIM4_ICU_ARRval    65535
+#define TIM5_ICU_ARRval    65535
 #endif /* MTIM2_5_MTIM2_5_CONFIG_H_ */
