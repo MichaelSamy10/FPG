@@ -37,7 +37,7 @@ int main()
 
 	MSTK_voidIntialize();
 
-	MTIM2_5_voidICU_init(MTIM_3,MTIM2_5_ch1);
+	TIM2_5_voidICU_init(MTIM_3,MTIM2_5_ch1);
 	MGPIO_voidSetPinMode(TRIG_PORT, TRIG_PIN,MGPIO_u8OUTPUT);
 
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
@@ -85,16 +85,16 @@ void CaptureCallBack(void)
 	MUSART_voidSendData(' ');
 			if (Is_First_Captured==0) // if the first value is not captured
 			{
-				IC_Val1 = MTIM2_5_u32ReturnICUvalue(MTIM_3,MTIM2_5_ch1); // read the first value
+				IC_Val1 = TIM2_5_u32ReturnICUvalue(MTIM_3,MTIM2_5_ch1); // read the first value
 				Is_First_Captured = 1;  // set the first captured as true
 				// Now change the polarity to falling edge
-				MTIM2_5_ChangICUpolaritiy(MTIM_3,MTIM2_5_ch1,MTIM_FallingEdge);
+				TIM2_5_ChangICUpolaritiy(MTIM_3,MTIM2_5_ch1,MTIM_FallingEdge);
 				//__HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_FALLING);
 			}
 
 			else if (Is_First_Captured==1)   // if the first is already captured
 			{
-				IC_Val2 = MTIM2_5_u32ReturnICUvalue(MTIM_3,MTIM2_5_ch1);  // read second value
+				IC_Val2 = TIM2_5_u32ReturnICUvalue(MTIM_3,MTIM2_5_ch1);  // read second value
 				//__HAL_TIM_SET_COUNTER(htim, 0);  // reset the counter
 
 				if (IC_Val2 > IC_Val1)
@@ -111,7 +111,7 @@ void CaptureCallBack(void)
 				Is_First_Captured = 0; // set it back to false
 
 				// set polarity to rising edge
-				MTIM2_5_ChangICUpolaritiy(MTIM_3,MTIM2_5_ch1,MTIM_RisingEdge);
+				TIM2_5_ChangICUpolaritiy(MTIM_3,MTIM2_5_ch1,MTIM_RisingEdge);
 				TIM2_5_voidDisable_ICU_Interrupt(MTIM_3,MTIM2_5_ch1);
 				//__HAL_TIM_DISABLE_IT(&htim1, TIM_IT_CC1);
 			}

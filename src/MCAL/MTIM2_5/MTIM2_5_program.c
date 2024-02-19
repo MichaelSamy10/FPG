@@ -10,8 +10,8 @@ peri		: for the developer in MCAL only not for the user
 
 /***************	TIM2_5 Files include	***************/
 /*Standard LIBS*/
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../../LIB/STD_TYPES.h"
+#include "../../LIB/BIT_MATH.h"
 /*TIM 2_5 files*/
 #include "MTIM2_5_interface.h"
 #include "MTIM2_5_private.h"
@@ -399,13 +399,13 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 
 
 
-void MTIM2_5_SetPWM(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel,u16 Copy_u16PRESCALER,u16 Copy_u16Frequancy,u16 Copy_DutyCycle){
+void TIM2_5_voidSetPWM(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel,u16 Copy_u16Frequency,u16 Copy_DutyCycle){
 switch(Copy_udtTimerNumber){
 case MTIM_3:
 			switch(Copy_udtPWMchannel){
 			case MTIM2_5_ch1:
 							/*set the frequency of the PWM*/
-							MTIM3->ARR=Copy_u16Frequancy;
+							MTIM3->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM3->CCR1=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -413,7 +413,7 @@ case MTIM_3:
 							break;
 			case MTIM2_5_ch2:
 							/*set the frequency of the PWM*/
-							MTIM3->ARR=Copy_u16Frequancy;
+							MTIM3->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM3->CCR2=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -421,7 +421,7 @@ case MTIM_3:
 								break;
 			case MTIM2_5_ch3:
 							/*set the frequency of the PWM*/
-							MTIM3->ARR=Copy_u16Frequancy;
+							MTIM3->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM3->CCR3=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -429,7 +429,7 @@ case MTIM_3:
 							break;
 						case MTIM2_5_ch4:
 							/*set the frequency of the PWM*/
-							MTIM3->ARR=Copy_u16Frequancy;
+							MTIM3->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM3->CCR4=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -441,7 +441,7 @@ case MTIM_4:
 			switch(Copy_udtPWMchannel){
 			case MTIM2_5_ch1:
 							/*set the frequency of the PWM*/
-							MTIM4->ARR=Copy_u16Frequancy;
+							MTIM4->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM4->CCR1=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -449,7 +449,7 @@ case MTIM_4:
 							break;
 			case MTIM2_5_ch2:
 							/*set the frequency of the PWM*/
-							MTIM4->ARR=Copy_u16Frequancy;
+							MTIM4->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM4->CCR2=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -457,7 +457,7 @@ case MTIM_4:
 							break;
 			case MTIM2_5_ch3:
 							/*set the frequency of the PWM*/
-							MTIM4->ARR=Copy_u16Frequancy;
+							MTIM4->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM4->CCR3=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -465,7 +465,7 @@ case MTIM_4:
 							break;
 			case MTIM2_5_ch4:
 							/*set the frequency of the PWM*/
-							MTIM4->ARR=Copy_u16Frequancy;
+							MTIM4->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM4->CCR4=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -477,7 +477,7 @@ case MTIM_5:
 			switch(Copy_udtPWMchannel){
 			case MTIM2_5_ch1:
 							/*set the frequency of the PWM*/
-							MTIM5->ARR=Copy_u16Frequancy;
+							MTIM5->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM5->CCR1=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -485,7 +485,7 @@ case MTIM_5:
 							break;
 			case MTIM2_5_ch2:
 							/*set the frequency of the PWM*/
-							MTIM5->ARR=Copy_u16Frequancy;
+							MTIM5->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM5->CCR2=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -493,7 +493,7 @@ case MTIM_5:
 							break;
 			case MTIM2_5_ch3:
 							/*set the frequency of the PWM*/
-							MTIM5->ARR=Copy_u16Frequancy;
+							MTIM5->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM5->CCR3=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -501,7 +501,7 @@ case MTIM_5:
 							break;
 			case MTIM2_5_ch4:
 							/*set the frequency of the PWM*/
-							MTIM5->ARR=Copy_u16Frequancy;
+							MTIM5->ARR=Copy_u16Frequency;
 							/*set the duty cycle of the PWM*/
 							MTIM5->CCR4=Copy_DutyCycle;
 							/*enable timer to start the PWM*/
@@ -509,11 +509,11 @@ case MTIM_5:
 							break;
 					}
 					break;
-}
+	}
 }
 
 
-void MTIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
+void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
 	switch (Copy_udtTimerNumber){
 	case MTIM_3:
 		switch(Copy_udtICUchannel){
@@ -848,7 +848,7 @@ void TIM2_5_voidDisable_ICU_Interrupt(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5
 	}
 }
 
-void MTIM2_5_ChangICUpolaritiy(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel,MTIM2_5_polarity Copy_udtPolarity){
+void TIM2_5_ChangICUpolaritiy(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel,MTIM2_5_polarity Copy_udtPolarity){
 switch (Copy_udtPolarity){
 case MTIM_RisingEdge:
 	switch (Copy_udtTimerNumber){
@@ -919,7 +919,7 @@ case MTIM_RisingEdge:
 }
 }
 
-u32 MTIM2_5_u32ReturnICUvalue(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
+u32 TIM2_5_u32ReturnICUvalue(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
 	u32 Local_RetVALUE=0;
 	switch (Copy_udtTimerNumber){
 			case MTIM_2: switch (Copy_udtICUchannel){

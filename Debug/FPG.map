@@ -3008,8 +3008,8 @@ Discarded input sections
                 0x00000000       0xb8 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .text.TIM2_5_voidPWM_Init
                 0x00000000      0x284 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .text.MTIM2_5_SetPWM
-                0x00000000      0x104 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
+ .text.TIM2_5_voidSetPWM
+                0x00000000      0x100 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .text.MTIM4_setCALLBACK
                 0x00000000        0xc ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .text.MTIM5_setCALLBACK
@@ -3911,21 +3911,21 @@ END GROUP
  .text.USART1_IRQHandler
                 0x08001090       0x10 ./src/MCAL/MUART/MUART_program.o
                 0x08001090                USART1_IRQHandler
- .text.MTIM2_5_voidICU_init
+ .text.TIM2_5_voidICU_init
                 0x080010a0      0x510 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
-                0x080010a0                MTIM2_5_voidICU_init
+                0x080010a0                TIM2_5_voidICU_init
  .text.TIM2_5_voidEnable_ICU_Interrupt
                 0x080015b0      0x114 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
                 0x080015b0                TIM2_5_voidEnable_ICU_Interrupt
  .text.TIM2_5_voidDisable_ICU_Interrupt
                 0x080016c4      0x114 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
                 0x080016c4                TIM2_5_voidDisable_ICU_Interrupt
- .text.MTIM2_5_ChangICUpolaritiy
+ .text.TIM2_5_ChangICUpolaritiy
                 0x080017d8      0x338 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
-                0x080017d8                MTIM2_5_ChangICUpolaritiy
- .text.MTIM2_5_u32ReturnICUvalue
+                0x080017d8                TIM2_5_ChangICUpolaritiy
+ .text.TIM2_5_u32ReturnICUvalue
                 0x08001b10       0xc8 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
-                0x08001b10                MTIM2_5_u32ReturnICUvalue
+                0x08001b10                TIM2_5_u32ReturnICUvalue
  .text.MTIM3_setCALLBACK
                 0x08001bd8        0xc ./src/MCAL/MTIM2_5/MTIM2_5_program.o
                 0x08001bd8                MTIM3_setCALLBACK
@@ -4548,7 +4548,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0xe07c
+.debug_info     0x00000000     0xe06a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x107e ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_info    0x0000107e     0x1863 ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
@@ -4565,16 +4565,16 @@ END GROUP
  .debug_info    0x00009e9b      0xcfe ./system/src/cmsis/system_stm32f4xx.o
  .debug_info    0x0000ab99       0xca ./system/src/cmsis/vectors_stm32f401xc.o
  .debug_info    0x0000ac63      0x1f6 ./src/MCAL/MUART/MUART_program.o
- .debug_info    0x0000ae59      0x5c2 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_info    0x0000b41b      0x212 ./src/MCAL/MSTK/MSTK_program.o
- .debug_info    0x0000b62d      0x14e ./src/MCAL/MRCC/MRCC_program.o
- .debug_info    0x0000b77b      0x312 ./src/MCAL/MNVIC/MNVIC_program.o
- .debug_info    0x0000ba8d      0x350 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_info    0x0000bddd      0x2f5 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_info    0x0000c0d2      0x3f8 ./src/MCAL/MDMA/MDMA_program.o
- .debug_info    0x0000c4ca      0xd34 ./src/_initialize_hardware.o
- .debug_info    0x0000d1fe      0x56f ./src/main.o
- .debug_info    0x0000d76d      0x90f ./src/stm32f4xx_hal_msp.o
+ .debug_info    0x0000ae59      0x5b0 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
+ .debug_info    0x0000b409      0x212 ./src/MCAL/MSTK/MSTK_program.o
+ .debug_info    0x0000b61b      0x14e ./src/MCAL/MRCC/MRCC_program.o
+ .debug_info    0x0000b769      0x312 ./src/MCAL/MNVIC/MNVIC_program.o
+ .debug_info    0x0000ba7b      0x350 ./src/MCAL/MGPIO/MGPIO_program.o
+ .debug_info    0x0000bdcb      0x2f5 ./src/MCAL/MEXTI/MEXTI_program.o
+ .debug_info    0x0000c0c0      0x3f8 ./src/MCAL/MDMA/MDMA_program.o
+ .debug_info    0x0000c4b8      0xd34 ./src/_initialize_hardware.o
+ .debug_info    0x0000d1ec      0x56f ./src/main.o
+ .debug_info    0x0000d75b      0x90f ./src/stm32f4xx_hal_msp.o
 
 .debug_abbrev   0x00000000     0x2efc
  *(.debug_abbrev)
@@ -4604,7 +4604,7 @@ END GROUP
  .debug_abbrev  0x00002c58       0xf3 ./src/main.o
  .debug_abbrev  0x00002d4b      0x1b1 ./src/stm32f4xx_hal_msp.o
 
-.debug_line     0x00000000     0x879e
+.debug_line     0x00000000     0x87bc
  *(.debug_line)
  .debug_line    0x00000000      0xb34 ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_line    0x00000b34      0xc2b ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
@@ -4621,16 +4621,16 @@ END GROUP
  .debug_line    0x000057ce      0x9d6 ./system/src/cmsis/system_stm32f4xx.o
  .debug_line    0x000061a4       0xec ./system/src/cmsis/vectors_stm32f401xc.o
  .debug_line    0x00006290      0x17c ./src/MCAL/MUART/MUART_program.o
- .debug_line    0x0000640c      0x42a ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_line    0x00006836      0x177 ./src/MCAL/MSTK/MSTK_program.o
- .debug_line    0x000069ad      0x10a ./src/MCAL/MRCC/MRCC_program.o
- .debug_line    0x00006ab7      0x14d ./src/MCAL/MNVIC/MNVIC_program.o
- .debug_line    0x00006c04      0x1d9 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_line    0x00006ddd      0x1c8 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_line    0x00006fa5      0x28a ./src/MCAL/MDMA/MDMA_program.o
- .debug_line    0x0000722f      0x9c9 ./src/_initialize_hardware.o
- .debug_line    0x00007bf8      0x1dc ./src/main.o
- .debug_line    0x00007dd4      0x9ca ./src/stm32f4xx_hal_msp.o
+ .debug_line    0x0000640c      0x448 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
+ .debug_line    0x00006854      0x177 ./src/MCAL/MSTK/MSTK_program.o
+ .debug_line    0x000069cb      0x10a ./src/MCAL/MRCC/MRCC_program.o
+ .debug_line    0x00006ad5      0x14d ./src/MCAL/MNVIC/MNVIC_program.o
+ .debug_line    0x00006c22      0x1d9 ./src/MCAL/MGPIO/MGPIO_program.o
+ .debug_line    0x00006dfb      0x1c8 ./src/MCAL/MEXTI/MEXTI_program.o
+ .debug_line    0x00006fc3      0x28a ./src/MCAL/MDMA/MDMA_program.o
+ .debug_line    0x0000724d      0x9c9 ./src/_initialize_hardware.o
+ .debug_line    0x00007c16      0x1dc ./src/main.o
+ .debug_line    0x00007df2      0x9ca ./src/stm32f4xx_hal_msp.o
 
 .debug_frame    0x00000000     0x153c
  *(.debug_frame)
@@ -4675,7 +4675,7 @@ END GROUP
  .debug_frame   0x000014ec       0x30 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
  .debug_frame   0x0000151c       0x20 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-msizer.o)
 
-.debug_str      0x00000000    0x75c67
+.debug_str      0x00000000    0x75c55
  *(.debug_str)
  .debug_str     0x00000000    0x6fc65 ./system/src/stm32f4-hal/stm32f4xx_hal.o
                               0x70099 (size before relaxing)
@@ -4707,28 +4707,28 @@ END GROUP
                                0x388a (size before relaxing)
  .debug_str     0x00073390      0x2ad ./src/MCAL/MUART/MUART_program.o
                                0x3077 (size before relaxing)
- .debug_str     0x0007363d      0x945 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
-                               0x3804 (size before relaxing)
- .debug_str     0x00073f82      0x278 ./src/MCAL/MSTK/MSTK_program.o
+ .debug_str     0x0007363d      0x933 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
+                               0x37f2 (size before relaxing)
+ .debug_str     0x00073f70      0x278 ./src/MCAL/MSTK/MSTK_program.o
                                0x3123 (size before relaxing)
- .debug_str     0x000741fa      0x87d ./src/MCAL/MRCC/MRCC_program.o
+ .debug_str     0x000741e8      0x87d ./src/MCAL/MRCC/MRCC_program.o
                                0x3708 (size before relaxing)
- .debug_str     0x00074a77      0x2bd ./src/MCAL/MNVIC/MNVIC_program.o
+ .debug_str     0x00074a65      0x2bd ./src/MCAL/MNVIC/MNVIC_program.o
                                0x31af (size before relaxing)
- .debug_str     0x00074d34      0x529 ./src/MCAL/MGPIO/MGPIO_program.o
+ .debug_str     0x00074d22      0x529 ./src/MCAL/MGPIO/MGPIO_program.o
                                0x33d1 (size before relaxing)
- .debug_str     0x0007525d      0x45d ./src/MCAL/MEXTI/MEXTI_program.o
+ .debug_str     0x0007524b      0x45d ./src/MCAL/MEXTI/MEXTI_program.o
                                0x32f5 (size before relaxing)
- .debug_str     0x000756ba      0x48d ./src/MCAL/MDMA/MDMA_program.o
+ .debug_str     0x000756a8      0x48d ./src/MCAL/MDMA/MDMA_program.o
                                0x3325 (size before relaxing)
- .debug_str     0x00075b47       0x31 ./src/_initialize_hardware.o
+ .debug_str     0x00075b35       0x31 ./src/_initialize_hardware.o
                               0x6f921 (size before relaxing)
- .debug_str     0x00075b78       0xb2 ./src/main.o
-                               0x358c (size before relaxing)
- .debug_str     0x00075c2a       0x3d ./src/stm32f4xx_hal_msp.o
+ .debug_str     0x00075b66       0xb2 ./src/main.o
+                               0x3589 (size before relaxing)
+ .debug_str     0x00075c18       0x3d ./src/stm32f4xx_hal_msp.o
                               0x6f672 (size before relaxing)
 
-.debug_loc      0x00000000     0x32af
+.debug_loc      0x00000000     0x315b
  *(.debug_loc)
  .debug_loc     0x00000000       0x92 ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_loc     0x00000092      0x73b ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
@@ -4742,13 +4742,13 @@ END GROUP
  .debug_loc     0x000013d5      0x291 ./system/src/cortexm/exception_handlers.o
  .debug_loc     0x00001666      0x13e ./system/src/cmsis/system_stm32f4xx.o
  .debug_loc     0x000017a4       0x2a ./src/MCAL/MUART/MUART_program.o
- .debug_loc     0x000017ce      0xa69 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_loc     0x00002237       0x44 ./src/MCAL/MSTK/MSTK_program.o
- .debug_loc     0x0000227b      0x340 ./src/MCAL/MRCC/MRCC_program.o
- .debug_loc     0x000025bb      0x207 ./src/MCAL/MNVIC/MNVIC_program.o
- .debug_loc     0x000027c2      0x831 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_loc     0x00002ff3      0x1c0 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_loc     0x000031b3       0xfc ./src/MCAL/MDMA/MDMA_program.o
+ .debug_loc     0x000017ce      0x915 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
+ .debug_loc     0x000020e3       0x44 ./src/MCAL/MSTK/MSTK_program.o
+ .debug_loc     0x00002127      0x340 ./src/MCAL/MRCC/MRCC_program.o
+ .debug_loc     0x00002467      0x207 ./src/MCAL/MNVIC/MNVIC_program.o
+ .debug_loc     0x0000266e      0x831 ./src/MCAL/MGPIO/MGPIO_program.o
+ .debug_loc     0x00002e9f      0x1c0 ./src/MCAL/MEXTI/MEXTI_program.o
+ .debug_loc     0x0000305f       0xfc ./src/MCAL/MDMA/MDMA_program.o
 
 .debug_macinfo
  *(.debug_macinfo)
