@@ -537,6 +537,7 @@ void MTIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel
 
 			/* Set prescaler 16 */
 			MTIM3->PSC = 15;
+			/* Set Preload */
 			MTIM3->ARR=65535;
 
 			/*enable interrupt*/
