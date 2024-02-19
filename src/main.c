@@ -87,7 +87,6 @@ int main()
 
 	MUSART_voidInit();
 	MUSART_voidEnable();
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
 	while(1)
 	{
