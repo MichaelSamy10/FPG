@@ -18,7 +18,7 @@ peri		: for the developer in MCAL only not for the user
  * 					3- 	MRCC_PLL
  */
 
-#define 		MRCC_CLK_SOURCE				MRCC_HSIp
+#define 		MRCC_CLK_SOURCE				MRCC_HSI
 
 /*****************************************************/
 /*****************************************************/
