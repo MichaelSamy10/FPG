@@ -399,7 +399,7 @@ void TIM2_5_voidPWM_Init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 
 
 
-void MTIM2_5_SetPWM(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel,u16 Copy_u16PRESCALER,u16 Copy_u16Frequancy,u16 Copy_DutyCycle){
+void TIM2_5_SetPWM(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtPWMchannel,u16 Copy_u16PRESCALER,u16 Copy_u16Frequancy,u16 Copy_DutyCycle){
 switch(Copy_udtTimerNumber){
 case MTIM_3:
 			switch(Copy_udtPWMchannel){
@@ -513,7 +513,7 @@ case MTIM_5:
 }
 
 
-void MTIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
+void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
 	switch (Copy_udtTimerNumber){
 	case MTIM_3:
 		switch(Copy_udtICUchannel){
@@ -848,7 +848,7 @@ void TIM2_5_voidDisable_ICU_Interrupt(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5
 	}
 }
 
-void MTIM2_5_ChangICUpolaritiy(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel,MTIM2_5_polarity Copy_udtPolarity){
+void TIM2_5_ChangICUpolaritiy(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel,MTIM2_5_polarity Copy_udtPolarity){
 switch (Copy_udtPolarity){
 case MTIM_RisingEdge:
 	switch (Copy_udtTimerNumber){
@@ -919,7 +919,7 @@ case MTIM_RisingEdge:
 }
 }
 
-u32 MTIM2_5_u32ReturnICUvalue(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
+u32 TIM2_5_u32ReturnICUvalue(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_num Copy_udtICUchannel){
 	u32 Local_RetVALUE=0;
 	switch (Copy_udtTimerNumber){
 			case MTIM_2: switch (Copy_udtICUchannel){
