@@ -40,7 +40,7 @@ void Ultrasonic_voidInit(void)
 	static u32 L_u32Difference = 0;
 	static u8 Is_First_Captured = 0;  // is the first value captured ?
 
-	//MUSART_voidSendData(' ');
+	MUSART_voidSendData(' ');
 		if (Is_First_Captured==0) // if the first value is not captured
 		{
 			L_u32FirstCapt = TIM2_5_u32ReturnICUvalue(MTIM_3,MTIM2_5_ch1); // read the first value
@@ -89,9 +89,10 @@ void Ultrasonic_voidRead(void)
 	MGPIO_voidSetPinValue(TRIG_PORT, TRIG_PIN, MGPIO_u8LOW);
 
 	// Channel 1 -> PA6
-	TIM2_5_voidEnable_ICU_Interrupt(MTIM_3,MTIM2_5_ch1);
-
 	MTIM3_setCALLBACK(&Ultrasonic_voidSetCallBackICU);
 
-	MSTK_voidSetBusyWait(1000000);
+	TIM2_5_voidEnable_ICU_Interrupt(MTIM_3,MTIM2_5_ch1);
+
+
+	MSTK_voidSetBusyWait(32000000);
 }
