@@ -10,8 +10,8 @@ peri		: for the developer in MCAL only not for the user
 
 /***************	TIM2_5 Files include	***************/
 /*Standard LIBS*/
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../../LIB/STD_TYPES.h"
+#include "../../LIB/BIT_MATH.h"
 /*TIM 2_5 files*/
 #include "MTIM2_5_interface.h"
 #include "MTIM2_5_private.h"
