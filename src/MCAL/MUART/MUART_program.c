@@ -61,25 +61,15 @@ void MUSART_voidDisable(void){
 	CLR_BIT(MUSART1->CR1,13);
 }
 
-<<<<<<< HEAD
+
 void MUSART_voidSendString(u8 *Copy_pu8Data){
 	u8 L_u8Iterator=0;
-	while ( Copy_pu8Data[L_u8Iterator] != '\0')
-	{
-		MUSART1->DR = Copy_pu8Data[L_u8Iterator];
-		while( GET_BIT(MUSART1->SR,7) == 0 );
-		L_u8Iterator++;
-	}
-=======
-void MUSART_voidSendString(u8 *Copy_pu8Ddata){
-	u8 L_u8Iterator=0;
-		while ( Copy_pu8Ddata[L_u8Iterator] != '\0')
+		while ( Copy_pu8Data[L_u8Iterator] != '\0')
 			{
-				MUSART1->DR = Copy_pu8Ddata[L_u8Iterator];
+				MUSART1->DR = Copy_pu8Data[L_u8Iterator];
 				while( GET_BIT(MUSART1->SR,7) == 0 );
 				L_u8Iterator++;
 			}
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 }
 
 void MUSART_voidSetCallBack(void(*vp_Fumc)(void)){

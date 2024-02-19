@@ -1,14 +1,11 @@
 Archive member included to satisfy reference by file (symbol)
 
-<<<<<<< HEAD
-=======
 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
                               ./src/main.o (__aeabi_ui2d)
 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
                               ./src/main.o (__aeabi_dmul)
 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_fixunsdfsi.o)
                               ./src/main.o (__aeabi_d2uiz)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
                               ./system/src/newlib/_sbrk.o (__errno)
 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-impure.o)
@@ -3009,8 +3006,6 @@ Discarded input sections
                 0x00000000       0x4c ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .text.TIM2_5_voidSetBusyWait
                 0x00000000       0xb8 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
-<<<<<<< HEAD
-=======
  .text.TIM2_5_voidPWM_Init
                 0x00000000      0x284 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .text.MTIM2_5_SetPWM
@@ -3019,7 +3014,6 @@ Discarded input sections
                 0x00000000        0xc ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .text.MTIM5_setCALLBACK
                 0x00000000        0xc ./src/MCAL/MTIM2_5/MTIM2_5_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .debug_macro   0x00000000      0xa6c ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/MTIM2_5/MTIM2_5_program.o
@@ -3112,16 +3106,6 @@ Discarded input sections
  .debug_macro   0x00000000      0xa6c ./src/MCAL/MNVIC/MNVIC_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/MNVIC/MNVIC_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/MNVIC/MNVIC_program.o
-<<<<<<< HEAD
- .debug_macro   0x00000000       0x22 ./src/MCAL/MNVIC/MNVIC_program.o
- .debug_line    0x00000000      0x14d ./src/MCAL/MNVIC/MNVIC_program.o
- .debug_str     0x00000000     0x31af ./src/MCAL/MNVIC/MNVIC_program.o
- .comment       0x00000000       0x7f ./src/MCAL/MNVIC/MNVIC_program.o
- .debug_frame   0x00000000       0x80 ./src/MCAL/MNVIC/MNVIC_program.o
- .ARM.attributes
-                0x00000000       0x33 ./src/MCAL/MNVIC/MNVIC_program.o
-=======
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .group         0x00000000        0xc ./src/MCAL/MGPIO/MGPIO_program.o
  .group         0x00000000        0xc ./src/MCAL/MGPIO/MGPIO_program.o
  .group         0x00000000        0xc ./src/MCAL/MGPIO/MGPIO_program.o
@@ -3283,13 +3267,34 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/HAL/DCMOTOR/DCMOTOR_program.o
  .data          0x00000000        0x0 ./src/HAL/DCMOTOR/DCMOTOR_program.o
  .bss           0x00000000        0x0 ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .text.DCMOTOR_voidInit
+                0x00000000       0x7c ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .text.DCMOTOR_voidSetDirection
+                0x00000000       0x48 ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .text.DCMOTOR_voidSetSpeed
+                0x00000000       0x30 ./src/HAL/DCMOTOR/DCMOTOR_program.o
  .text.DCMOTOR_voidStop
                 0x00000000       0x10 ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_info    0x00000000      0x47f ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_abbrev  0x00000000       0xfa ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_loc     0x00000000      0x23f ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_aranges
+                0x00000000       0x38 ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_ranges  0x00000000       0x28 ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_macro   0x00000000       0x51 ./src/HAL/DCMOTOR/DCMOTOR_program.o
  .debug_macro   0x00000000      0xa6c ./src/HAL/DCMOTOR/DCMOTOR_program.o
  .debug_macro   0x00000000       0x1c ./src/HAL/DCMOTOR/DCMOTOR_program.o
  .debug_macro   0x00000000       0x1c ./src/HAL/DCMOTOR/DCMOTOR_program.o
  .debug_macro   0x00000000       0xd6 ./src/HAL/DCMOTOR/DCMOTOR_program.o
  .debug_macro   0x00000000       0x6a ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_macro   0x00000000       0x2e ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_macro   0x00000000       0x5e ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_line    0x00000000      0x1c7 ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_str     0x00000000     0x366a ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .comment       0x00000000       0x7f ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .debug_frame   0x00000000       0x70 ./src/HAL/DCMOTOR/DCMOTOR_program.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/HAL/DCMOTOR/DCMOTOR_program.o
  .group         0x00000000        0xc ./src/_initialize_hardware.o
  .group         0x00000000        0xc ./src/_initialize_hardware.o
  .group         0x00000000        0xc ./src/_initialize_hardware.o
@@ -3668,15 +3673,12 @@ Discarded input sections
  .debug_macro   0x00000000      0x115 ./src/stm32f4xx_hal_msp.o
  .debug_macro   0x00000000       0x6e ./src/stm32f4xx_hal_msp.o
  .debug_macro   0x00000000      0x11e ./src/stm32f4xx_hal_msp.o
-<<<<<<< HEAD
-=======
  .data          0x00000000        0x0 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
  .bss           0x00000000        0x0 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
  .data          0x00000000        0x0 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
  .bss           0x00000000        0x0 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
  .data          0x00000000        0x0 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_fixunsdfsi.o)
  .bss           0x00000000        0x0 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_fixunsdfsi.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text          0x00000000        0x0 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
  .data          0x00000000        0x0 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
  .bss           0x00000000        0x0 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
@@ -3858,18 +3860,10 @@ END GROUP
 
 .inits          0x080003f4       0x28
                 0x080003f4                __data_regions_array_start = .
-<<<<<<< HEAD
-                0x080003f4        0x4 LONG 0x80025d8 LOADADDR (.data)
-=======
                 0x080003f4        0x4 LONG 0x80036c8 LOADADDR (.data)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
                 0x080003f8        0x4 LONG 0x20000000 ADDR (.data)
                 0x080003fc        0x4 LONG 0x20000078 (ADDR (.data) + SIZEOF (.data))
-<<<<<<< HEAD
-                0x08000400        0x4 LONG 0x80025d8 LOADADDR (.data_CCMRAM)
-=======
                 0x08000400        0x4 LONG 0x80036c8 LOADADDR (.data_CCMRAM)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
                 0x08000404        0x4 LONG 0x10000000 ADDR (.data_CCMRAM)
                 0x08000408        0x4 LONG 0x10000000 (ADDR (.data_CCMRAM) + SIZEOF (.data_CCMRAM))
                 0x0800040c                __data_regions_array_end = .
@@ -3901,11 +3895,7 @@ END GROUP
 .flashtext
  *(.flashtext .flashtext.*)
 
-<<<<<<< HEAD
-.text           0x08000420     0x21b7
-=======
 .text           0x08000420     0x32a7
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  *(.text .text.*)
  .text.HAL_InitTick
                 0x08000420       0x2c ./system/src/stm32f4-hal/stm32f4xx_hal.o
@@ -3989,19 +3979,6 @@ END GROUP
                 0x08001080       0x10 ./src/MCAL/MUART/MUART_program.o
                 0x08001080                MUSART_voidEnable
  .text.USART1_IRQHandler
-<<<<<<< HEAD
-                0x08001024       0x10 ./src/MCAL/MUART/MUART_program.o
-                0x08001024                USART1_IRQHandler
- .text.TIM2_5_voidPWM_Init
-                0x08001034      0x2f8 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
-                0x08001034                TIM2_5_voidPWM_Init
- .text.MTIM2_5_voidSetPWM
-                0x0800132c       0xa8 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
-                0x0800132c                MTIM2_5_voidSetPWM
- .text.MSTK_voidIntialize
-                0x080013d4       0x10 ./src/MCAL/MSTK/MSTK_program.o
-                0x080013d4                MSTK_voidIntialize
-=======
                 0x08001090       0x10 ./src/MCAL/MUART/MUART_program.o
                 0x08001090                USART1_IRQHandler
  .text.MTIM2_5_voidICU_init
@@ -4041,27 +4018,7 @@ END GROUP
  .text.MSTK_voidSetBusyWait
                 0x08001c28       0x30 ./src/MCAL/MSTK/MSTK_program.o
                 0x08001c28                MSTK_voidSetBusyWait
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.SysTick_Handler
-<<<<<<< HEAD
-                0x080013e4       0x2c ./src/MCAL/MSTK/MSTK_program.o
-                0x080013e4                SysTick_Handler
- .text.MRCC_voidInitializeSystemClock
-                0x08001410       0x28 ./src/MCAL/MRCC/MRCC_program.o
-                0x08001410                MRCC_voidInitializeSystemClock
- .text.MRCC_voidEnablePeripheralClock
-                0x08001438       0xb0 ./src/MCAL/MRCC/MRCC_program.o
-                0x08001438                MRCC_voidEnablePeripheralClock
- .text.MGPIO_voidSetPinMode
-                0x080014e8       0x70 ./src/MCAL/MGPIO/MGPIO_program.o
-                0x080014e8                MGPIO_voidSetPinMode
- .text.MGPIO_voidSetPinValue
-                0x08001558       0x94 ./src/MCAL/MGPIO/MGPIO_program.o
-                0x08001558                MGPIO_voidSetPinValue
- .text.MGPIO_voidSetAltFunc
-                0x080015ec       0xd8 ./src/MCAL/MGPIO/MGPIO_program.o
-                0x080015ec                MGPIO_voidSetAltFunc
-=======
                 0x08001c58       0x2c ./src/MCAL/MSTK/MSTK_program.o
                 0x08001c58                SysTick_Handler
  .text.MRCC_voidInitializeSystemClock
@@ -4082,215 +4039,79 @@ END GROUP
  .text.MGPIO_voidSetAltFunc
                 0x08001e78       0xd8 ./src/MCAL/MGPIO/MGPIO_program.o
                 0x08001e78                MGPIO_voidSetAltFunc
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.EXTI0_IRQHandler
-<<<<<<< HEAD
-                0x080016c4       0x20 ./src/MCAL/MEXTI/MEXTI_program.o
-                0x080016c4                EXTI0_IRQHandler
-=======
                 0x08001f50       0x20 ./src/MCAL/MEXTI/MEXTI_program.o
                 0x08001f50                EXTI0_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.EXTI1_IRQHandler
-<<<<<<< HEAD
-                0x080016e4       0x20 ./src/MCAL/MEXTI/MEXTI_program.o
-                0x080016e4                EXTI1_IRQHandler
-=======
                 0x08001f70       0x20 ./src/MCAL/MEXTI/MEXTI_program.o
                 0x08001f70                EXTI1_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.EXTI2_IRQHandler
-<<<<<<< HEAD
-                0x08001704       0x20 ./src/MCAL/MEXTI/MEXTI_program.o
-                0x08001704                EXTI2_IRQHandler
-=======
                 0x08001f90       0x20 ./src/MCAL/MEXTI/MEXTI_program.o
                 0x08001f90                EXTI2_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.EXTI3_IRQHandler
-<<<<<<< HEAD
-                0x08001724       0x20 ./src/MCAL/MEXTI/MEXTI_program.o
-                0x08001724                EXTI3_IRQHandler
-=======
                 0x08001fb0       0x20 ./src/MCAL/MEXTI/MEXTI_program.o
                 0x08001fb0                EXTI3_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.EXTI4_IRQHandler
-<<<<<<< HEAD
-                0x08001744       0x20 ./src/MCAL/MEXTI/MEXTI_program.o
-                0x08001744                EXTI4_IRQHandler
-=======
                 0x08001fd0       0x20 ./src/MCAL/MEXTI/MEXTI_program.o
                 0x08001fd0                EXTI4_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.EXTI9_5_IRQHandler
-<<<<<<< HEAD
-                0x08001764       0x28 ./src/MCAL/MEXTI/MEXTI_program.o
-                0x08001764                EXTI9_5_IRQHandler
-=======
                 0x08001ff0       0x28 ./src/MCAL/MEXTI/MEXTI_program.o
                 0x08001ff0                EXTI9_5_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.EXTI15_10_IRQHandler
-<<<<<<< HEAD
-                0x0800178c       0x28 ./src/MCAL/MEXTI/MEXTI_program.o
-                0x0800178c                EXTI15_10_IRQHandler
-=======
                 0x08002018       0x28 ./src/MCAL/MEXTI/MEXTI_program.o
                 0x08002018                EXTI15_10_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA1_Stream0_IRQHandler
-<<<<<<< HEAD
-                0x080017b4       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x080017b4                DMA1_Stream0_IRQHandler
-=======
                 0x08002040       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x08002040                DMA1_Stream0_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA1_Stream1_IRQHandler
-<<<<<<< HEAD
-                0x080017c4       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x080017c4                DMA1_Stream1_IRQHandler
-=======
                 0x08002050       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x08002050                DMA1_Stream1_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA1_Stream2_IRQHandler
-<<<<<<< HEAD
-                0x080017d4       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x080017d4                DMA1_Stream2_IRQHandler
-=======
                 0x08002060       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x08002060                DMA1_Stream2_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA1_Stream3_IRQHandler
-<<<<<<< HEAD
-                0x080017e4       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x080017e4                DMA1_Stream3_IRQHandler
-=======
                 0x08002070       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x08002070                DMA1_Stream3_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA1_Stream4_IRQHandler
-<<<<<<< HEAD
-                0x080017f4       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x080017f4                DMA1_Stream4_IRQHandler
-=======
                 0x08002080       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x08002080                DMA1_Stream4_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA1_Stream5_IRQHandler
-<<<<<<< HEAD
-                0x08001804       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x08001804                DMA1_Stream5_IRQHandler
-=======
                 0x08002090       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x08002090                DMA1_Stream5_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA1_Stream6_IRQHandler
-<<<<<<< HEAD
-                0x08001814       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x08001814                DMA1_Stream6_IRQHandler
-=======
                 0x080020a0       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x080020a0                DMA1_Stream6_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA1_Stream7_IRQHandler
-<<<<<<< HEAD
-                0x08001824       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x08001824                DMA1_Stream7_IRQHandler
-=======
                 0x080020b0       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x080020b0                DMA1_Stream7_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA2_Stream0_IRQHandler
-<<<<<<< HEAD
-                0x08001834       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x08001834                DMA2_Stream0_IRQHandler
-=======
                 0x080020c0       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x080020c0                DMA2_Stream0_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA2_Stream1_IRQHandler
-<<<<<<< HEAD
-                0x08001844       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x08001844                DMA2_Stream1_IRQHandler
-=======
                 0x080020d0       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x080020d0                DMA2_Stream1_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA2_Stream2_IRQHandler
-<<<<<<< HEAD
-                0x08001854       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x08001854                DMA2_Stream2_IRQHandler
-=======
                 0x080020e0       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x080020e0                DMA2_Stream2_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA2_Stream3_IRQHandler
-<<<<<<< HEAD
-                0x08001864       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x08001864                DMA2_Stream3_IRQHandler
-=======
                 0x080020f0       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x080020f0                DMA2_Stream3_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA2_Stream4_IRQHandler
-<<<<<<< HEAD
-                0x08001874       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x08001874                DMA2_Stream4_IRQHandler
-=======
                 0x08002100       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x08002100                DMA2_Stream4_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA2_Stream5_IRQHandler
-<<<<<<< HEAD
-                0x08001884       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x08001884                DMA2_Stream5_IRQHandler
-=======
                 0x08002110       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x08002110                DMA2_Stream5_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA2_Stream6_IRQHandler
-<<<<<<< HEAD
-                0x08001894       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x08001894                DMA2_Stream6_IRQHandler
-=======
                 0x08002120       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x08002120                DMA2_Stream6_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.DMA2_Stream7_IRQHandler
-<<<<<<< HEAD
-                0x080018a4       0x10 ./src/MCAL/MDMA/MDMA_program.o
-                0x080018a4                DMA2_Stream7_IRQHandler
- .text.DCMOTOR_voidInit
-                0x080018b4       0x7c ./src/HAL/DCMOTOR/DCMOTOR_program.o
-                0x080018b4                DCMOTOR_voidInit
- .text.DCMOTOR_voidSetDirection
-                0x08001930       0x48 ./src/HAL/DCMOTOR/DCMOTOR_program.o
-                0x08001930                DCMOTOR_voidSetDirection
- .text.DCMOTOR_voidSetSpeed
-                0x08001978       0x30 ./src/HAL/DCMOTOR/DCMOTOR_program.o
-                0x08001978                DCMOTOR_voidSetSpeed
-=======
                 0x08002130       0x10 ./src/MCAL/MDMA/MDMA_program.o
                 0x08002130                DMA2_Stream7_IRQHandler
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.SystemClock_Config
-<<<<<<< HEAD
-                0x080019a8       0x98 ./src/_initialize_hardware.o
-                0x080019a8                SystemClock_Config
-=======
                 0x08002140       0x98 ./src/_initialize_hardware.o
                 0x08002140                SystemClock_Config
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.__initialize_hardware
-<<<<<<< HEAD
-                0x08001a40       0x10 ./src/_initialize_hardware.o
-                0x08001a40                __initialize_hardware
- .text.main     0x08001a50       0x4c ./src/main.o
-                0x08001a50                main
-=======
                 0x080021d8       0x10 ./src/_initialize_hardware.o
                 0x080021d8                __initialize_hardware
  .text.CaptureCallBack
@@ -4301,17 +4122,7 @@ END GROUP
                 0x080022a0                HCSR04_Read
  .text.main     0x080022dc       0xc8 ./src/main.o
                 0x080022dc                main
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.HAL_MspInit
-<<<<<<< HEAD
-                0x08001a9c        0x2 ./src/stm32f4xx_hal_msp.o
-                0x08001a9c                HAL_MspInit
- *fill*         0x08001a9e        0x2 
- .text.__errno  0x08001aa0        0xc e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
-                0x08001aa0                __errno
- .text          0x08001aac       0x10 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-strlen.o)
-                0x08001aac                strlen
-=======
                 0x080023a4        0x2 ./src/stm32f4xx_hal_msp.o
                 0x080023a4                HAL_MspInit
  *fill*         0x080023a6        0x2 
@@ -4343,68 +4154,26 @@ END GROUP
                 0x08002b84                __errno
  .text          0x08002b90       0x10 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-strlen.o)
                 0x08002b90                strlen
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text._vsnprintf_r
-<<<<<<< HEAD
-                0x08001abc       0x58 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x08001abc                _vsniprintf_r
-                0x08001abc                _vsnprintf_r
-=======
                 0x08002ba0       0x58 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
                 0x08002ba0                _vsniprintf_r
                 0x08002ba0                _vsnprintf_r
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.vsnprintf
-<<<<<<< HEAD
-                0x08001b14       0x1c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x08001b14                vsniprintf
-                0x08001b14                vsnprintf
-=======
                 0x08002bf8       0x1c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
                 0x08002bf8                vsniprintf
                 0x08002bf8                vsnprintf
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.__ssputs_r
-<<<<<<< HEAD
-                0x08001b30       0xb4 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x08001b30                __ssputs_r
-=======
                 0x08002c14       0xb4 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
                 0x08002c14                __ssputs_r
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text._svfprintf_r
-<<<<<<< HEAD
-                0x08001be4      0x1ec e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x08001be4                _svfiprintf_r
-                0x08001be4                _svfprintf_r
-=======
                 0x08002cc8      0x1ec e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
                 0x08002cc8                _svfiprintf_r
                 0x08002cc8                _svfprintf_r
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text._printf_common
-<<<<<<< HEAD
-                0x08001dd0       0xea e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08001dd0                _printf_common
- *fill*         0x08001eba        0x2 
-=======
                 0x08002eb4       0xea e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
                 0x08002eb4                _printf_common
  *fill*         0x08002f9e        0x2 
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text._printf_i
-<<<<<<< HEAD
-                0x08001ebc      0x224 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08001ebc                _printf_i
- .text          0x080020e0       0xa0 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memchr.o)
-                0x080020e0                memchr
- .text.memcpy   0x08002180       0x16 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x08002180                memcpy
- .text.memmove  0x08002196       0x32 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memmove.o)
-                0x08002196                memmove
- .text._free_r  0x080021c8       0x9c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-freer.o)
-                0x080021c8                _free_r
-=======
                 0x08002fa0      0x224 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
                 0x08002fa0                _printf_i
  *fill*         0x080031c4        0xc 
@@ -4416,225 +4185,92 @@ END GROUP
                 0x08003286                memmove
  .text._free_r  0x080032b8       0x9c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-freer.o)
                 0x080032b8                _free_r
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text._malloc_r
-<<<<<<< HEAD
-                0x08002264       0xb4 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x08002264                _malloc_r
-=======
                 0x08003354       0xb4 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
                 0x08003354                _malloc_r
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text._realloc_r
-<<<<<<< HEAD
-                0x08002318       0x4c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-reallocr.o)
-                0x08002318                _realloc_r
- .text._sbrk_r  0x08002364       0x20 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-sbrkr.o)
-                0x08002364                _sbrk_r
-=======
                 0x08003408       0x4c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-reallocr.o)
                 0x08003408                _realloc_r
  .text._sbrk_r  0x08003454       0x20 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-sbrkr.o)
                 0x08003454                _sbrk_r
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.__malloc_lock
-<<<<<<< HEAD
-                0x08002384        0x2 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
-                0x08002384                __malloc_lock
-=======
                 0x08003474        0x2 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
                 0x08003474                __malloc_lock
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text.__malloc_unlock
-<<<<<<< HEAD
-                0x08002386        0x2 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
-                0x08002386                __malloc_unlock
-=======
                 0x08003476        0x2 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
                 0x08003476                __malloc_unlock
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .text._malloc_usable_size_r
-<<<<<<< HEAD
-                0x08002388       0x10 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-msizer.o)
-                0x08002388                _malloc_usable_size_r
-=======
                 0x08003478       0x10 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-msizer.o)
                 0x08003478                _malloc_usable_size_r
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.HAL_NVIC_SetPriorityGrouping.str1.4
-<<<<<<< HEAD
-                0x08002398       0x31 ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
- *fill*         0x080023c9        0x3 
-=======
                 0x08003488       0x31 ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
  *fill*         0x080034b9        0x3 
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .rodata.APBAHBPrescTable
-<<<<<<< HEAD
-                0x080023cc       0x10 ./system/src/stm32f4-hal/stm32f4xx_hal_rcc.o
-                0x080023cc                APBAHBPrescTable
-=======
                 0x080034bc       0x10 ./system/src/stm32f4-hal/stm32f4xx_hal_rcc.o
                 0x080034bc                APBAHBPrescTable
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .rodata.HAL_RCC_OscConfig.str1.4
-<<<<<<< HEAD
-                0x080023dc       0x2e ./system/src/stm32f4-hal/stm32f4xx_hal_rcc.o
- *fill*         0x0800240a        0x2 
-=======
                 0x080034cc       0x2e ./system/src/stm32f4-hal/stm32f4xx_hal_rcc.o
  *fill*         0x080034fa        0x2 
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .rodata.abort.str1.4
-<<<<<<< HEAD
-                0x0800240c       0x14 ./system/src/newlib/_exit.o
-=======
                 0x080034fc       0x14 ./system/src/newlib/_exit.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .rodata.assert_failed.str1.4
-<<<<<<< HEAD
-                0x08002420       0x2b ./system/src/newlib/assert.o
-=======
                 0x08003510       0x2b ./system/src/newlib/assert.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .rodata.trace_puts.str1.4
-<<<<<<< HEAD
-                0x0800244b       0x2b ./system/src/diag/Trace.o
-=======
                 0x0800353b       0x2b ./system/src/diag/Trace.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
                                   0x2 (size before relaxing)
-<<<<<<< HEAD
- *fill*         0x0800244b        0x1 
-=======
  *fill*         0x0800353b        0x1 
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .rodata.dumpExceptionStack.str1.4
-<<<<<<< HEAD
-                0x0800244c      0x11a ./system/src/cortexm/exception_handlers.o
- *fill*         0x08002566        0x2 
-=======
                 0x0800353c      0x11a ./system/src/cortexm/exception_handlers.o
  *fill*         0x08003656        0x2 
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .rodata.str1.4
-<<<<<<< HEAD
-                0x08002568       0x2c ./system/src/cortexm/exception_handlers.o
-=======
                 0x08003658       0x2c ./system/src/cortexm/exception_handlers.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
                                  0x2a (size before relaxing)
  .rodata.AHBPrescTable
-<<<<<<< HEAD
-                0x08002594       0x10 ./system/src/cmsis/system_stm32f4xx.o
-                0x08002594                AHBPrescTable
-=======
                 0x08003684       0x10 ./system/src/cmsis/system_stm32f4xx.o
                 0x08003684                AHBPrescTable
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .rodata._svfprintf_r.str1.1
-<<<<<<< HEAD
-                0x080025a4       0x11 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
-=======
                 0x08003694       0x11 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .rodata._printf_i.str1.1
-<<<<<<< HEAD
-                0x080025b5       0x22 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-=======
                 0x080036a5       0x22 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  *(vtable)
  *(.eh_frame*)
  *(.glue_7)
-<<<<<<< HEAD
- .glue_7        0x080025d7        0x0 linker stubs
-=======
  .glue_7        0x080036c7        0x0 linker stubs
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  *(.glue_7t)
-<<<<<<< HEAD
- .glue_7t       0x080025d7        0x0 linker stubs
-=======
  .glue_7t       0x080036c7        0x0 linker stubs
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
-<<<<<<< HEAD
-.vfp11_veneer   0x080025d8        0x0
- .vfp11_veneer  0x080025d8        0x0 linker stubs
-=======
 .vfp11_veneer   0x080036c8        0x0
  .vfp11_veneer  0x080036c8        0x0 linker stubs
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
-<<<<<<< HEAD
-.v4_bx          0x080025d8        0x0
- .v4_bx         0x080025d8        0x0 linker stubs
-=======
 .v4_bx          0x080036c8        0x0
  .v4_bx         0x080036c8        0x0 linker stubs
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
-<<<<<<< HEAD
-.iplt           0x080025d8        0x0
- .iplt          0x080025d8        0x0 ./system/src/stm32f4-hal/stm32f4xx_hal.o
-=======
 .iplt           0x080036c8        0x0
  .iplt          0x080036c8        0x0 ./system/src/stm32f4-hal/stm32f4xx_hal.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
-<<<<<<< HEAD
-.rel.dyn        0x080025d8        0x0
- .rel.iplt      0x080025d8        0x0 ./system/src/stm32f4-hal/stm32f4xx_hal.o
-=======
 .rel.dyn        0x080036c8        0x0
  .rel.iplt      0x080036c8        0x0 ./system/src/stm32f4-hal/stm32f4xx_hal.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-<<<<<<< HEAD
-                0x080025d8                . = ALIGN (0x4)
-                0x080025d8                __exidx_start = .
-=======
                 0x080036c8                . = ALIGN (0x4)
                 0x080036c8                __exidx_start = .
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-<<<<<<< HEAD
-                0x080025d8                __exidx_end = .
-                0x080025d8                . = ALIGN (0x4)
-                0x080025d8                _etext = .
-                0x080025d8                __etext = .
-=======
                 0x080036c8                __exidx_end = .
                 0x080036c8                . = ALIGN (0x4)
                 0x080036c8                _etext = .
                 0x080036c8                __etext = .
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
-<<<<<<< HEAD
-.data_CCMRAM    0x10000000        0x0 load address 0x080025d8
-=======
 .data_CCMRAM    0x10000000        0x0 load address 0x080036c8
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  FILL mask 0xff
  *(.data.CCMRAM .data.CCMRAM.*)
                 0x10000000                . = ALIGN (0x4)
-<<<<<<< HEAD
-                0x080025d8                _sidata = LOADADDR (.data)
-=======
                 0x080036c8                _sidata = LOADADDR (.data)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
-<<<<<<< HEAD
-.data           0x20000000       0x78 load address 0x080025d8
-=======
 .data           0x20000000       0x78 load address 0x080036c8
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  FILL mask 0xff
                 0x20000000                _sdata = .
                 0x20000000                __data_start__ = .
@@ -4657,11 +4293,7 @@ END GROUP
                 0x20000078                _edata = .
                 0x20000078                __data_end__ = .
 
-<<<<<<< HEAD
-.igot.plt       0x20000078        0x0 load address 0x08002650
-=======
 .igot.plt       0x20000078        0x0 load address 0x08003740
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .igot.plt      0x20000078        0x0 ./system/src/stm32f4-hal/stm32f4xx_hal.o
 
 .bss_CCMRAM     0x10000000        0x0
@@ -4724,21 +4356,11 @@ END GROUP
                 0x20000176                var2
  *fill*         0x20000177        0x1 
  .bss.__malloc_free_list
-<<<<<<< HEAD
-                0x20000158        0x4 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x20000158                __malloc_free_list
-=======
                 0x20000178        0x4 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
                 0x20000178                __malloc_free_list
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .bss.__malloc_sbrk_start
-<<<<<<< HEAD
-                0x2000015c        0x4 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x2000015c                __malloc_sbrk_start
-=======
                 0x2000017c        0x4 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
                 0x2000017c                __malloc_sbrk_start
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  *(COMMON)
  COMMON         0x20000180        0x4 ./system/src/stm32f4-hal/stm32f4xx_hal.o
                 0x20000180                uwTick
@@ -4831,14 +4453,10 @@ END GROUP
  .comment       0x0000007e       0x7f ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .comment       0x0000007e       0x7f ./src/MCAL/MSTK/MSTK_program.o
  .comment       0x0000007e       0x7f ./src/MCAL/MRCC/MRCC_program.o
-<<<<<<< HEAD
-=======
  .comment       0x0000007e       0x7f ./src/MCAL/MNVIC/MNVIC_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .comment       0x0000007e       0x7f ./src/MCAL/MGPIO/MGPIO_program.o
  .comment       0x0000007e       0x7f ./src/MCAL/MEXTI/MEXTI_program.o
  .comment       0x0000007e       0x7f ./src/MCAL/MDMA/MDMA_program.o
- .comment       0x0000007e       0x7f ./src/HAL/DCMOTOR/DCMOTOR_program.o
  .comment       0x0000007e       0x7f ./src/_initialize_hardware.o
  .comment       0x0000007e       0x7f ./src/main.o
  .comment       0x0000007e       0x7f ./src/stm32f4xx_hal_msp.o
@@ -4882,29 +4500,13 @@ END GROUP
  .ARM.attributes
                 0x00000363       0x33 ./src/MCAL/MRCC/MRCC_program.o
  .ARM.attributes
-<<<<<<< HEAD
-                0x00000396       0x33 ./src/MCAL/MGPIO/MGPIO_program.o
-=======
                 0x00000396       0x33 ./src/MCAL/MNVIC/MNVIC_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x000003c9       0x33 ./src/MCAL/MEXTI/MEXTI_program.o
-=======
                 0x000003c9       0x33 ./src/MCAL/MGPIO/MGPIO_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x000003fc       0x33 ./src/MCAL/MDMA/MDMA_program.o
-=======
                 0x000003fc       0x33 ./src/MCAL/MEXTI/MEXTI_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x0000042f       0x33 ./src/HAL/DCMOTOR/DCMOTOR_program.o
-=======
                 0x0000042f       0x33 ./src/MCAL/MDMA/MDMA_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
                 0x00000462       0x33 ./src/_initialize_hardware.o
  .ARM.attributes
@@ -4912,77 +4514,26 @@ END GROUP
  .ARM.attributes
                 0x000004c8       0x33 ./src/stm32f4xx_hal_msp.o
  .ARM.attributes
-<<<<<<< HEAD
-                0x000004fb       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
-=======
                 0x000004fb       0x1e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x00000529       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-impure.o)
-=======
                 0x00000519       0x1e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x00000557       0x17 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-strlen.o)
-=======
                 0x00000537       0x1e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_fixunsdfsi.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x0000056e       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
-=======
                 0x00000555       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x0000059c       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
-=======
                 0x00000583       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-impure.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x000005ca       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-=======
                 0x000005b1       0x17 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-strlen.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x000005f8       0x1c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memchr.o)
-=======
                 0x000005c8       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x00000614       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memcpy-stub.o)
-=======
                 0x000005f6       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x00000642       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memmove.o)
-=======
                 0x00000624       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x00000670       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-freer.o)
-=======
                 0x00000652       0x1c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memchr.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .ARM.attributes
-<<<<<<< HEAD
-                0x0000069e       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
- .ARM.attributes
-                0x000006cc       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-reallocr.o)
- .ARM.attributes
-                0x000006fa       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-sbrkr.o)
- .ARM.attributes
-                0x00000728       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
- .ARM.attributes
-                0x00000756       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-msizer.o)
-=======
                 0x0000066e       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memcpy-stub.o)
  .ARM.attributes
                 0x0000069c       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memmove.o)
@@ -4998,7 +4549,6 @@ END GROUP
                 0x00000782       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
  .ARM.attributes
                 0x000007b0       0x2e e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-msizer.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
 .debug
  *(.debug)
@@ -5012,11 +4562,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-<<<<<<< HEAD
-.debug_aranges  0x00000000      0x7d8
-=======
 .debug_aranges  0x00000000      0x860
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0xc0 ./system/src/stm32f4-hal/stm32f4xx_hal.o
@@ -5049,47 +4595,16 @@ END GROUP
  .debug_aranges
                 0x00000428       0x60 ./src/MCAL/MUART/MUART_program.o
  .debug_aranges
-<<<<<<< HEAD
-                0x00000488       0x58 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
-=======
                 0x00000488       0xb8 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .debug_aranges
-<<<<<<< HEAD
-                0x000004e0       0x60 ./src/MCAL/MSTK/MSTK_program.o
-=======
                 0x00000540       0x60 ./src/MCAL/MSTK/MSTK_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .debug_aranges
-<<<<<<< HEAD
-                0x00000540       0x30 ./src/MCAL/MRCC/MRCC_program.o
-=======
                 0x000005a0       0x30 ./src/MCAL/MRCC/MRCC_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .debug_aranges
-<<<<<<< HEAD
-                0x00000570       0x60 ./src/MCAL/MGPIO/MGPIO_program.o
-=======
                 0x000005d0       0x50 ./src/MCAL/MNVIC/MNVIC_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .debug_aranges
-<<<<<<< HEAD
-                0x000005d0       0x78 ./src/MCAL/MEXTI/MEXTI_program.o
-=======
                 0x00000620       0x60 ./src/MCAL/MGPIO/MGPIO_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .debug_aranges
-<<<<<<< HEAD
-                0x00000648       0xd8 ./src/MCAL/MDMA/MDMA_program.o
- .debug_aranges
-                0x00000720       0x38 ./src/HAL/DCMOTOR/DCMOTOR_program.o
- .debug_aranges
-                0x00000758       0x28 ./src/_initialize_hardware.o
- .debug_aranges
-                0x00000780       0x20 ./src/main.o
- .debug_aranges
-                0x000007a0       0x38 ./src/stm32f4xx_hal_msp.o
-=======
                 0x00000680       0x78 ./src/MCAL/MEXTI/MEXTI_program.o
  .debug_aranges
                 0x000006f8       0xd8 ./src/MCAL/MDMA/MDMA_program.o
@@ -5099,16 +4614,11 @@ END GROUP
                 0x000007f8       0x30 ./src/main.o
  .debug_aranges
                 0x00000828       0x38 ./src/stm32f4xx_hal_msp.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
 .debug_pubnames
  *(.debug_pubnames)
 
-<<<<<<< HEAD
-.debug_info     0x00000000     0xdbea
-=======
 .debug_info     0x00000000     0xe07c
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x107e ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_info    0x0000107e     0x1863 ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
@@ -5124,19 +4634,6 @@ END GROUP
  .debug_info    0x00008d41     0x115a ./system/src/cortexm/exception_handlers.o
  .debug_info    0x00009e9b      0xcfe ./system/src/cmsis/system_stm32f4xx.o
  .debug_info    0x0000ab99       0xca ./system/src/cmsis/vectors_stm32f401xc.o
-<<<<<<< HEAD
- .debug_info    0x0000ac63      0x20c ./src/MCAL/MUART/MUART_program.o
- .debug_info    0x0000ae6f      0x369 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_info    0x0000b1d8      0x212 ./src/MCAL/MSTK/MSTK_program.o
- .debug_info    0x0000b3ea      0x14e ./src/MCAL/MRCC/MRCC_program.o
- .debug_info    0x0000b538      0x350 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_info    0x0000b888      0x2f5 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_info    0x0000bb7d      0x3f8 ./src/MCAL/MDMA/MDMA_program.o
- .debug_info    0x0000bf75      0x45d ./src/HAL/DCMOTOR/DCMOTOR_program.o
- .debug_info    0x0000c3d2      0xd34 ./src/_initialize_hardware.o
- .debug_info    0x0000d106      0x1d5 ./src/main.o
- .debug_info    0x0000d2db      0x90f ./src/stm32f4xx_hal_msp.o
-=======
  .debug_info    0x0000ac63      0x1f6 ./src/MCAL/MUART/MUART_program.o
  .debug_info    0x0000ae59      0x5c2 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .debug_info    0x0000b41b      0x212 ./src/MCAL/MSTK/MSTK_program.o
@@ -5148,13 +4645,8 @@ END GROUP
  .debug_info    0x0000c4ca      0xd34 ./src/_initialize_hardware.o
  .debug_info    0x0000d1fe      0x56f ./src/main.o
  .debug_info    0x0000d76d      0x90f ./src/stm32f4xx_hal_msp.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
-<<<<<<< HEAD
-.debug_abbrev   0x00000000     0x2de5
-=======
 .debug_abbrev   0x00000000     0x2efc
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x32b ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_abbrev  0x0000032b      0x3f1 ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
@@ -5170,19 +4662,6 @@ END GROUP
  .debug_abbrev  0x00001bd4      0x32b ./system/src/cortexm/exception_handlers.o
  .debug_abbrev  0x00001eff      0x216 ./system/src/cmsis/system_stm32f4xx.o
  .debug_abbrev  0x00002115       0x9d ./system/src/cmsis/vectors_stm32f401xc.o
-<<<<<<< HEAD
- .debug_abbrev  0x000021b2      0x122 ./src/MCAL/MUART/MUART_program.o
- .debug_abbrev  0x000022d4      0x109 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_abbrev  0x000023dd      0x119 ./src/MCAL/MSTK/MSTK_program.o
- .debug_abbrev  0x000024f6       0x97 ./src/MCAL/MRCC/MRCC_program.o
- .debug_abbrev  0x0000258d       0xe2 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_abbrev  0x0000266f      0x12b ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_abbrev  0x0000279a      0x109 ./src/MCAL/MDMA/MDMA_program.o
- .debug_abbrev  0x000028a3       0xce ./src/HAL/DCMOTOR/DCMOTOR_program.o
- .debug_abbrev  0x00002971      0x22d ./src/_initialize_hardware.o
- .debug_abbrev  0x00002b9e       0x96 ./src/main.o
- .debug_abbrev  0x00002c34      0x1b1 ./src/stm32f4xx_hal_msp.o
-=======
  .debug_abbrev  0x000021b2      0x10a ./src/MCAL/MUART/MUART_program.o
  .debug_abbrev  0x000022bc      0x183 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .debug_abbrev  0x0000243f      0x119 ./src/MCAL/MSTK/MSTK_program.o
@@ -5194,13 +4673,8 @@ END GROUP
  .debug_abbrev  0x00002a2b      0x22d ./src/_initialize_hardware.o
  .debug_abbrev  0x00002c58       0xf3 ./src/main.o
  .debug_abbrev  0x00002d4b      0x1b1 ./src/stm32f4xx_hal_msp.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
-<<<<<<< HEAD
-.debug_line     0x00000000     0x85c8
-=======
-.debug_line     0x00000000     0x879e
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
+.debug_line     0x00000000     0x87cb
  *(.debug_line)
  .debug_line    0x00000000      0xb34 ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_line    0x00000b34      0xc2b ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
@@ -5216,37 +4690,19 @@ END GROUP
  .debug_line    0x00004cb0      0xb1e ./system/src/cortexm/exception_handlers.o
  .debug_line    0x000057ce      0x9d6 ./system/src/cmsis/system_stm32f4xx.o
  .debug_line    0x000061a4       0xec ./system/src/cmsis/vectors_stm32f401xc.o
-<<<<<<< HEAD
- .debug_line    0x00006290      0x183 ./src/MCAL/MUART/MUART_program.o
- .debug_line    0x00006413      0x259 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_line    0x0000666c      0x177 ./src/MCAL/MSTK/MSTK_program.o
- .debug_line    0x000067e3      0x10a ./src/MCAL/MRCC/MRCC_program.o
- .debug_line    0x000068ed      0x1d9 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_line    0x00006ac6      0x1c8 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_line    0x00006c8e      0x28a ./src/MCAL/MDMA/MDMA_program.o
- .debug_line    0x00006f18      0x1c7 ./src/HAL/DCMOTOR/DCMOTOR_program.o
- .debug_line    0x000070df      0x9c9 ./src/_initialize_hardware.o
- .debug_line    0x00007aa8      0x156 ./src/main.o
- .debug_line    0x00007bfe      0x9ca ./src/stm32f4xx_hal_msp.o
-=======
- .debug_line    0x00006290      0x17c ./src/MCAL/MUART/MUART_program.o
- .debug_line    0x0000640c      0x42a ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_line    0x00006836      0x177 ./src/MCAL/MSTK/MSTK_program.o
- .debug_line    0x000069ad      0x10a ./src/MCAL/MRCC/MRCC_program.o
- .debug_line    0x00006ab7      0x14d ./src/MCAL/MNVIC/MNVIC_program.o
- .debug_line    0x00006c04      0x1d9 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_line    0x00006ddd      0x1c8 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_line    0x00006fa5      0x28a ./src/MCAL/MDMA/MDMA_program.o
- .debug_line    0x0000722f      0x9c9 ./src/_initialize_hardware.o
- .debug_line    0x00007bf8      0x1dc ./src/main.o
- .debug_line    0x00007dd4      0x9ca ./src/stm32f4xx_hal_msp.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
+ .debug_line    0x00006290      0x17d ./src/MCAL/MUART/MUART_program.o
+ .debug_line    0x0000640d      0x42a ./src/MCAL/MTIM2_5/MTIM2_5_program.o
+ .debug_line    0x00006837      0x177 ./src/MCAL/MSTK/MSTK_program.o
+ .debug_line    0x000069ae      0x10a ./src/MCAL/MRCC/MRCC_program.o
+ .debug_line    0x00006ab8      0x14d ./src/MCAL/MNVIC/MNVIC_program.o
+ .debug_line    0x00006c05      0x1d9 ./src/MCAL/MGPIO/MGPIO_program.o
+ .debug_line    0x00006dde      0x1c8 ./src/MCAL/MEXTI/MEXTI_program.o
+ .debug_line    0x00006fa6      0x28a ./src/MCAL/MDMA/MDMA_program.o
+ .debug_line    0x00007230      0x9c9 ./src/_initialize_hardware.o
+ .debug_line    0x00007bf9      0x208 ./src/main.o
+ .debug_line    0x00007e01      0x9ca ./src/stm32f4xx_hal_msp.o
 
-<<<<<<< HEAD
-.debug_frame    0x00000000     0x1304
-=======
 .debug_frame    0x00000000     0x153c
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  *(.debug_frame)
  .debug_frame   0x00000000      0x188 ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_frame   0x00000188      0x17c ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
@@ -5263,30 +4719,6 @@ END GROUP
  .debug_frame   0x00000840       0x30 ./system/src/cmsis/system_stm32f4xx.o
  .debug_frame   0x00000870       0x20 ./system/src/cmsis/vectors_stm32f401xc.o
  .debug_frame   0x00000890       0xa8 ./src/MCAL/MUART/MUART_program.o
-<<<<<<< HEAD
- .debug_frame   0x00000938       0x90 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_frame   0x000009c8       0xa8 ./src/MCAL/MSTK/MSTK_program.o
- .debug_frame   0x00000a70       0x40 ./src/MCAL/MRCC/MRCC_program.o
- .debug_frame   0x00000ab0       0xdc ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_frame   0x00000b8c      0x114 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_frame   0x00000ca0      0x268 ./src/MCAL/MDMA/MDMA_program.o
- .debug_frame   0x00000f08       0x70 ./src/HAL/DCMOTOR/DCMOTOR_program.o
- .debug_frame   0x00000f78       0x4c ./src/_initialize_hardware.o
- .debug_frame   0x00000fc4       0x28 ./src/main.o
- .debug_frame   0x00000fec       0x50 ./src/stm32f4xx_hal_msp.o
- .debug_frame   0x0000103c       0x20 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x0000105c       0x4c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
- .debug_frame   0x000010a8       0x90 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
- .debug_frame   0x00001138       0x60 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_frame   0x00001198       0x28 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x000011c0       0x28 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memmove.o)
- .debug_frame   0x000011e8       0x38 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x00001220       0x2c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x0000124c       0x3c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-reallocr.o)
- .debug_frame   0x00001288       0x2c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x000012b4       0x30 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
- .debug_frame   0x000012e4       0x20 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-msizer.o)
-=======
  .debug_frame   0x00000938      0x168 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .debug_frame   0x00000aa0       0xa8 ./src/MCAL/MSTK/MSTK_program.o
  .debug_frame   0x00000b48       0x40 ./src/MCAL/MRCC/MRCC_program.o
@@ -5312,13 +4744,8 @@ END GROUP
  .debug_frame   0x000014c0       0x2c e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-sbrkr.o)
  .debug_frame   0x000014ec       0x30 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
  .debug_frame   0x0000151c       0x20 e:/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-msizer.o)
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
-<<<<<<< HEAD
-.debug_str      0x00000000    0x758e8
-=======
-.debug_str      0x00000000    0x75c67
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
+.debug_str      0x00000000    0x75cf1
  *(.debug_str)
  .debug_str     0x00000000    0x6fc65 ./system/src/stm32f4-hal/stm32f4xx_hal.o
                               0x70099 (size before relaxing)
@@ -5348,66 +4775,30 @@ END GROUP
                               0x6f80b (size before relaxing)
  .debug_str     0x00073337       0x59 ./system/src/cmsis/vectors_stm32f401xc.o
                                0x388a (size before relaxing)
-<<<<<<< HEAD
- .debug_str     0x00073390      0x2be ./src/MCAL/MUART/MUART_program.o
-                               0x3088 (size before relaxing)
- .debug_str     0x0007364e      0x605 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
-                               0x34de (size before relaxing)
- .debug_str     0x00073c53      0x278 ./src/MCAL/MSTK/MSTK_program.o
-=======
- .debug_str     0x00073390      0x2ad ./src/MCAL/MUART/MUART_program.o
-                               0x3077 (size before relaxing)
- .debug_str     0x0007363d      0x945 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
+ .debug_str     0x00073390      0x2ac ./src/MCAL/MUART/MUART_program.o
+                               0x3076 (size before relaxing)
+ .debug_str     0x0007363c      0x945 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
                                0x3804 (size before relaxing)
- .debug_str     0x00073f82      0x278 ./src/MCAL/MSTK/MSTK_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
+ .debug_str     0x00073f81      0x278 ./src/MCAL/MSTK/MSTK_program.o
                                0x3123 (size before relaxing)
-<<<<<<< HEAD
- .debug_str     0x00073ecb      0x87e ./src/MCAL/MRCC/MRCC_program.o
-                               0x3709 (size before relaxing)
- .debug_str     0x00074749      0x529 ./src/MCAL/MGPIO/MGPIO_program.o
-                               0x33d1 (size before relaxing)
- .debug_str     0x00074c72      0x45d ./src/MCAL/MEXTI/MEXTI_program.o
-=======
- .debug_str     0x000741fa      0x87d ./src/MCAL/MRCC/MRCC_program.o
+ .debug_str     0x000741f9      0x87d ./src/MCAL/MRCC/MRCC_program.o
                                0x3708 (size before relaxing)
- .debug_str     0x00074a77      0x2bd ./src/MCAL/MNVIC/MNVIC_program.o
+ .debug_str     0x00074a76      0x2bd ./src/MCAL/MNVIC/MNVIC_program.o
                                0x31af (size before relaxing)
- .debug_str     0x00074d34      0x529 ./src/MCAL/MGPIO/MGPIO_program.o
+ .debug_str     0x00074d33      0x529 ./src/MCAL/MGPIO/MGPIO_program.o
                                0x33d1 (size before relaxing)
- .debug_str     0x0007525d      0x45d ./src/MCAL/MEXTI/MEXTI_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
+ .debug_str     0x0007525c      0x45d ./src/MCAL/MEXTI/MEXTI_program.o
                                0x32f5 (size before relaxing)
-<<<<<<< HEAD
- .debug_str     0x000750cf      0x48d ./src/MCAL/MDMA/MDMA_program.o
-=======
- .debug_str     0x000756ba      0x48d ./src/MCAL/MDMA/MDMA_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
+ .debug_str     0x000756b9      0x48d ./src/MCAL/MDMA/MDMA_program.o
                                0x3325 (size before relaxing)
-<<<<<<< HEAD
- .debug_str     0x0007555c      0x2f6 ./src/HAL/DCMOTOR/DCMOTOR_program.o
-                               0x366a (size before relaxing)
- .debug_str     0x00075852       0x31 ./src/_initialize_hardware.o
-=======
- .debug_str     0x00075b47       0x31 ./src/_initialize_hardware.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
+ .debug_str     0x00075b46       0x31 ./src/_initialize_hardware.o
                               0x6f921 (size before relaxing)
-<<<<<<< HEAD
- .debug_str     0x00075883       0x28 ./src/main.o
-                               0x33db (size before relaxing)
- .debug_str     0x000758ab       0x3d ./src/stm32f4xx_hal_msp.o
-=======
- .debug_str     0x00075b78       0xb2 ./src/main.o
-                               0x358c (size before relaxing)
- .debug_str     0x00075c2a       0x3d ./src/stm32f4xx_hal_msp.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
+ .debug_str     0x00075b77      0x13d ./src/main.o
+                               0x3617 (size before relaxing)
+ .debug_str     0x00075cb4       0x3d ./src/stm32f4xx_hal_msp.o
                               0x6f672 (size before relaxing)
 
-<<<<<<< HEAD
-.debug_loc      0x00000000     0x2b29
-=======
 .debug_loc      0x00000000     0x32af
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  *(.debug_loc)
  .debug_loc     0x00000000       0x92 ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_loc     0x00000092      0x73b ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
@@ -5421,15 +4812,6 @@ END GROUP
  .debug_loc     0x000013d5      0x291 ./system/src/cortexm/exception_handlers.o
  .debug_loc     0x00001666      0x13e ./system/src/cmsis/system_stm32f4xx.o
  .debug_loc     0x000017a4       0x2a ./src/MCAL/MUART/MUART_program.o
-<<<<<<< HEAD
- .debug_loc     0x000017ce      0x2ab ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_loc     0x00001a79       0x44 ./src/MCAL/MSTK/MSTK_program.o
- .debug_loc     0x00001abd      0x340 ./src/MCAL/MRCC/MRCC_program.o
- .debug_loc     0x00001dfd      0x831 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_loc     0x0000262e      0x1c0 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_loc     0x000027ee       0xfc ./src/MCAL/MDMA/MDMA_program.o
- .debug_loc     0x000028ea      0x23f ./src/HAL/DCMOTOR/DCMOTOR_program.o
-=======
  .debug_loc     0x000017ce      0xa69 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .debug_loc     0x00002237       0x44 ./src/MCAL/MSTK/MSTK_program.o
  .debug_loc     0x0000227b      0x340 ./src/MCAL/MRCC/MRCC_program.o
@@ -5437,7 +4819,6 @@ END GROUP
  .debug_loc     0x000027c2      0x831 ./src/MCAL/MGPIO/MGPIO_program.o
  .debug_loc     0x00002ff3      0x1c0 ./src/MCAL/MEXTI/MEXTI_program.o
  .debug_loc     0x000031b3       0xfc ./src/MCAL/MDMA/MDMA_program.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -5455,11 +4836,7 @@ END GROUP
  *(.debug_varnames)
 OUTPUT(FPG.elf elf32-littlearm)
 
-<<<<<<< HEAD
-.debug_ranges   0x00000000      0x738
-=======
 .debug_ranges   0x00000000      0x7c0
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
  .debug_ranges  0x00000000       0xb0 ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_ranges  0x000000b0       0xe8 ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o
  .debug_ranges  0x00000198       0x78 ./system/src/stm32f4-hal/stm32f4xx_hal_rcc.o
@@ -5475,18 +4852,6 @@ OUTPUT(FPG.elf elf32-littlearm)
  .debug_ranges  0x00000410       0x18 ./system/src/cmsis/system_stm32f4xx.o
  .debug_ranges  0x00000428       0x10 ./system/src/cmsis/vectors_stm32f401xc.o
  .debug_ranges  0x00000438       0x50 ./src/MCAL/MUART/MUART_program.o
-<<<<<<< HEAD
- .debug_ranges  0x00000488       0x48 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_ranges  0x000004d0       0x50 ./src/MCAL/MSTK/MSTK_program.o
- .debug_ranges  0x00000520       0x20 ./src/MCAL/MRCC/MRCC_program.o
- .debug_ranges  0x00000540       0x50 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_ranges  0x00000590       0x68 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_ranges  0x000005f8       0xc8 ./src/MCAL/MDMA/MDMA_program.o
- .debug_ranges  0x000006c0       0x28 ./src/HAL/DCMOTOR/DCMOTOR_program.o
- .debug_ranges  0x000006e8       0x18 ./src/_initialize_hardware.o
- .debug_ranges  0x00000700       0x10 ./src/main.o
- .debug_ranges  0x00000710       0x28 ./src/stm32f4xx_hal_msp.o
-=======
  .debug_ranges  0x00000488       0xa8 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .debug_ranges  0x00000530       0x50 ./src/MCAL/MSTK/MSTK_program.o
  .debug_ranges  0x00000580       0x20 ./src/MCAL/MRCC/MRCC_program.o
@@ -5497,13 +4862,8 @@ OUTPUT(FPG.elf elf32-littlearm)
  .debug_ranges  0x00000760       0x18 ./src/_initialize_hardware.o
  .debug_ranges  0x00000778       0x20 ./src/main.o
  .debug_ranges  0x00000798       0x28 ./src/stm32f4xx_hal_msp.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
 
-<<<<<<< HEAD
-.debug_macro    0x00000000    0x156e3
-=======
-.debug_macro    0x00000000    0x15725
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
+.debug_macro    0x00000000    0x1572e
  .debug_macro   0x00000000      0x532 ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_macro   0x00000532      0xa6c ./system/src/stm32f4-hal/stm32f4xx_hal.o
  .debug_macro   0x00000f9e      0x289 ./system/src/stm32f4-hal/stm32f4xx_hal.o
@@ -5630,35 +4990,6 @@ OUTPUT(FPG.elf elf32-littlearm)
  .debug_macro   0x00014508       0x1c ./src/MCAL/MUART/MUART_program.o
  .debug_macro   0x00014524       0x16 ./src/MCAL/MUART/MUART_program.o
  .debug_macro   0x0001453a       0x48 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
-<<<<<<< HEAD
- .debug_macro   0x00014582       0xf4 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_macro   0x00014676       0x3a ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_macro   0x000146b0       0x3a ./src/MCAL/MTIM2_5/MTIM2_5_program.o
- .debug_macro   0x000146ea       0x48 ./src/MCAL/MSTK/MSTK_program.o
- .debug_macro   0x00014732       0x2e ./src/MCAL/MSTK/MSTK_program.o
- .debug_macro   0x00014760       0x10 ./src/MCAL/MSTK/MSTK_program.o
- .debug_macro   0x00014770       0x16 ./src/MCAL/MSTK/MSTK_program.o
- .debug_macro   0x00014786       0x47 ./src/MCAL/MRCC/MRCC_program.o
- .debug_macro   0x000147cd       0x6a ./src/MCAL/MRCC/MRCC_program.o
- .debug_macro   0x00014837       0x64 ./src/MCAL/MRCC/MRCC_program.o
- .debug_macro   0x0001489b       0x1c ./src/MCAL/MRCC/MRCC_program.o
- .debug_macro   0x000148b7       0x8e ./src/MCAL/MRCC/MRCC_program.o
- .debug_macro   0x00014945       0x49 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_macro   0x0001498e       0xd6 ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_macro   0x00014a64       0x2e ./src/MCAL/MGPIO/MGPIO_program.o
- .debug_macro   0x00014a92       0x49 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_macro   0x00014adb       0x2e ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_macro   0x00014b09       0x34 ./src/MCAL/MEXTI/MEXTI_program.o
- .debug_macro   0x00014b3d       0x49 ./src/MCAL/MDMA/MDMA_program.o
- .debug_macro   0x00014b86       0x3a ./src/MCAL/MDMA/MDMA_program.o
- .debug_macro   0x00014bc0       0x22 ./src/MCAL/MDMA/MDMA_program.o
- .debug_macro   0x00014be2       0x51 ./src/HAL/DCMOTOR/DCMOTOR_program.o
- .debug_macro   0x00014c33       0x2e ./src/HAL/DCMOTOR/DCMOTOR_program.o
- .debug_macro   0x00014c61       0x5e ./src/HAL/DCMOTOR/DCMOTOR_program.o
- .debug_macro   0x00014cbf      0x4e4 ./src/_initialize_hardware.o
- .debug_macro   0x000151a3       0x5c ./src/main.o
- .debug_macro   0x000151ff      0x4e4 ./src/stm32f4xx_hal_msp.o
-=======
  .debug_macro   0x00014582      0x184 ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .debug_macro   0x00014706       0x3a ./src/MCAL/MTIM2_5/MTIM2_5_program.o
  .debug_macro   0x00014740       0x3a ./src/MCAL/MTIM2_5/MTIM2_5_program.o
@@ -5683,6 +5014,5 @@ OUTPUT(FPG.elf elf32-littlearm)
  .debug_macro   0x00014c82       0x3a ./src/MCAL/MDMA/MDMA_program.o
  .debug_macro   0x00014cbc       0x22 ./src/MCAL/MDMA/MDMA_program.o
  .debug_macro   0x00014cde      0x4e4 ./src/_initialize_hardware.o
- .debug_macro   0x000151c2       0x7f ./src/main.o
- .debug_macro   0x00015241      0x4e4 ./src/stm32f4xx_hal_msp.o
->>>>>>> branch 'musherif' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard/
+ .debug_macro   0x000151c2       0x88 ./src/main.o
+ .debug_macro   0x0001524a      0x4e4 ./src/stm32f4xx_hal_msp.o

@@ -6,12 +6,11 @@
 #include "MCAL/MSTK/MSTK_interface.h"
 #include "MCAL/MUART/MUART_interface.h"
 #include "HAL/LCD/LCD_interface.h"
+#include "MCAL/MNVIC/MNVIC_interface.h"
 
 #include "MCAL/MTIM2_5/MTIM2_5_interface.h"
 #include "HAL/DCMOTOR/DCMOTOR_interface.h"
 
-#include "MCAL/MNVIC/MNVIC_interface.h"
-#include "MCAL/MTIM2_5/MTIM2_5_interface.h"
 
 #define TRIG_PORT MGPIO_u8PORTB
 #define TRIG_PIN 6
@@ -102,17 +101,6 @@ int main()
 	}
 
 }
-
-
-//void delay (u16 time)
-//{
-//	//TIM2_5_voidSetBusyWait(MTIM_3,0);
-//
-//	//__HAL_TIM_SET_COUNTER(&htim1, 0);
-//	setCounter(0);
-//
-//	while (getCounter() < time);
-//}
 
 void CaptureCallBack(void)
 {
