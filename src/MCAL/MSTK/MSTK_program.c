@@ -76,6 +76,7 @@ void MSTK_voidStopTimer(void){
 void MSTK_voidSetBusyWait(u32 Copy_u32TicksNUM){
 	/*reset timer */
 	MSTK->VAL = 0;
+	CLR_BIT(MSTK->CTRL,1);
 	/*load value in load register*/
 	MSTK->LOAD = Copy_u32TicksNUM;
 	/*Start timer*/

@@ -24,12 +24,14 @@ void Ultrasonic_voidInit(void)
 {
 	/* Set Trigger pin mode */
 	MGPIO_voidSetPinMode(TRIG_PORT, TRIG_PIN,MGPIO_u8OUTPUT);
-	/* Timer3 Input Capture Init */
-	TIM2_5_voidICU_init(MTIM_3,MTIM2_5_ch1);
 
 	// Alternate Function for TIM3 CH1 -> PA6
 	MGPIO_voidSetPinMode(ECHO_PORT,ECHO_PIN,MGPIO_u8ALTFUNC);
 	MGPIO_voidSetAltFunc(ECHO_PORT,ECHO_PIN,GPIO_u8AF2);
+
+	/* Timer3 Input Capture Init */
+	TIM2_5_voidICU_init(MTIM_3,MTIM2_5_ch1);
+
 
 }
 
@@ -43,6 +45,7 @@ void Ultrasonic_voidInit(void)
 	MUSART_voidSendData(' ');
 		if (Is_First_Captured==0) // if the first value is not captured
 		{
+
 			L_u32FirstCapt = TIM2_5_u32ReturnICUvalue(MTIM_3,MTIM2_5_ch1); // read the first value
 			Is_First_Captured = 1;  // set the first captured as true
 			// Now change the polarity to falling edge
@@ -81,18 +84,23 @@ void Ultrasonic_voidRead(void)
 {
 	// pull the TRIG pin HIGH
 	MGPIO_voidSetPinValue(TRIG_PORT, TRIG_PIN, MGPIO_u8HIGH);
+	//MUSART_voidSendData('1');
 
 	// wait for 10 us
 	MSTK_voidSetBusyWait(160);
 
 	// pull the TRIG pin low
 	MGPIO_voidSetPinValue(TRIG_PORT, TRIG_PIN, MGPIO_u8LOW);
+	//MUSART_voidSendData('2');
+
+	TIM2_5_voidEnable_ICU_Interrupt(MTIM_3,MTIM2_5_ch1);
+	//MUSART_voidSendData('3');
 
 	// Channel 1 -> PA6
 	MTIM3_setCALLBACK(&Ultrasonic_voidSetCallBackICU);
+	//MUSART_voidSendData('4');
 
-	TIM2_5_voidEnable_ICU_Interrupt(MTIM_3,MTIM2_5_ch1);
+	MSTK_voidSetBusyWait(2000000);
+	//MUSART_voidSendData('5');
 
-
-	MSTK_voidSetBusyWait(32000000);
 }

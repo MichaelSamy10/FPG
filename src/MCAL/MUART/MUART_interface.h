@@ -21,6 +21,6 @@ void MUSART_voidDisable(void);
 
 void MUSART_voidSendString(u8 *Copy_pu8Data);
 
-void MUSART_voidSetCallBack(void(*vp_Fuc)(void));
+void MUSART_voidSetCallBack(void(*vp_Fumc)(void));
 
 #endif /* MUART_MUART_INTERFACE_H_ */

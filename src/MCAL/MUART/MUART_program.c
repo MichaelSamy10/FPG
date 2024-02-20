@@ -4,8 +4,6 @@
  *  Created on: Jan 24, 2024
  *      Author: BROTHERS
  */
-
-
 #include "../../LIB/STD_TYPES.h"
 #include "../../LIB/BIT_MATH.h"
 
@@ -17,8 +15,8 @@
 void (*Gpv_MUSART_CallBACK_Func)(void)= NULL;
 
 void MUSART_voidInit(void){
-	/*set bud rate to 115200 Bp/s*/
-		MUSART1->BRR =0x0000008B;
+	/*set bud rate to 115200 ->(0x0000008B) 9600->(0x00000683)*/
+		MUSART1->BRR =0x00000683;
 	/*set stop bit*/
 		CLR_BIT(MUSART1->CR2,12);
 		CLR_BIT(MUSART1->CR2,13);

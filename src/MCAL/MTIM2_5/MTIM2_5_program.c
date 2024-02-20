@@ -541,9 +541,8 @@ void TIM2_5_voidICU_init(MTIMx_NUMBER_t Copy_udtTimerNumber,MTIM2_5_PWM_channel_
 			MTIM3->ARR=65535;
 			//CLR_BIT(MTIM3->CR1,CR1_ARPE);
 
-			SET_BIT(MTIM3->CR1,1);
+			//SET_BIT(MTIM3->CR1,1);
 
-			//MTIM3->EGR |= 0x01; // Generate an update event
 			/*enable interrupt*/
 			SET_BIT(MTIM3->DIER,DIER_CC1IE);
 			/*enable timer to start ICU*/
