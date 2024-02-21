@@ -19,7 +19,7 @@ peri		: for the developer in MCAL only not for the user
  *
  */
 
-#define 	MSTK_CLOCK_SOURCE		MSTK_AHB
+#define 	MSTK_CLOCK_SOURCE		MSTK_AHB_DIV_8
 
 
 /*****************************************************/
