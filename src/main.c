@@ -8,7 +8,7 @@
 
 int main()
 {
- int reema;
+ int reemaa;
 	while(1)
 	{
 
