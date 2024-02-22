@@ -3,12 +3,12 @@
 #include"LIB/STD_TYPES.h"
 #include"MCAL/MRCC/MRCC_interface.h"
 #include"MCAL/MGPIO/MGPIO_interface.h"
-#include"I2C_interface.h"
-//#include"lcd_interface.h"
+#include"MCAL/I2C/I2C_interface.h"
+
 
 int main (void){
 
-	LCD_voidInit();
+	//LCD_voidInit();
 	unsigned char x;
 
 	I2C_Master_init(1600000);
@@ -28,8 +28,8 @@ int main (void){
 	I2C_write_address(0b10100001); // transmit device address and read
 	//x=I2C_read_with_NACK();
 	I2C_stop();
-	LCD_voidSendCharacter(x);
-	..
+	//LCD_voidSendCharacter(x);
+
 	while(1)
 	{
 
