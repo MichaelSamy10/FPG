@@ -15,8 +15,8 @@
 void (*Gpv_MUSART_CallBACK_Func)(void)= NULL;
 
 void MUSART_voidInit(void){
-	/*set bud rate to 115200 ->(0x0000008B) 9600->(0x00000683)*/
-		MUSART1->BRR =0x00000683;
+	/*set baud rate */
+		MUSART1->BRR = MUSART1_BAUD_RATE;
 	/*set stop bit*/
 		CLR_BIT(MUSART1->CR2,12);
 		CLR_BIT(MUSART1->CR2,13);
@@ -33,17 +33,16 @@ void MUSART_voidInit(void){
 }
 
 void MUSART_voidSendData(u8 Copy_u8Data){
-MUSART1->DR=Copy_u8Data;
-while(GET_BIT(MUSART1->SR,7)==0){
-		asm("NOP");
-	}
+	MUSART1->DR=Copy_u8Data;
+	while(GET_BIT(MUSART1->SR,7)==0){
+			asm("NOP");
+		}
 }
 u8 MUSART_voidReciveData(void){
-
 	while(!(GET_BIT(MUSART1->SR,5))){
 			asm("NOP");
 	}
-return (u8) MUSART1->DR;
+	return (u8) MUSART1->DR;
 }
 
 u8 MUSART_voidRecieveAsynchronous(void){
@@ -62,12 +61,12 @@ void MUSART_voidDisable(void){
 
 void MUSART_voidSendString(u8 *Copy_pu8Data){
 	u8 L_u8Iterator=0;
-		while ( Copy_pu8Data[L_u8Iterator] != '\0')
-			{
-				MUSART1->DR = Copy_pu8Data[L_u8Iterator];
-				while( GET_BIT(MUSART1->SR,7) == 0 );
-				L_u8Iterator++;
-			}
+	while ( Copy_pu8Data[L_u8Iterator] != '\0')
+		{
+			MUSART1->DR = Copy_pu8Data[L_u8Iterator];
+			while( GET_BIT(MUSART1->SR,7) == 0 );
+			L_u8Iterator++;
+		}
 }
 
 void MUSART_voidSetCallBack(void(*vp_Fumc)(void)){

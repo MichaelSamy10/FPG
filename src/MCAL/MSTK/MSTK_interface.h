@@ -34,12 +34,19 @@ void MSTK_voidStartTimer(u32 Copy_u32LoadValue);
 /********************************************************************************************/
 void MSTK_voidStopTimer(void);
 /********************************************************************************************/
-/* @Name  	  :->		@ MSTK_voidSetBusyWait											 	*/
+/* @Name  	  :->		@ MSTK_voidDelayMS											 	*/
 /* @Brief 	  :->		@ used to as a delay function (Pooling)					 		 	*/
-/* @parameters   :-> 	@ Copy_u32TicksNUM-> Number of ticks							    */
+/* @parameters   :-> 	@ Copy_u32DelayMS-> Delay in Milliseconds							    */
 /* @PreRequsteis :->	@ MSTK system Clock must be initialized								*/
 /********************************************************************************************/
-void MSTK_voidSetBusyWait(u32 Copy_u32TicksNUM);
+void MSTK_voidDelayMS(u32 Copy_u32DelayMS);
+/********************************************************************************************/
+/* @Name  	  :->		@ MSTK_voidDelayMS											 	*/
+/* @Brief 	  :->		@ used to as a delay function (Pooling)					 		 	*/
+/* @parameters   :-> 	@ Copy_u32DelayMS-> Delay in Micro Seconds							    */
+/* @PreRequsteis :->	@ MSTK system Clock must be initialized								*/
+/********************************************************************************************/
+void MSTK_voidDelayUS(u32 Copy_u32DelayUS);
 /********************************************************************************************/
 /* @Name  	  :->		@ MSTK_u32GetElapsedTime										 	*/
 /* @Brief 	  :->		@ used to return the passed time from the set time		 		 	*/

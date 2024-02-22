@@ -25,7 +25,7 @@ peri		: for the developer in MCAL only not for the user
 
 static void(*MSTK_Gpv_CallBackFunc)(void)= NULL;		/*pointer to the function of call back to the ISR*/
 
-static u8 Gu8_PeriodicFlag;			/*flag used to set periodic/single time timer interrupt*/
+static u8 Gu8_PeriodicFlag = 0;			/*flag used to set periodic/single time timer interrupt*/
 
 /*********************************************/
 /*********************************************/
@@ -68,17 +68,43 @@ void MSTK_voidStopTimer(void){
 	CLR_BIT(MSTK->CTRL,MSTK_CTRL_ENABLE);
 }
 /********************************************************************************************/
-/* @Name  	  :->		@ MSTK_voidSetBusyWait											 	*/
+/* @Name  	  :->		@ MSTK_voidDelayMS											 	*/
 /* @Brief 	  :->		@ used to as a delay function (Pooling)					 		 	*/
-/* @parameters   :-> 	@ Copy_u32TicksNUM-> Number of ticks							    */
+/* @parameters   :-> 	@ Copy_u32DelayMs-> Delay in Milliseconds						    */
 /* @PreRequsteis :->	@ MSTK system Clock must be initialized								*/
 /********************************************************************************************/
-void MSTK_voidSetBusyWait(u32 Copy_u32TicksNUM){
+void MSTK_voidDelayMS(u32 Copy_u32DelayMs){
+	/* Disable Interrupt*/
+	CLR_BIT(MSTK->CTRL,1);
+	u32 Copy_32TicksNumber = (Copy_u32DelayMs * 2000);
+	/*load value in load register*/
+	MSTK->LOAD = Copy_32TicksNumber;
 	/*reset timer */
 	MSTK->VAL = 0;
+	/*Start timer*/
+	SET_BIT(MSTK->CTRL,MSTK_CTRL_ENABLE);
+	/*wait for timer*/
+	while(GET_BIT(MSTK->CTRL,MSTK_CTRL_COUNTFLAG)!=1){
+		asm("NOP");
+	}
+	/*stop timer*/
+	CLR_BIT(MSTK->CTRL,MSTK_CTRL_ENABLE);
+}
+/********************************************************************************************/
+/* @Name  	  :->		@ MSTK_voidSetBusyWait											 	*/
+/* @Brief 	  :->		@ used to as a delay function (Pooling)					 		 	*/
+/* @parameters   :-> 	@ Copy_u32DelayUS-> Delay in Micro seconds							    */
+/* @PreRequsteis :->	@ MSTK system Clock must be initialized								*/
+/********************************************************************************************/
+void MSTK_voidDelayUS(u32 Copy_u32DelayUS){
+	/* Disable Interrupt*/
 	CLR_BIT(MSTK->CTRL,1);
+
+	u32 Copy_32TicksNumber = (Copy_u32DelayUS * 2);
 	/*load value in load register*/
-	MSTK->LOAD = Copy_u32TicksNUM;
+	MSTK->LOAD = Copy_32TicksNumber;
+	/*reset timer */
+	MSTK->VAL = 0;
 	/*Start timer*/
 	SET_BIT(MSTK->CTRL,MSTK_CTRL_ENABLE);
 	/*wait for timer*/
