@@ -5,12 +5,12 @@
  *      Author: Maghraby Store
  */
 
-#include "../../LIB/STD_TYPES.h"
-#include "../../LIB/BIT_MATH.h"
+#include"BIT_MATH.h"
+#include"STD_TYPES.h"
 #include"I2C_interface.h"
-#include"../MRCC/MRCC_interface.h"
+#include"MRCC_interface.h"
 #include"I2C_register.h"
-#include"../MGPIO/MGPIO_interface.h"
+#include"MGPIO_interface.h"
 
 
 
@@ -37,7 +37,11 @@ u8 value=0;
         while (!(I2C->SR1 & (1<<0)));  // Wait for SB bit to set to 1
      }
 
-
+	/*void I2C_repeated_start(void){
+		TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTA);
+				while(READ_BIT(TWCR,TWINT)==0); //wait to finish
+				while ((TWSR & 0XF8) != 0x10); // repeated start condition has been transmitted
+	}*/
 	void I2C_write_address(unsigned char address)
 
 	   {
@@ -61,6 +65,18 @@ u8 value=0;
 		           while (I2C->SR2 & (1<<0)); //Cleared by hardware after detecting a Stop condition on the bus
 		           // Clear the STOP bit
 		           I2C->CR1 &= ~(1<<9);
+	}
+
+unsigned char I2C_read_with_NACK(void){
+	   u8 receivedData = 0;
+	          I2C->CR1 &= ~(1<<10);  // clear the ACK bit
+	            temp = I2C->SR1 | I2C->SR2;  // read SR1 and SR2 to clear the ADDR bit.... EV6 condition
+	           I2C->CR1 |= (1<<9);  // Stop I2C
+	            while (!(I2C->SR1 & (1<<6)));  // wait for RxNE to set
+	           receivedData = I2C->DR; // Read the data from the DATA REGISTER
+	        return receivedData;
+
+
 	}
 
 

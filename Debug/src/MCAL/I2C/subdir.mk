@@ -4,16 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/MCAL/I2C/I2C_program.c \
-../src/MCAL/I2C/main.c 
+../src/MCAL/I2C/I2C_program.c 
 
 OBJS += \
-./src/MCAL/I2C/I2C_program.o \
-./src/MCAL/I2C/main.o 
+./src/MCAL/I2C/I2C_program.o 
 
 C_DEPS += \
-./src/MCAL/I2C/I2C_program.d \
-./src/MCAL/I2C/main.d 
+./src/MCAL/I2C/I2C_program.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
