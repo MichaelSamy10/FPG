@@ -1,6 +1,6 @@
 
-#include"BIT_MATH.h"
-#include"STD_TYPES.h"
+#include"LIB/BIT_MATH.h"
+#include"LIB/STD_TYPES.h"
 #include"MCAL/MRCC/MRCC_interface.h"
 #include"MCAL/MGPIO/MGPIO_interface.h"
 #include"I2C_interface.h"

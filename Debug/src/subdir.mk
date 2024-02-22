@@ -10,13 +10,10 @@ C_SRCS += \
 ../src/stm32f4xx_hal_msp.c 
 
 CPP_SRCS += \
-../src/BlinkLed.cpp \
-../src/Timer.cpp \
-../src/main.cpp 
+../src/BlinkLed.cpp 
 
 OBJS += \
 ./src/BlinkLed.o \
-./src/Timer.o \
 ./src/_initialize_hardware.o \
 ./src/_write.o \
 ./src/main.o \
@@ -29,9 +26,7 @@ C_DEPS += \
 ./src/stm32f4xx_hal_msp.d 
 
 CPP_DEPS += \
-./src/BlinkLed.d \
-./src/Timer.d \
-./src/main.d 
+./src/BlinkLed.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
