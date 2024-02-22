@@ -29,6 +29,7 @@ int main (void){
 	//x=I2C_read_with_NACK();
 	I2C_stop();
 	LCD_voidSendCharacter(x);
+	..
 	while(1)
 	{
 
