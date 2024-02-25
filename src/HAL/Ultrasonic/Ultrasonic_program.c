@@ -33,7 +33,7 @@ void Ultrasonic_voidInit(void)
 	/* Timer3 Input Capture Init */
 	TIM2_5_voidICU_init(MTIM_3,MTIM2_5_ch1);
 	/* Enable Timer3 Interrupt */
-	MNVIC_voidEnableInterrupt(29);
+	MNVIC_voidEnableInterrupt(TIMER3_POS);
 
 
 }

@@ -15,6 +15,12 @@ u8 MUSART_voidReciveData(void);
 
 u8 MUSART_voidRecieveAsynchronous(void);
 
+void MUSART_voidEnableInterrupt(void);
+
+void MUSART_voidDisbleInterrupt(void);
+
+void MUSART_voidEnableInterrupt(void);
+
 void MUSART_voidEnable(void);
 
 void MUSART_voidDisable(void);

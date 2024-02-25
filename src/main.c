@@ -13,6 +13,7 @@
 #define TX	9
 #define RX	10
 
+void Car_Control();
 
 int main()
 {
@@ -25,6 +26,7 @@ int main()
 
 	MSTK_voidIntialize();
 
+	MNVIC_voidEnableInterrupt(USART1_POS);
 
 	/**********SERVO******************/
 	//SERVO_voidInit();
@@ -42,6 +44,7 @@ int main()
 
 	//MUSART_voidSendString("Hi");
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
 
 	/*********BLUETOOTH********************/
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
@@ -53,26 +56,29 @@ int main()
 	MUSART_voidInit();
 	MUSART_voidEnable();
 
-	MUSART_voidSendString("HELLO WORLD\r\n");
-	u8 data;
+	MUSART_voidEnableInterrupt();
+
+	MUSART_voidSetCallBack(&Car_Control);
 
 	while(1)
 	{
+		MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8HIGH);
+		MSTK_voidDelayMS(3000);
+		MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8LOW);
+		MSTK_voidDelayMS(3000);
+
 		/**********BLUETOOTH ****************/
-		 data = MUSART_voidReciveData();
-		if(data == '1')
-		{
-			//MUSART_voidSendString("ON");
-			MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8HIGH);
-		}
-		else
-		{
-			//MUSART_voidSendString("OFF");
-			MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8LOW);
-		}
 
-
-
+//		if(data == '1')
+//		{
+//			//MUSART_voidSendString("ON");
+//			MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8HIGH);
+//		}
+//		else
+//		{
+//			//MUSART_voidSendString("OFF");
+//			MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8LOW);
+//		}
 
 
 //		SERVO_voidSetAngle(0);
@@ -101,10 +107,28 @@ int main()
 //				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,0);
 //		  }
 
-
-
-
 	}
 
 }
 
+void Car_Control(void)
+{
+	u8 data;
+	data = MUSART_voidRecieveAsynchronous();
+			if(data == 'F')
+			{
+				//MUSART_voidSendString("ON");
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8HIGH);
+			}
+			else if(data == 'B')
+			{
+				//MUSART_voidSendString("OFF");
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8LOW);
+			}
+			else
+			{
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8LOW);
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8LOW);
+				MUSART_voidSendString("Hi");
+			}
+}

@@ -46,8 +46,17 @@ u8 MUSART_voidReciveData(void){
 }
 
 u8 MUSART_voidRecieveAsynchronous(void){
-	SET_BIT(MUSART1->CR1,5);
 	return (u8) MUSART1->DR;
+}
+
+void MUSART_voidEnableInterrupt(void)
+{
+	SET_BIT(MUSART1->CR1,5);
+}
+
+void MUSART_voidDisbleInterrupt(void)
+{
+	SET_BIT(MUSART1->CR1,5);
 }
 
 void MUSART_voidEnable(void){
@@ -75,6 +84,7 @@ void MUSART_voidSetCallBack(void(*vp_Fumc)(void)){
 
 
 void USART1_IRQHandler(void){
+	MUSART1 -> SR = 0;
 	if(Gpv_MUSART_CallBACK_Func!=NULL){
 		Gpv_MUSART_CallBACK_Func();
 	}
