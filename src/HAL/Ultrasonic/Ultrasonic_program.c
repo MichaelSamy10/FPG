@@ -10,6 +10,7 @@
 #include "../../MCAL/MGPIO/MGPIO_interface.h"
 #include "../../MCAL/MSTK/MSTK_interface.h"
 #include "../../MCAL/MUART/MUART_interface.h"
+#include "../../MCAL/MNVIC/MNVIC_interface.h"
 #include "../../MCAL/MTIM2_5/MTIM2_5_interface.h"
 
 #include "Ultrasonic_private.h"
@@ -31,6 +32,8 @@ void Ultrasonic_voidInit(void)
 
 	/* Timer3 Input Capture Init */
 	TIM2_5_voidICU_init(MTIM_3,MTIM2_5_ch1);
+	/* Enable Timer3 Interrupt */
+	MNVIC_voidEnableInterrupt(29);
 
 
 }

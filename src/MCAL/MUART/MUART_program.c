@@ -15,7 +15,7 @@
 void (*Gpv_MUSART_CallBACK_Func)(void)= NULL;
 
 void MUSART_voidInit(void){
-	/*set baud rate */
+	/*set baud rate 38400*/
 		MUSART1->BRR = MUSART1_BAUD_RATE;
 	/*set stop bit*/
 		CLR_BIT(MUSART1->CR2,12);

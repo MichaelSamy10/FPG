@@ -31,6 +31,7 @@ src/HAL/DCMOTOR \
 src/HAL/LCD \
 src/HAL/SERVO \
 src/HAL/Ultrasonic \
+src/MCAL/I2C \
 src/MCAL/MADC \
 src/MCAL/MDMA \
 src/MCAL/MEXTI \

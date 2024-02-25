@@ -23,61 +23,63 @@ int main()
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOB_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART1_EN);
 
-
 	MSTK_voidIntialize();
-	//MGPIO_voidSetPinMode(MGPIO_u8PORTB,6,MGPIO_u8ALTFUNC);
-	//MGPIO_voidSetAltFunc(MGPIO_u8PORTB,6,GPIO_u8AF2);
 
 
-
-	SERVO_voidInit();
+	/**********SERVO******************/
+	//SERVO_voidInit();
 	//TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,500);
 	//SERVO_voidSetAngle(0);
+	/*********************************/
 
-	//	/* Enable Timer3 Interrupt */
-//	MNVIC_voidEnableInterrupt(29);
-//
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
-//
-//	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
-//	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
-//
-//	MUSART_voidInit();
-//	MUSART_voidEnable();
-
-
+	/**********ULTRASONIC************/
 	/* Ultrasonic Init */
 	//Ultrasonic_voidInit();
 
 
 	u8 var1=0,var2=0;
 	u8 distance;
+
 	//MUSART_voidSendString("Hi");
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
 
+	/*********BLUETOOTH********************/
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
+
+	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
+	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
+
+	MUSART_voidInit();
+	MUSART_voidEnable();
+
+	MUSART_voidSendString("HELLO WORLD\r\n");
+	u8 data;
+
 	while(1)
 	{
-		SERVO_voidSetAngle(0);
-		MSTK_voidDelayMS(2000);
-		SERVO_voidSetAngle(180);
-		MSTK_voidDelayMS(2000);
+		/**********BLUETOOTH ****************/
+		 data = MUSART_voidReciveData();
+		if(data == '1')
+		{
+			//MUSART_voidSendString("ON");
+			MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8HIGH);
+		}
+		else
+		{
+			//MUSART_voidSendString("OFF");
+			MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8LOW);
+		}
 
-//		for(u16 i=500;i<=2700;i++){
-//			SERVO_voidSetAngle(i);
-//			MSTK_voidSetBusyWait(32000);
-//		}
-//
-//		for(u16 i=2700;i>=500;i--)
-//		{
-//					SERVO_voidSetAngle(i);
-//					MSTK_voidSetBusyWait(32000);
-//		}
 
-//		SERVO_voidSetAngle(2700);
-//		MSTK_voidSetBusyWait(320000);
-//		SERVO_voidSetAngle(500);
-//		MSTK_voidSetBusyWait(320000);
+
+
+
+//		SERVO_voidSetAngle(0);
+//		MSTK_voidDelayMS(2000);
+//		SERVO_voidSetAngle(180);
+//		MSTK_voidDelayMS(2000);
+
 
 
 		// ULTRASONIC
@@ -98,6 +100,7 @@ int main()
 //		  {
 //				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,0);
 //		  }
+
 
 
 
