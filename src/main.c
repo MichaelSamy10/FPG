@@ -38,15 +38,16 @@ int main()
 	/* Ultrasonic Init */
 	//Ultrasonic_voidInit();
 
-
 	u8 var1=0,var2=0;
 	u8 distance;
 
-	//MUSART_voidSendString("Hi");
+
+
+	/*********BLUETOOTH********************/
+
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
 
-	/*********BLUETOOTH********************/
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
 
@@ -81,6 +82,8 @@ int main()
 //		}
 
 
+		/********** SERVO *****************/
+
 //		SERVO_voidSetAngle(0);
 //		MSTK_voidDelayMS(2000);
 //		SERVO_voidSetAngle(180);
@@ -88,7 +91,7 @@ int main()
 
 
 
-		// ULTRASONIC
+		/**************** ULTRASONIC **********/
 
 //		Ultrasonic_voidRead();
 //
