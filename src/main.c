@@ -45,9 +45,13 @@ int main()
 
 	/*********BLUETOOTH********************/
 
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8OUTPUT);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
 
+	/* UART */
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
 	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
 
@@ -63,9 +67,9 @@ int main()
 
 	while(1)
 	{
-		MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8HIGH);
+		MGPIO_voidSetPinValue(MGPIO_u8PORTA,4,MGPIO_u8HIGH);
 		MSTK_voidDelayMS(3000);
-		MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8LOW);
+		MGPIO_voidSetPinValue(MGPIO_u8PORTA,4,MGPIO_u8LOW);
 		MSTK_voidDelayMS(3000);
 
 		/**********BLUETOOTH ****************/
@@ -121,17 +125,30 @@ void Car_Control(void)
 			if(data == 'F')
 			{
 				//MUSART_voidSendString("ON");
-				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8HIGH);
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,MGPIO_u8HIGH);
 			}
 			else if(data == 'B')
 			{
 				//MUSART_voidSendString("OFF");
-				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8LOW);
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8HIGH);
 			}
+			else if(data == 'L')
+			{
+				//MUSART_voidSendString("OFF");
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8HIGH);
+			}
+			else if(data == 'R')
+			{
+				//MUSART_voidSendString("OFF");
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,3,MGPIO_u8LOW);
+			}
+
 			else
 			{
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,MGPIO_u8LOW);
 				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8LOW);
 				MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8LOW);
-				MUSART_voidSendString("Hi");
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,3,MGPIO_u8LOW);
+				//MUSART_voidSendString("Hi");
 			}
 }
