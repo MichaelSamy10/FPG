@@ -1,4 +1,3 @@
-
 #ifndef WWDG_PRIVATE_H_
 #define WWDG_PRIVATE_H_
 

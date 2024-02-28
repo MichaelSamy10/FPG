@@ -1,4 +1,3 @@
-
 #ifndef WWDG_CONFIG_H_
 #define WWDG_CONFIG_H_
 

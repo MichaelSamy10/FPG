@@ -1,4 +1,3 @@
-
 #ifndef WWDG_INTERFACE_H_
 #define WWDG_INTERFACE_H_
 
