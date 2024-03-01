@@ -19,8 +19,8 @@
 
 void SERVO_voidInit()
 {
-	/* Enable Timer 4 Clock for PWM generation */
-	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM4_EN);
+//	/* Enable Timer 4 Clock for PWM generation */
+//	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM4_EN);
 	/* Timer 4 PWM Channel 1-> PORTB 6 */
 	MGPIO_voidSetPinMode(MGPIO_u8PORTB,6,MGPIO_u8ALTFUNC);
 	/* Timer 4 Alternate Function */
@@ -32,7 +32,7 @@ void SERVO_voidInit()
 
 void SERVO_voidSetAngle(u16 Copy_u16Angle)
 {
-	u16 L_u16Angle = 1000 + (((u32)1700*Copy_u16Angle)/180);
+	u16 L_u16Angle = 1000 + (((u32)999*Copy_u16Angle)/180);
 	/* set Angle of Servo */
 	TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,L_u16Angle);
 }

@@ -9,6 +9,7 @@
 #include "MCAL/MTIM2_5/MTIM2_5_interface.h"
 #include "HAL/Ultrasonic/Ultrasonic_interface.h"
 #include "HAL/SERVO/SERVO_interface.h"
+#include "HAL/DCMOTOR/DCMOTOR_interface.h"
 
 #define TX	9
 #define RX	10
@@ -25,8 +26,9 @@ int main()
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART1_EN);
 
 	MSTK_voidIntialize();
+//	MNVIC_voidEnableInterrupt(USART1_POS);
 
-	MNVIC_voidEnableInterrupt(USART1_POS);
+	DCMOTOR_voidInit();
 
 	/**********SERVO******************/
 	//SERVO_voidInit();
@@ -45,32 +47,51 @@ int main()
 
 	/*********BLUETOOTH********************/
 
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8OUTPUT);
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
-
-	/* UART */
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
-
-	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
-	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
-
-	MUSART_voidInit();
-	MUSART_voidEnable();
-
-	MUSART_voidEnableInterrupt();
-
-	MUSART_voidSetCallBack(&Car_Control);
+//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
+//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
+//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
+//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8OUTPUT);
+//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
+//
+//	/* UART */
+//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
+//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
+//
+//	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
+//	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
+//
+//	MUSART_voidInit();
+//	MUSART_voidEnable();
+//
+//	MUSART_voidEnableInterrupt();
+//
+//	MUSART_voidSetCallBack(&Car_Control);
 
 	while(1)
 	{
-		MGPIO_voidSetPinValue(MGPIO_u8PORTA,4,MGPIO_u8HIGH);
-		MSTK_voidDelayMS(3000);
-		MGPIO_voidSetPinValue(MGPIO_u8PORTA,4,MGPIO_u8LOW);
-		MSTK_voidDelayMS(3000);
+
+//		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,1000);
+//		DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,1000);
+//		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_BACKWARD_DIRECTION);
+//		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
+
+//		MSTK_voidDelayMS(5000);
+//		DCMOTOR_voidStop(DCMOTOR_1);
+//		DCMOTOR_voidStop(DCMOTOR_2);
+//		MSTK_voidDelayMS(5000);
+
+		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,4000);
+		//DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,1000);
+		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
+		//DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
+		MSTK_voidDelayMS(5000);
+
+
+
+//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,4,MGPIO_u8HIGH);
+//		MSTK_voidDelayMS(3000);
+//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,4,MGPIO_u8LOW);
+//		MSTK_voidDelayMS(3000);
 
 		/**********BLUETOOTH ****************/
 
@@ -88,10 +109,13 @@ int main()
 
 		/********** SERVO *****************/
 
-//		SERVO_voidSetAngle(0);
+//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,500); //0
 //		MSTK_voidDelayMS(2000);
-//		SERVO_voidSetAngle(180);
+//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,1800); // 90
 //		MSTK_voidDelayMS(2000);
+//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,2000);
+//		MSTK_voidDelayMS(2000);
+
 
 
 

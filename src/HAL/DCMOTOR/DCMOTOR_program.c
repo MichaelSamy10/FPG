@@ -19,9 +19,9 @@
 void DCMOTOR_voidInit()
 {
 	/* Set Timer 3,4,5 Clock for PWM signal generation*/
-	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM3_EN);
-	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM4_EN);
-	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM5_EN);
+//	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM3_EN);
+//	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM4_EN);
+//	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM5_EN);
 	/* Timer3 PWM Channel 1-> PORTA 6 */
 	MGPIO_voidSetPinMode(TIMER3_CH1_PORT,TIMER3_CH1_PIN,MGPIO_u8ALTFUNC);
 	/* Timer3 Alternate Function */
@@ -77,44 +77,6 @@ void DCMOTOR_voidSetDirection(u8 Copy_u8MotorNum,u8 Copy_u8Direction)
 	}
 
 
-
-	/* Direction of MOTOR 1 */
-	/*
-	switch(Copy_u8MotorNum)
-	{
-	case DCMOTOR_1:
-		switch(Copy_u8Direction)
-		{
-		case DCMOTOR_FORWARD_DIRECTION:
-			MGPIO_voidSetPinValue(DCMOTOR1_CONTROL_PORT,DCMOTOR1_CONTROL_PIN0,MGPIO_u8HIGH);
-			MGPIO_voidSetPinValue(DCMOTOR1_CONTROL_PORT,DCMOTOR1_CONTROL_PIN1,MGPIO_u8LOW);
-			break;
-		case DCMOTOR_BACKWARD_DIRECTION:
-			MGPIO_voidSetPinValue(DCMOTOR1_CONTROL_PORT,DCMOTOR1_CONTROL_PIN0,MGPIO_u8LOW);
-			MGPIO_voidSetPinValue(DCMOTOR1_CONTROL_PORT,DCMOTOR1_CONTROL_PIN1,MGPIO_u8HIGH);
-			break;
-		}
-	break;
-
-	/* Direction of MOTOR 2 */
-	/*
-		case DCMOTOR_2:
-			switch(Copy_u8Direction)
-			{
-			case DCMOTOR_FORWARD_DIRECTION:
-				MGPIO_voidSetPinValue(DCMOTOR2_CONTROL_PORT,DCMOTOR2_CONTROL_PIN0,MGPIO_u8HIGH);
-				MGPIO_voidSetPinValue(DCMOTOR2_CONTROL_PORT,DCMOTOR2_CONTROL_PIN1,MGPIO_u8LOW);
-				break;
-			case DCMOTOR_BACKWARD_DIRECTION:
-				MGPIO_voidSetPinValue(DCMOTOR2_CONTROL_PORT,DCMOTOR2_CONTROL_PIN0,MGPIO_u8LOW);
-				MGPIO_voidSetPinValue(DCMOTOR2_CONTROL_PORT,DCMOTOR2_CONTROL_PIN1,MGPIO_u8HIGH);
-				break;
-			}
-		break;
-	}
-	*/
-
-
 }
 
 void DCMOTOR_voidSetSpeed(u8 Copy_u8MotorNum,u16 Copy_u16Frequency,u16 Copy_u16DutyCycle)
@@ -123,10 +85,10 @@ void DCMOTOR_voidSetSpeed(u8 Copy_u8MotorNum,u16 Copy_u16Frequency,u16 Copy_u16D
 	{
 		case DCMOTOR_1:
 			/* PWM init for Timer3 Channel 1*/
-			TIM2_5_voidSetPWM(MOTOR1_PWM_TIMER,MOTOR2_PWM_CHANNEL,5000,2000);
+			TIM2_5_voidSetPWM(MOTOR1_PWM_TIMER,MOTOR1_PWM_CHANNEL,Copy_u16Frequency,Copy_u16DutyCycle);
 			break;
 		case DCMOTOR_2:
-			TIM2_5_voidSetPWM(MOTOR2_PWM_TIMER,MOTOR2_PWM_CHANNEL,5000,2000);
+			TIM2_5_voidSetPWM(MOTOR2_PWM_TIMER,MOTOR2_PWM_CHANNEL,Copy_u16Frequency,Copy_u16DutyCycle);
 			break;
 
 	}
@@ -138,7 +100,8 @@ void DCMOTOR_voidStop(u8 Copy_u8MotorNum)
 
 	switch(Copy_u8MotorNum)
 	{
-		case DCMOTOR_1:TIM2_5_voidTimerStop(MOTOR1_PWM_TIMER); break;
+	case DCMOTOR_1:TIM2_5_voidTimerStop(MOTOR1_PWM_TIMER); break;
+	case DCMOTOR_2:TIM2_5_voidTimerStop(MOTOR2_PWM_TIMER); break;
 
 	}
 
