@@ -35,7 +35,6 @@ void Ultrasonic_voidInit(void)
 	/* Enable Timer3 Interrupt */
 	MNVIC_voidEnableInterrupt(TIMER3_POS);
 
-
 }
 
  void Ultrasonic_voidSetCallBackICU(void)
@@ -45,7 +44,7 @@ void Ultrasonic_voidInit(void)
 	static u32 L_u32Difference = 0;
 	static u8 Is_First_Captured = 0;  // is the first value captured ?
 
-	MUSART_voidSendData(' ');
+	//MUSART_voidSendData(' ');
 		if (Is_First_Captured==0) // if the first value is not captured
 		{
 			L_u32FirstCapt = TIM2_5_u32ReturnICUvalue(MTIM_3,MTIM2_5_ch1); // read the first value
@@ -86,11 +85,9 @@ void Ultrasonic_voidRead(void)
 {
 	// pull the TRIG pin HIGH
 	MGPIO_voidSetPinValue(TRIG_PORT, TRIG_PIN, MGPIO_u8HIGH);
-	//MUSART_voidSendData('1');
 
 	// wait for 10 us
 	MSTK_voidDelayUS(10);
-	//MSTK_voidSetBusyWait(160);
 
 	// pull the TRIG pin low
 	MGPIO_voidSetPinValue(TRIG_PORT, TRIG_PIN, MGPIO_u8LOW);
@@ -100,6 +97,14 @@ void Ultrasonic_voidRead(void)
 	// Channel 1 -> PA6
 	MTIM3_setCALLBACK(&Ultrasonic_voidSetCallBackICU);
 
-	MSTK_voidDelayMS(200);
+	MSTK_voidDelayMS(50);
 
+
+	if(G_u8Distance > 20){
+		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,1);
+	  }
+	  else
+	  {
+			MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,0);
+	  }
 }

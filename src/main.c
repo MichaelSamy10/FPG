@@ -26,49 +26,56 @@ int main()
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART1_EN);
 
 	MSTK_voidIntialize();
-//	MNVIC_voidEnableInterrupt(USART1_POS);
+	MNVIC_voidEnableInterrupt(USART1_POS);
 
-	DCMOTOR_voidInit();
+//	DCMOTOR_voidInit();
 
 	/**********SERVO******************/
-	//SERVO_voidInit();
-	//TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,500);
-	//SERVO_voidSetAngle(0);
-	/*********************************/
+	// TIMER 4 for SERVO
+	SERVO_voidInit();
+	//SERVO_voidSetAngle(120);
+
+
+
 
 	/**********ULTRASONIC************/
-	/* Ultrasonic Init */
-	//Ultrasonic_voidInit();
+	// TIMER 3 for ULTRASONIC
 
-	u8 var1=0,var2=0;
+	Ultrasonic_voidInit();
+	//	u8 var1=0,var2=0;
 	u8 distance;
-
 
 
 	/*********BLUETOOTH********************/
 
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8OUTPUT);
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
+	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
+	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8OUTPUT);
+	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
+	//	/* UART */
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
+//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
+//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
 //
-//	/* UART */
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
+//		MUSART_voidInit();
+//		MUSART_voidEnable();
 //
-//	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
-//	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
-//
-//	MUSART_voidInit();
-//	MUSART_voidEnable();
-//
-//	MUSART_voidEnableInterrupt();
-//
-//	MUSART_voidSetCallBack(&Car_Control);
+//		MUSART_voidEnableInterrupt();
+
+//		MUSART_voidSetCallBack(&Car_Control);
 
 	while(1)
 	{
+
+//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,1);
+//		MSTK_voidDelayMS(3000);
+//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,0);
+//		MSTK_voidDelayMS(3000);
+
+
+		/******************* DC Motor ***************************/
 
 //		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,1000);
 //		DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,1000);
@@ -80,21 +87,19 @@ int main()
 //		DCMOTOR_voidStop(DCMOTOR_2);
 //		MSTK_voidDelayMS(5000);
 
-		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,4000);
-		//DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,1000);
-		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
+	//	DCMOTOR_voidSetSpeed(DCMOTOR_1,10000,4000);
+		//DCMOTOR_voidSetSpeed(DCMOTOR_2,10000,1000);
+	//	DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 		//DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
-		MSTK_voidDelayMS(5000);
+	//	MSTK_voidDelayMS(5000);
 
 
+		/*******************BLUETOOTH ***************************/
 
 //		MGPIO_voidSetPinValue(MGPIO_u8PORTA,4,MGPIO_u8HIGH);
 //		MSTK_voidDelayMS(3000);
 //		MGPIO_voidSetPinValue(MGPIO_u8PORTA,4,MGPIO_u8LOW);
 //		MSTK_voidDelayMS(3000);
-
-		/**********BLUETOOTH ****************/
-
 //		if(data == '1')
 //		{
 //			//MUSART_voidSendString("ON");
@@ -107,24 +112,41 @@ int main()
 //		}
 
 
-		/********** SERVO *****************/
+		/*********************** SERVO *************************/
 
-//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,500); //0
-//		MSTK_voidDelayMS(2000);
-//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,1800); // 90
-//		MSTK_voidDelayMS(2000);
+//		for(u16 i=0;i<=180;i=i+20)
+//		{
+//			SERVO_voidSetAngle(i);
+//			MSTK_voidDelayMS(2000);
+//		}
+
+
+
+		/******************** ULTRASONIC **********************/
+
+		//distance = Ultrasonic_u8GetDistance();
+		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,250);
+		Ultrasonic_voidRead();
+		MSTK_voidDelayMS(2000);
+
+		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,1000);
+		Ultrasonic_voidRead();
+		MSTK_voidDelayMS(2000);
+
 //		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,2000);
+//		Ultrasonic_voidRead();
+//		MSTK_voidDelayMS(2000);
+//
+//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,1000);
+//		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
 
 
+//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,1);
+//		MSTK_voidDelayMS(3000);
+//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,0);
+//		MSTK_voidDelayMS(3000);
 
-
-		/**************** ULTRASONIC **********/
-
-//		Ultrasonic_voidRead();
-//
-//		distance = Ultrasonic_u8GetDistance();
-//
 //		var1 = (distance / 10) + '0';
 //		var2 = (distance % 10) + '0';
 //
@@ -142,37 +164,32 @@ int main()
 
 }
 
+
 void Car_Control(void)
 {
 	u8 data;
 	data = MUSART_voidRecieveAsynchronous();
-			if(data == 'F')
+			if(data == '1')//Forward
 			{
-				//MUSART_voidSendString("ON");
-				MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,MGPIO_u8HIGH);
-			}
-			else if(data == 'B')
-			{
-				//MUSART_voidSendString("OFF");
 				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8HIGH);
 			}
-			else if(data == 'L')
+			else if(data == '2')//Backward
 			{
-				//MUSART_voidSendString("OFF");
+				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8LOW);
+			}
+			else if(data == 'L')//Left
+			{
 				MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8HIGH);
 			}
-			else if(data == 'R')
+			else if(data == 'R')//Right
 			{
-				//MUSART_voidSendString("OFF");
 				MGPIO_voidSetPinValue(MGPIO_u8PORTA,3,MGPIO_u8LOW);
 			}
-
 			else
 			{
 				MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,MGPIO_u8LOW);
 				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8LOW);
 				MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8LOW);
 				MGPIO_voidSetPinValue(MGPIO_u8PORTA,3,MGPIO_u8LOW);
-				//MUSART_voidSendString("Hi");
 			}
 }

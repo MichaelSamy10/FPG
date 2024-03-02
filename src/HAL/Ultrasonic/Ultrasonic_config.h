@@ -10,7 +10,7 @@
 
 
 #define TRIG_PORT 	MGPIO_u8PORTB
-#define TRIG_PIN  	6
+#define TRIG_PIN  	7
 
 #define ECHO_PORT 	MGPIO_u8PORTA
 #define ECHO_PIN  	6

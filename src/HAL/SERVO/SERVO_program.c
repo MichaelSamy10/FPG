@@ -32,6 +32,7 @@ void SERVO_voidInit()
 
 void SERVO_voidSetAngle(u16 Copy_u16Angle)
 {
+	// 0->1000  90->1500  180->2000
 	u16 L_u16Angle = 1000 + (((u32)999*Copy_u16Angle)/180);
 	/* set Angle of Servo */
 	TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,L_u16Angle);
