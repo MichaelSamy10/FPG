@@ -5,12 +5,12 @@
  *      Author: MICHAEL
  */
 
-#include "../STD_TYPES.h"
-#include "../BIT_MATH.h"
+#include "../../LIB/STD_TYPES.h"
+#include "../../LIB/BIT_MATH.h"
 
-#include "../MGPIO/MGPIO_interface.h"
-#include "../MRCC/MRCC_interface.h"
-#include "../MTIM2_5/MTIM2_5_interface.h"
+#include "../../MCAL/MGPIO/MGPIO_interface.h"
+#include "../../MCAL/MRCC/MRCC_interface.h"
+#include "../../MCAL/MTIM2_5/MTIM2_5_interface.h"
 
 #include "DCMOTOR_interface.h"
 #include "DCMOTOR_config.h"

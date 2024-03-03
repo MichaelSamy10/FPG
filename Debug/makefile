@@ -25,6 +25,7 @@ RM := rm -rf
 -include src/MCAL/MEXTI/subdir.mk
 -include src/MCAL/MDMA/subdir.mk
 -include src/HAL/LCD/subdir.mk
+-include src/HAL/DC_motor/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk

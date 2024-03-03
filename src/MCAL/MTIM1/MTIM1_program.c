@@ -190,7 +190,7 @@ void MTIM1_voidDisableICU_interrupt(MTIM1_channel_t Copy_udtChaNum){
 /********************************************************************************************/
 void MTIM1_voidChangeICU_polarity(MTIM1_channel_t Copy_udtChaNum,MTIM1_ICU_Polarity_t Copy_udtSenseEDGE){
 	switch (Copy_udtSenseEDGE){
-	case MTIM_RisingEdge:
+	case MTIM1_RisingEdge:
 					switch (Copy_udtChaNum){
 								case MTIM1_CH1:	CLR_BIT(MTIM1->CCER,CCER_CC1P); CLR_BIT(MTIM1->CCER,CCER_CC1NP); break;  /*Set timer1 ICU  sense mode as rising edge */
 								case MTIM1_CH2:	CLR_BIT(MTIM1->CCER,CCER_CC2P); CLR_BIT(MTIM1->CCER,CCER_CC2NP); break;  /*Set timer1 ICU  sense mode as rising edge */
@@ -198,7 +198,7 @@ void MTIM1_voidChangeICU_polarity(MTIM1_channel_t Copy_udtChaNum,MTIM1_ICU_Polar
 								case MTIM1_CH4:	CLR_BIT(MTIM1->CCER,CCER_CC4P); 	 break;								 /*Set timer1 ICU  sense mode as rising edge */
 					}
 					break;
-case MTIM_FallingEdge:
+case MTIM1_FallingEdge:
 				switch (Copy_udtChaNum){
 							case MTIM1_CH1:	SET_BIT(MTIM1->CCER,CCER_CC1P); CLR_BIT(MTIM1->CCER,CCER_CC1NP); break;  /*Set timer1 ICU  sense mode as rising edge */
 							case MTIM1_CH2:	SET_BIT(MTIM1->CCER,CCER_CC2P); CLR_BIT(MTIM1->CCER,CCER_CC2NP); break;  /*Set timer1 ICU  sense mode as rising edge */
@@ -220,10 +220,10 @@ case MTIM_FallingEdge:
 u32 MTIM1_u32ReturnICU_value(MTIM1_channel_t Copy_udtChaNum){
 	u32 Local_RetVALUE=0;
 	switch (Copy_udtChaNum){
-								case MTIM2_5_ch1:	Local_RetVALUE=MTIM1->CCR1	; break;     /*get the value from the CCRx register*/
-								case MTIM2_5_ch2:	Local_RetVALUE=MTIM1->CCR2	; break;     /*get the value from the CCRx register*/
-								case MTIM2_5_ch3:	Local_RetVALUE=MTIM1->CCR3	; break;     /*get the value from the CCRx register*/
-								case MTIM2_5_ch4:	Local_RetVALUE=MTIM1->CCR4	; break;     /*get the value from the CCRx register*/
+								case MTIM1_CH1:	Local_RetVALUE=MTIM1->CCR1	; break;     /*get the value from the CCRx register*/
+								case MTIM1_CH2:	Local_RetVALUE=MTIM1->CCR2	; break;     /*get the value from the CCRx register*/
+								case MTIM1_CH3:	Local_RetVALUE=MTIM1->CCR3	; break;     /*get the value from the CCRx register*/
+								case MTIM1_CH4:	Local_RetVALUE=MTIM1->CCR4	; break;     /*get the value from the CCRx register*/
 					}
 	return Local_RetVALUE;	/*return the captured value*/
 }
