@@ -44,7 +44,7 @@ void Ultrasonic_voidInit(void)
 	static u32 L_u32Difference = 0;
 	static u8 Is_First_Captured = 0;  // is the first value captured ?
 
-	//MUSART_voidSendData(' ');
+	MUSART_voidSendData(' ');
 		if (Is_First_Captured==0) // if the first value is not captured
 		{
 			L_u32FirstCapt = TIM2_5_u32ReturnICUvalue(MTIM_3,MTIM2_5_ch1); // read the first value
@@ -83,6 +83,7 @@ u8 Ultrasonic_u8GetDistance()
 
 void Ultrasonic_voidRead(void)
 {
+	u8 var1,var2;
 	// pull the TRIG pin HIGH
 	MGPIO_voidSetPinValue(TRIG_PORT, TRIG_PIN, MGPIO_u8HIGH);
 
@@ -97,14 +98,21 @@ void Ultrasonic_voidRead(void)
 	// Channel 1 -> PA6
 	MTIM3_setCALLBACK(&Ultrasonic_voidSetCallBackICU);
 
-	MSTK_voidDelayMS(50);
+	MSTK_voidDelayMS(10);
 
 
-	if(G_u8Distance > 20){
+	if(G_u8Distance > 20)
+	{
 		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,1);
-	  }
-	  else
-	  {
-			MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,0);
-	  }
+	}
+    else
+    {
+		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,0);
+    }
+
+	var1 = (G_u8Distance / 10) + '0';
+	var2 = (G_u8Distance % 10) + '0';
+
+	  MUSART_voidSendData(var1);
+	  MUSART_voidSendData(var2);
 }

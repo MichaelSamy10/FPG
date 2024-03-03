@@ -33,9 +33,6 @@ int main()
 	/**********SERVO******************/
 	// TIMER 4 for SERVO
 	SERVO_voidInit();
-	//SERVO_voidSetAngle(120);
-
-
 
 
 	/**********ULTRASONIC************/
@@ -43,7 +40,7 @@ int main()
 
 	Ultrasonic_voidInit();
 	//	u8 var1=0,var2=0;
-	u8 distance;
+	//	u8 distance;
 
 
 	/*********BLUETOOTH********************/
@@ -53,14 +50,15 @@ int main()
 	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
 	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8OUTPUT);
 	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
-	//	/* UART */
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
-//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
-//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
-//
-//		MUSART_voidInit();
-//		MUSART_voidEnable();
+
+	/***************UART********************/
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
+	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
+	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
+
+	MUSART_voidInit();
+	MUSART_voidEnable();
 //
 //		MUSART_voidEnableInterrupt();
 
@@ -75,7 +73,7 @@ int main()
 //		MSTK_voidDelayMS(3000);
 
 
-		/******************* DC Motor ***************************/
+		/******************* DC MOTOR ***************************/
 
 //		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,1000);
 //		DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,1000);
@@ -112,17 +110,7 @@ int main()
 //		}
 
 
-		/*********************** SERVO *************************/
-
-//		for(u16 i=0;i<=180;i=i+20)
-//		{
-//			SERVO_voidSetAngle(i);
-//			MSTK_voidDelayMS(2000);
-//		}
-
-
-
-		/******************** ULTRASONIC **********************/
+		/******************** ULTRASONIC & SERVO**********************/
 
 		//distance = Ultrasonic_u8GetDistance();
 		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,250);
@@ -133,13 +121,13 @@ int main()
 		Ultrasonic_voidRead();
 		MSTK_voidDelayMS(2000);
 
-//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,2000);
-//		Ultrasonic_voidRead();
-//		MSTK_voidDelayMS(2000);
-//
-//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,1000);
-//		Ultrasonic_voidRead();
-//		MSTK_voidDelayMS(2000);
+		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,2000);
+		Ultrasonic_voidRead();
+		MSTK_voidDelayMS(2000);
+
+		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,1000);
+		Ultrasonic_voidRead();
+		MSTK_voidDelayMS(2000);
 
 
 //		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,1);
