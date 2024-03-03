@@ -20,7 +20,7 @@ peri		: for the developer in MCAL only not for the user
 
 /**********************************************/
 #define TIM2_PRESCALER    0
-#define TIM3_PRESCALER    0
+#define TIM3_PRESCALER    16
 #define TIM4_PRESCALER    16
 #define TIM5_PRESCALER    0
 #endif /* MTIM2_5_MTIM2_5_CONFIG_H_ */

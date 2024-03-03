@@ -11,6 +11,7 @@
 #include "../../MCAL/MGPIO/MGPIO_interface.h"
 #include "../../MCAL/MRCC/MRCC_interface.h"
 #include "../../MCAL/MTIM2_5/MTIM2_5_interface.h"
+#include "../../MCAL/MSTK/MSTK_interface.h"
 
 #include "DCMOTOR_interface.h"
 #include "DCMOTOR_config.h"
@@ -97,12 +98,18 @@ void DCMOTOR_voidSetSpeed(u8 Copy_u8MotorNum,u16 Copy_u16Frequency,u16 Copy_u16D
 
 void DCMOTOR_voidStop(u8 Copy_u8MotorNum)
 {
-
 	switch(Copy_u8MotorNum)
 	{
-	case DCMOTOR_1:TIM2_5_voidTimerStop(MOTOR1_PWM_TIMER); break;
-	case DCMOTOR_2:TIM2_5_voidTimerStop(MOTOR2_PWM_TIMER); break;
+		case DCMOTOR_1:
+			MGPIO_voidSetPinValue(DCMOTOR1_CONTROL_PORT,DCMOTOR1_CONTROL_PIN0,MGPIO_u8LOW);
+			MGPIO_voidSetPinValue(DCMOTOR1_CONTROL_PORT,DCMOTOR1_CONTROL_PIN1,MGPIO_u8LOW);
 
+			break;
+		case DCMOTOR_2:
+			MGPIO_voidSetPinValue(DCMOTOR2_CONTROL_PORT,DCMOTOR2_CONTROL_PIN0,MGPIO_u8LOW);
+			MGPIO_voidSetPinValue(DCMOTOR2_CONTROL_PORT,DCMOTOR2_CONTROL_PIN1,MGPIO_u8LOW);
+
+			break;
 	}
 
 }
