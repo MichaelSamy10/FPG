@@ -133,7 +133,7 @@ void MUSART2_voidSendString(u8 *Copy_pu8Ddata){
 /*						@ USART2 must be initialized										*/
 /********************************************************************************************/
 void MUSART2_voidSetCallBack(void(*vp_Fumc)(void)){
-	Gpv_MUSART_CallBACK_Func=vp_Fumc;
+	Gpv_MUSART2_CallBACK_Func=vp_Fumc;
 }
 
 /********************************************************************************************/
