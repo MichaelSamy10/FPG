@@ -40,8 +40,10 @@ src/MCAL/MNVIC \
 src/MCAL/MRCC \
 src/MCAL/MSPI \
 src/MCAL/MSTK \
+src/MCAL/MTIM1 \
 src/MCAL/MTIM2_5 \
 src/MCAL/MUART \
+src/MCAL/MUART2 \
 src \
 system/src/cmsis \
 system/src/cortexm \

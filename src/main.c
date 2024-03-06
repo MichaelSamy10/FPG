@@ -33,7 +33,7 @@ int main()
 
 	/**********SERVO******************/
 	// TIMER 4 for SERVO
-	SERVO_voidInit();
+	//SERVO_voidInit();
 
 
 	/**********ULTRASONIC************/
@@ -46,8 +46,8 @@ int main()
 
 	/*********BLUETOOTH********************/
 
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
+	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
+	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
 	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
 	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8OUTPUT);
 	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
@@ -60,7 +60,7 @@ int main()
 
 	MUSART_voidInit();
 	MUSART_voidEnable();
-//
+
 		MUSART_voidEnableInterrupt();
 
 		MUSART_voidSetCallBack(&Car_Control);
@@ -72,25 +72,6 @@ int main()
 //		MSTK_voidDelayMS(3000);
 //		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,0);
 //		MSTK_voidDelayMS(3000);
-
-
-		/******************* DC MOTOR ***************************/
-
-//		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,1000);
-//		DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,1000);
-//		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_BACKWARD_DIRECTION);
-//		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
-
-//		MSTK_voidDelayMS(5000);
-//		DCMOTOR_voidStop(DCMOTOR_1);
-//		DCMOTOR_voidStop(DCMOTOR_2);
-//		MSTK_voidDelayMS(5000);
-
-	//	DCMOTOR_voidSetSpeed(DCMOTOR_1,10000,4000);
-		//DCMOTOR_voidSetSpeed(DCMOTOR_2,10000,1000);
-	//	DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
-		//DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
-	//	MSTK_voidDelayMS(5000);
 
 
 		/*******************BLUETOOTH ***************************/
@@ -165,7 +146,7 @@ void Car_Control(void)
 			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,4000);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
-			MSTK_voidDelayMS(100);
+			MSTK_voidDelayMS(1000);
 			DCMOTOR_voidStop(DCMOTOR_1);
 			DCMOTOR_voidStop(DCMOTOR_2);
 			break;
@@ -182,6 +163,7 @@ void Car_Control(void)
 			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,4000);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 			MSTK_voidDelayMS(100);
+			DCMOTOR_voidStop(DCMOTOR_1);
 			DCMOTOR_voidStop(DCMOTOR_2);
 			break;
 		case 'R'://Right
@@ -189,34 +171,49 @@ void Car_Control(void)
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 			MSTK_voidDelayMS(100);
 			DCMOTOR_voidStop(DCMOTOR_1);
+			DCMOTOR_voidStop(DCMOTOR_2);
 			break;
 		case 'G'://Forward Left
 			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,3000);
 			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,1000);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
+			MSTK_voidDelayMS(100);
+			DCMOTOR_voidStop(DCMOTOR_1);
+			DCMOTOR_voidStop(DCMOTOR_2);
 			break;
 		case 'I'://Forward Right
 			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,1000);
 			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,3000);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
+			MSTK_voidDelayMS(100);
+			DCMOTOR_voidStop(DCMOTOR_1);
+			DCMOTOR_voidStop(DCMOTOR_2);
 			break;
 		case 'H'://BackLeft
 			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,3000);
 			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,1000);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_BACKWARD_DIRECTION);
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
+
 			break;
 		case 'J'://BackRight
 			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,1000);
 			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,3000);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_BACKWARD_DIRECTION);
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
+			MSTK_voidDelayMS(100);
+			DCMOTOR_voidStop(DCMOTOR_1);
+			DCMOTOR_voidStop(DCMOTOR_2);
 			break;
 		case 'S'://Stop
 			DCMOTOR_voidStop(DCMOTOR_1);
 			DCMOTOR_voidStop(DCMOTOR_2);
 		break;
+		default:
+			DCMOTOR_voidStop(DCMOTOR_1);
+			DCMOTOR_voidStop(DCMOTOR_2);
+			break;
 	}
 }
