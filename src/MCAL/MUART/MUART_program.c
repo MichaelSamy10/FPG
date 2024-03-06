@@ -30,7 +30,7 @@ void (*Gpv_MUSART_CallBACK_Func)(void)= NULL;
 /* @PreRequsteis :->	@ the Peripheral clock must be enabled in the RCC 					*/
 /********************************************************************************************/
 void MUSART_voidInit(void){
-	/*set baud rate 38400*/
+	/*set baud rate 9600*/
 		MUSART1->BRR = MUSART1_BAUD_RATE;
 	/*set stop bit*/
 		CLR_BIT(MUSART1->CR2,12);
@@ -169,8 +169,11 @@ void MUSART_voidSetCallBack(void(*vp_Func)(void)){
 /********************************************************************************************/
 /****	USART1 interrupt handler ****/
 void USART1_IRQHandler(void){
-	MUSART1 -> SR = 0;
+	//MUSART1 -> SR = 0;
 	if(Gpv_MUSART_CallBACK_Func!=NULL){
 		Gpv_MUSART_CallBACK_Func();
 	}
+
+
+
 }

@@ -15,8 +15,6 @@
 
 #define DCMOTOR_1						1
 #define DCMOTOR_2   					2
-#define DCMOTOR_3   					3
-#define DCMOTOR_4   					4
 
 
 void DCMOTOR_voidInit();
