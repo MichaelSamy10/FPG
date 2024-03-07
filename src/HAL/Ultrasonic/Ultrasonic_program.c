@@ -11,14 +11,14 @@
 #include "../../MCAL/MSTK/MSTK_interface.h"
 #include "../../MCAL/MUART/MUART_interface.h"
 #include "../../MCAL/MNVIC/MNVIC_interface.h"
-#include "../../MCAL/MTIM2_5/MTIM2_5_interface.h"
+#include "../../MCAL/MTIM1/MTIM1_interface.h"
 
 #include "Ultrasonic_private.h"
 #include "Ultrasonic_config.h"
 #include "Ultrasonic_interface.h"
 
 
-u8 G_u8Distance  ;
+u8 G_u8Distance;
 
 
 void Ultrasonic_voidInit(void)
@@ -26,14 +26,14 @@ void Ultrasonic_voidInit(void)
 	/* Set Trigger pin mode */
 	MGPIO_voidSetPinMode(TRIG_PORT, TRIG_PIN,MGPIO_u8OUTPUT);
 
-	// Alternate Function for TIM3 CH1 -> PA6
+	// Alternate Function for TIM1 CH1 -> PA6
 	MGPIO_voidSetPinMode(ECHO_PORT,ECHO_PIN,MGPIO_u8ALTFUNC);
 	MGPIO_voidSetAltFunc(ECHO_PORT,ECHO_PIN,GPIO_u8AF2);
 
-	/* Timer3 Input Capture Init */
-	TIM2_5_voidICU_init(MTIM_3,MTIM2_5_ch1);
-	/* Enable Timer3 Interrupt */
-	MNVIC_voidEnableInterrupt(TIMER3_POS);
+	/* Timer1 Input Capture Init */
+	MTIM1_voidICU_init(US_TIMER_CHANNEL);
+	/* Enable Timer1 Interrupt */
+	MNVIC_voidEnableInterrupt(TIMER1_POS);
 
 }
 
@@ -47,15 +47,15 @@ void Ultrasonic_voidInit(void)
 	MUSART_voidSendData(' ');
 		if (Is_First_Captured==0) // if the first value is not captured
 		{
-			L_u32FirstCapt = TIM2_5_u32ReturnICUvalue(MTIM_3,MTIM2_5_ch1); // read the first value
+			L_u32FirstCapt = MTIM1_u32ReturnICU_value(US_TIMER_CHANNEL); // read the first value
 			Is_First_Captured = 1;  // set the first captured as true
 			// Now change the polarity to falling edge
-			TIM2_5_ChangICUpolaritiy(MTIM_3,MTIM2_5_ch1,MTIM_FallingEdge);
+			MTIM1_voidChangeICU_polarity(US_TIMER_CHANNEL,MTIM1_FallingEdge);
 		}
 		else if (Is_First_Captured==1)   // if the first is already captured
 		{
 			// read second value
-			L_u32SecondCapt = TIM2_5_u32ReturnICUvalue(MTIM_3,MTIM2_5_ch1);
+			L_u32SecondCapt = MTIM1_u32ReturnICU_value(US_TIMER_CHANNEL);
 
 			if (L_u32SecondCapt > L_u32FirstCapt)
 			{
@@ -71,8 +71,8 @@ void Ultrasonic_voidInit(void)
 			Is_First_Captured = 0; // set it back to false
 
 			// set polarity to rising edge
-			TIM2_5_ChangICUpolaritiy(MTIM_3,MTIM2_5_ch1,MTIM_RisingEdge);
-			TIM2_5_voidDisable_ICU_Interrupt(MTIM_3,MTIM2_5_ch1);
+			MTIM1_voidChangeICU_polarity(US_TIMER_CHANNEL,MTIM1_RisingEdge);
+			MTIM1_voidDisableICU_interrupt(US_TIMER_CHANNEL);
 		}
 }
 
@@ -93,26 +93,25 @@ void Ultrasonic_voidRead(void)
 	// pull the TRIG pin low
 	MGPIO_voidSetPinValue(TRIG_PORT, TRIG_PIN, MGPIO_u8LOW);
 
-	TIM2_5_voidEnable_ICU_Interrupt(MTIM_3,MTIM2_5_ch1);
+	MTIM1_voidEnableICU_interrupt(US_TIMER_CHANNEL);
 
-	// Channel 1 -> PA6
-	MTIM3_setCALLBACK(&Ultrasonic_voidSetCallBackICU);
-
+	// Set callBack for ICU Timer1
+	MTIM1_voidSetCallBacK_ICU(&Ultrasonic_voidSetCallBackICU);
 	MSTK_voidDelayMS(10);
 
 
-	if(G_u8Distance > 20)
-	{
-		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,1);
-	}
-    else
-    {
-		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,0);
-    }
-
-	var1 = (G_u8Distance / 10) + '0';
-	var2 = (G_u8Distance % 10) + '0';
-
-	  MUSART_voidSendData(var1);
-	  MUSART_voidSendData(var2);
+//	if(G_u8Distance > 20)
+//	{
+//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,1);
+//	}
+//    else
+//    {
+//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,0);
+//    }
+//
+//	var1 = (G_u8Distance / 10) + '0';
+//	var2 = (G_u8Distance % 10) + '0';
+//
+//	  MUSART_voidSendData(var1);
+//	  MUSART_voidSendData(var2);
 }
