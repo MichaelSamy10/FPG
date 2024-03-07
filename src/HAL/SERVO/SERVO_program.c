@@ -21,12 +21,13 @@ void SERVO_voidInit()
 {
 //	/* Enable Timer 4 Clock for PWM generation */
 //	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM4_EN);
-	/* Timer 4 PWM Channel 1-> PORTB 6 */
-	MGPIO_voidSetPinMode(MGPIO_u8PORTB,6,MGPIO_u8ALTFUNC);
-	/* Timer 4 Alternate Function */
-	MGPIO_voidSetAltFunc(MGPIO_u8PORTB,6,GPIO_u8AF2);
 
-	TIM2_5_voidPWM_Init(MTIM_4,MTIM2_5_ch1);
+	/* Timer 5 PWM Channel 1-> PORTA 0 */
+	MGPIO_voidSetPinMode(SERVO_PORT,SERVO_PIN,MGPIO_u8ALTFUNC);
+	/* Timer 5 Alternate Function */
+	MGPIO_voidSetAltFunc(SERVO_PORT,SERVO_PIN,GPIO_u8AF2);
+
+	TIM2_5_voidPWM_Init(SERVO_PWM_TIMER,SERVO_PWM_TIMER_CH);
 
 }
 
@@ -35,10 +36,10 @@ void SERVO_voidSetAngle(u16 Copy_u16Angle)
 	// 0->1000  90->1500  180->2000
 	u16 L_u16Angle = 1000 + (((u32)999*Copy_u16Angle)/180);
 	/* set Angle of Servo */
-	TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,L_u16Angle);
+	TIM2_5_voidSetPWM(SERVO_PWM_TIMER,SERVO_PWM_TIMER_CH,19999,L_u16Angle);
 }
 
 void SERVO_voidStop()
 {
-	TIM2_5_voidTimerStop(MTIM_4);
+	TIM2_5_voidTimerStop(SERVO_PWM_TIMER);
 }
