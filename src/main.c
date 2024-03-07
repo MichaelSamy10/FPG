@@ -30,8 +30,10 @@ void Obstacle_SenseForward(void);
 int main()
 {
 	MRCC_voidInitializeSystemClock();
+	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM1_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM3_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM4_EN);
+	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM5_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOA_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOB_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART1_EN);
@@ -43,7 +45,7 @@ int main()
 	DCMOTOR_voidInit();
 	Obstacle_Init();
 	SERVO_voidInit();
-	Ultrasonic_voidInit();
+	//Ultrasonic_voidInit();
 
 
 	//	u8 var1=0,var2=0;
@@ -163,9 +165,7 @@ void Car_Control(void)
 			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,MOTOR_DUTY_CYCLE);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
-			MSTK_voidDelayMS(MOTOR_DELAY);
-			DCMOTOR_voidStop(DCMOTOR_1);
-			DCMOTOR_voidStop(DCMOTOR_2);
+
 			break;
 		case 'B'://Backward
 			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,MOTOR_DUTY_CYCLE);
