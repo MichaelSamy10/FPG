@@ -34,7 +34,7 @@ typedef enum{
 /* @PreRequsteis :->	@ RCC MUST be initialized								 		 	*/
 /*						@ timer must be enabled with RCC								 	*/
 /*						@ ICU preScaler must be PreConfiged in config file				  	*/
-/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func*/
+/*						@ the GPIO pin corresponding to the channel must be set as alt-func*/
 /********************************************************************************************/
 void MTIM1_voidICU_init(MTIM1_channel_t Copy_udtChaNum);
 /********************************************************************************************/
@@ -44,7 +44,7 @@ void MTIM1_voidICU_init(MTIM1_channel_t Copy_udtChaNum);
 /* @PreRequsteis :->	@ RCC MUST be initialized								 		 	*/
 /*						@ timer must be enabled with RCC								 	*/
 /*						@ Timer must be initialized as icu								  	*/
-/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func*/
+/*						@ the GPIO pin corresponding to the channel must be set as alt-func*/
 /********************************************************************************************/
 void MTIM1_voidEnableICU_interrupt(MTIM1_channel_t Copy_udtChaNum);
 /********************************************************************************************/
@@ -54,7 +54,7 @@ void MTIM1_voidEnableICU_interrupt(MTIM1_channel_t Copy_udtChaNum);
 /* @PreRequsteis :->	@ RCC MUST be initialized								 		 	*/
 /*						@ timer must be enabled with RCC								 	*/
 /*						@ Timer must be initialized as icu								  	*/
-/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func*/
+/*						@ the GPIO pin corresponding to the channel must be set as alt-func*/
 /********************************************************************************************/
 void MTIM1_voidDisableICU_interrupt(MTIM1_channel_t Copy_udtChaNum);
 /********************************************************************************************/
@@ -65,7 +65,7 @@ void MTIM1_voidDisableICU_interrupt(MTIM1_channel_t Copy_udtChaNum);
 /* @PreRequsteis :->	@ RCC MUST be initialized								 		 	*/
 /*						@ timer must be enabled with RCC								 	*/
 /*						@ Timer must be initialized as icu								  	*/
-/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func*/
+/*						@ the GPIO pin corresponding to the channel must be set as alt-func*/
 /********************************************************************************************/
 void MTIM1_voidChangeICU_polarity(MTIM1_channel_t Copy_udtChaNum,MTIM1_ICU_Polarity_t Copy_udtSenseEDGE);
 /********************************************************************************************/
@@ -75,7 +75,7 @@ void MTIM1_voidChangeICU_polarity(MTIM1_channel_t Copy_udtChaNum,MTIM1_ICU_Polar
 /* @PreRequsteis :->	@ RCC MUST be initialized								 		 	*/
 /*						@ timer must be enabled with RCC								 	*/
 /*						@ Timer must be initialized as icu								  	*/
-/*						@ the GPIO pin corresponding to the cahannel must be set as alt-func*/
+/*						@ the GPIO pin corresponding to the channel must be set as alt-func*/
 /********************************************************************************************/
 u32 MTIM1_u32ReturnICU_value(MTIM1_channel_t Copy_udtChaNum);
 /******************************************************************************************************/
