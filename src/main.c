@@ -35,39 +35,41 @@ int main()
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOA_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOB_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART1_EN);
-	//MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_SYSCFG_EN);
-	//LD_Init();
+	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_SYSCFG_EN);
+	LD_Init();
 	MSTK_voidIntialize();
 	MNVIC_voidEnableInterrupt(USART1_POS);
 
 	DCMOTOR_voidInit();
-	//Obstacle_Init();
-	/**********SERVO******************/
-	// TIMER 4 for SERVO
-	//SERVO_voidInit();
+	Obstacle_Init();
+	SERVO_voidInit();
+	Ultrasonic_voidInit();
 
 
-	/**********ULTRASONIC************/
-	// TIMER 3 for ULTRASONIC
-
-	//Ultrasonic_voidInit();
 	//	u8 var1=0,var2=0;
 	//	u8 distance;
 
 
-	/*********BLUETOOTH********************/
+	// PIN MODES
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8ALTFUNC);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8ALTFUNC);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8ALTFUNC);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);
 
-	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
-	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
-	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
-	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8OUTPUT);
-	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
 
-	/***************UART********************/
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
-	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
-	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
+		MGPIO_voidSetPullType(MGPIO_u8PORTA,4,MGPIO_u8PullUP);
+		MGPIO_voidSetPullType(MGPIO_u8PORTA,5,MGPIO_u8PullUP);
+
+
+
+		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,2,GPIO_u8AF7);
+		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,3,GPIO_u8AF7);
+
+		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,9,GPIO_u8AF7);
+		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,10,GPIO_u8AF7);
 
 	MUSART_voidInit();
 	MUSART_voidEnable();
@@ -154,9 +156,9 @@ void Car_Control(void)
 {
 	u8 data;
 	data = MUSART_voidRecieveAsynchronous();
-	switch(data)//Forward
+	switch(data)
 	{
-		case 'F':
+		case 'F'://Forward
 			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,MOTOR_DUTY_CYCLE);
 			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,MOTOR_DUTY_CYCLE);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
@@ -198,7 +200,7 @@ void Car_Control(void)
 			DCMOTOR_voidStop(DCMOTOR_2);
 			break;
 		case 'I'://Forward Right
-			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,1000);
+			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,6000);
 			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,3000);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
@@ -235,36 +237,37 @@ void Car_Control(void)
 
 void LD_Init(void)
 {
-
 		/** PIN sETup**/
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8INPUT);
-		MGPIO_voidSetPullType(MGPIO_u8PORTA,1,MGPIO_u8PullUP);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8INPUT);
-		MGPIO_voidSetPullType(MGPIO_u8PORTA,0,MGPIO_u8PullUP);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTB,4,MGPIO_u8INPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTB,5,MGPIO_u8INPUT);
+		MGPIO_voidSetPullType(MGPIO_u8PORTB,4,MGPIO_u8PullUP);
+		MGPIO_voidSetPullType(MGPIO_u8PORTB,5,MGPIO_u8PullUP);
 		/*EXTI interrupt*/
-		MEXTI_voidEnableEXTI(0);
-		MEXTI_voidTriggerSource(0,MEXTI_FALLING_EDGE);
-		MEXTI_voidSelectPort(0,MEXTI_PORTA);
-		MEXTI_voidSetCallBack(0,LD_IRsenseRight);
-		MEXTI_voidEnableEXTI(1);
-		MEXTI_voidTriggerSource(1,MEXTI_FALLING_EDGE);
-		MEXTI_voidSelectPort(1,MEXTI_PORTA);
-		MEXTI_voidSetCallBack(1,LD_IRsenseLeft);
-		MEXTI_voidEnableEXTI(0);
+		MEXTI_voidEnableEXTI(MEXTI_LINE4);
+		MEXTI_voidTriggerSource(MEXTI_LINE4,MEXTI_FALLING_EDGE);
+		MEXTI_voidSelectPort(MEXTI_LINE4,MEXTI_PORTB);
+		MEXTI_voidSetCallBack(MEXTI_LINE4,LD_IRsenseRight);
+
+		MEXTI_voidEnableEXTI(MEXTI_LINE5);
+		MEXTI_voidTriggerSource(MEXTI_LINE5,MEXTI_FALLING_EDGE);
+		MEXTI_voidSelectPort(MEXTI_LINE5,MEXTI_PORTA);
+		MEXTI_voidSetCallBack(MEXTI_LINE5,LD_IRsenseLeft);
+		MEXTI_voidEnableEXTI(MEXTI_LINE5);
 
 		/** DC motor **/
 		//	DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 		//	DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 		//	DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,2000);
 		//	DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,2000);
+
 		//	/**Enable interrupt**/
-		MNVIC_voidEnableInterrupt(6);
-		MNVIC_voidEnableInterrupt(7);
+		MNVIC_voidEnableInterrupt(EXTI4_POS);
+		MNVIC_voidEnableInterrupt(EXTI9_5_POS);
 
 }
 
 void LD_IRsenseRight(void){
-	while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,0)==0){
+	while(MGPIO_u8GetPinValue(MGPIO_u8PORTB,4)==0){
 		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,1200);
@@ -272,7 +275,7 @@ void LD_IRsenseRight(void){
 	}
 }
 void LD_IRsenseLeft(void){
-	while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,1)==0){
+	while(MGPIO_u8GetPinValue(MGPIO_u8PORTB,5)==0){
 		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 		DCMOTOR_voidStop(DCMOTOR_1);
@@ -283,23 +286,24 @@ void LD_IRsenseLeft(void){
 void Obstacle_Init(void)
 {
 	/** PIN sETup**/
-			MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8INPUT);
-			MGPIO_voidSetPullType(MGPIO_u8PORTA,2,MGPIO_u8PullUP);
-			MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8INPUT);
-			MGPIO_voidSetPullType(MGPIO_u8PORTA,3,MGPIO_u8PullUP);
+			MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
+			MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
 
-			MEXTI_voidTriggerSource(2,MEXTI_FALLING_EDGE);
-			MEXTI_voidSelectPort(2,MEXTI_PORTA);
-			MEXTI_voidSetCallBack(2,Obstacle_SenseBack);
-			MEXTI_voidEnableEXTI(2);
+			MGPIO_voidSetPullType(MGPIO_u8PORTA,4,MGPIO_u8PullUP);
+			MGPIO_voidSetPullType(MGPIO_u8PORTA,5,MGPIO_u8PullUP);
 
-			MEXTI_voidTriggerSource(3,MEXTI_FALLING_EDGE);
-			MEXTI_voidSelectPort(3,MEXTI_PORTA);
-			MEXTI_voidSetCallBack(3,Obstacle_SenseForward);
-			MEXTI_voidEnableEXTI(3);
+			MEXTI_voidTriggerSource(MEXTI_LINE4,MEXTI_FALLING_EDGE);
+			MEXTI_voidSelectPort(MEXTI_LINE4,MEXTI_PORTA);
+			MEXTI_voidSetCallBack(MEXTI_LINE4,Obstacle_SenseBack);
+			MEXTI_voidEnableEXTI(MEXTI_LINE4);
 
-			MNVIC_voidEnableInterrupt(8);
-			MNVIC_voidEnableInterrupt(9);
+			MEXTI_voidTriggerSource(MEXTI_LINE5,MEXTI_FALLING_EDGE);
+			MEXTI_voidSelectPort(MEXTI_LINE5,MEXTI_PORTA);
+			MEXTI_voidSetCallBack(MEXTI_LINE5,Obstacle_SenseForward);
+			MEXTI_voidEnableEXTI(MEXTI_LINE5);
+
+			MNVIC_voidEnableInterrupt(EXTI4_POS);
+			MNVIC_voidEnableInterrupt(EXTI9_5_POS);
 
 }
 
@@ -310,7 +314,7 @@ void Obstacle_SenseBack(void)
 
 void Obstacle_SenseForward(void)
 {
-	while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,3)==0){
+	while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,5)==0){
 		DCMOTOR_voidStop(DCMOTOR_1);
 		DCMOTOR_voidStop(DCMOTOR_2);
 	}

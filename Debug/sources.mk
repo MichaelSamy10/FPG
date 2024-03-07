@@ -29,6 +29,8 @@ CPP_DEPS :=
 SUBDIRS := \
 src/HAL/DCMOTOR \
 src/HAL/LCD \
+src/HAL/LDIR \
+src/HAL/OBS \
 src/HAL/SERVO \
 src/HAL/Ultrasonic \
 src/MCAL/I2C \

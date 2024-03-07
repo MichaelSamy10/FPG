@@ -28,6 +28,8 @@ RM := rm -rf
 -include src/MCAL/I2C/subdir.mk
 -include src/HAL/Ultrasonic/subdir.mk
 -include src/HAL/SERVO/subdir.mk
+-include src/HAL/OBS/subdir.mk
+-include src/HAL/LDIR/subdir.mk
 -include src/HAL/LCD/subdir.mk
 -include src/HAL/DCMOTOR/subdir.mk
 -include src/subdir.mk
