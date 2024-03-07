@@ -27,7 +27,12 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+src/HAL/DCMOTOR \
 src/HAL/LCD \
+src/HAL/SERVO \
+src/HAL/Ultrasonic \
+src/MCAL/I2C \
+src/MCAL/MADC \
 src/MCAL/MDMA \
 src/MCAL/MEXTI \
 src/MCAL/MGPIO \
@@ -35,7 +40,10 @@ src/MCAL/MNVIC \
 src/MCAL/MRCC \
 src/MCAL/MSPI \
 src/MCAL/MSTK \
+src/MCAL/MTIM1 \
+src/MCAL/MTIM2_5 \
 src/MCAL/MUART \
+src/MCAL/MUART2 \
 src \
 system/src/cmsis \
 system/src/cortexm \

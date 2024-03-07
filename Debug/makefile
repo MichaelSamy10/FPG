@@ -13,7 +13,10 @@ RM := rm -rf
 -include system/src/diag/subdir.mk
 -include system/src/cortexm/subdir.mk
 -include system/src/cmsis/subdir.mk
+-include src/MCAL/MUART2/subdir.mk
 -include src/MCAL/MUART/subdir.mk
+-include src/MCAL/MTIM2_5/subdir.mk
+-include src/MCAL/MTIM1/subdir.mk
 -include src/MCAL/MSTK/subdir.mk
 -include src/MCAL/MSPI/subdir.mk
 -include src/MCAL/MRCC/subdir.mk
@@ -21,7 +24,12 @@ RM := rm -rf
 -include src/MCAL/MGPIO/subdir.mk
 -include src/MCAL/MEXTI/subdir.mk
 -include src/MCAL/MDMA/subdir.mk
+-include src/MCAL/MADC/subdir.mk
+-include src/MCAL/I2C/subdir.mk
+-include src/HAL/Ultrasonic/subdir.mk
+-include src/HAL/SERVO/subdir.mk
 -include src/HAL/LCD/subdir.mk
+-include src/HAL/DCMOTOR/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk
