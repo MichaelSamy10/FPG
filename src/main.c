@@ -6,6 +6,7 @@
 #include "MCAL/MEXTI/MEXTI_interface.h"
 #include "MCAL/MSTK/MSTK_interface.h"
 #include "MCAL/MUART/MUART_interface.h"
+#include "MCAL/MUART2/MUART2_interface.h"
 #include "MCAL/MNVIC/MNVIC_interface.h"
 #include "MCAL/MTIM2_5/MTIM2_5_interface.h"
 #include "HAL/Ultrasonic/Ultrasonic_interface.h"
@@ -37,15 +38,16 @@ int main()
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOA_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOB_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART1_EN);
+	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_USART2_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_SYSCFG_EN);
-	LD_Init();
-	MSTK_voidIntialize();
-	MNVIC_voidEnableInterrupt(USART1_POS);
+	//LD_Init();
+	//MSTK_voidIntialize();
+	//MNVIC_voidEnableInterrupt(USART2_POS);
 
-	DCMOTOR_voidInit();
-	Obstacle_Init();
-	SERVO_voidInit();
-	//Ultrasonic_voidInit();
+//	DCMOTOR_voidInit();
+//	Obstacle_Init();
+//	SERVO_voidInit();
+//	Ultrasonic_voidInit();
 
 
 	//	u8 var1=0,var2=0;
@@ -53,35 +55,38 @@ int main()
 
 
 	// PIN MODES
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8ALTFUNC);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
 		MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8ALTFUNC);
 		MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8ALTFUNC);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);
 
 
-		MGPIO_voidSetPullType(MGPIO_u8PORTA,4,MGPIO_u8PullUP);
-		MGPIO_voidSetPullType(MGPIO_u8PORTA,5,MGPIO_u8PullUP);
+//		MGPIO_voidSetPullType(MGPIO_u8PORTA,4,MGPIO_u8PullUP);
+//		MGPIO_voidSetPullType(MGPIO_u8PORTA,5,MGPIO_u8PullUP);
 
 
 
 		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,2,GPIO_u8AF7);
 		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,3,GPIO_u8AF7);
 
-		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,9,GPIO_u8AF7);
-		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,10,GPIO_u8AF7);
+//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,9,GPIO_u8AF7);
+//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,10,GPIO_u8AF7);
 
-	MUSART_voidInit();
-	MUSART_voidEnable();
+		MUSART2_voidInit();
 
-		MUSART_voidEnableInterrupt();
+		MUSART2_voidEnable();
 
-		MUSART_voidSetCallBack(&Car_Control);
+		//MUSART2_voidEnableInterrupt();
 
+		MUSART2_voidSendData('1');
+
+		//MUSART2_voidSetCallBack(&Car_Control);
 	while(1)
 	{
+
 
 //		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 //		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
@@ -91,24 +96,6 @@ int main()
 //		MSTK_voidDelayMS(3000);
 //		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,0);
 //		MSTK_voidDelayMS(3000);
-
-
-		/*******************BLUETOOTH ***************************/
-
-//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,4,MGPIO_u8HIGH);
-//		MSTK_voidDelayMS(3000);
-//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,4,MGPIO_u8LOW);
-//		MSTK_voidDelayMS(3000);
-//		if(data == '1')
-//		{
-//			//MUSART_voidSendString("ON");
-//			MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8HIGH);
-//		}
-//		else
-//		{
-//			//MUSART_voidSendString("OFF");
-//			MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,MGPIO_u8LOW);
-//		}
 
 
 		/******************** ULTRASONIC & SERVO**********************/
@@ -157,7 +144,7 @@ int main()
 void Car_Control(void)
 {
 	u8 data;
-	data = MUSART_voidRecieveAsynchronous();
+	data = MUSART2_voidRecieveAsynchronous();
 	switch(data)
 	{
 		case 'F'://Forward
