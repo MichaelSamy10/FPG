@@ -13,7 +13,7 @@ peri		: for the developer in MCAL only not for the user
  * set the preScaler value for ICU mode->
  *
  */
-#define TIM1_ICU_PRESCALER 				15
+#define TIM1_ICU_PRESCALER 				16
 
 /*
  * set the ARR value for PWM mode->

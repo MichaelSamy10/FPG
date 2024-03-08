@@ -6,13 +6,13 @@ description : MUSART2_register.h -> registers address
 peri		: for the developer in MCAL only not for the user
 */
 
-#ifndef MUART2_MUART2_REGISTER_H_
-#define MUART2_MUART2_REGISTER_H_
+#ifndef MUART6_MUART6_REGISTER_H_
+#define MUART6_MUART6_REGISTER_H_
 /*****************************************************/
 /*****************************************************/
 
 /***************	MUSART2 BaseAddress		***************/
-#define MUSART2_BASE_ADDRESS  0x40004400
+#define MUSART6_BASE_ADDRESS  0x40011400
 
 /*****************************************************/
 /*****************************************************/
@@ -26,12 +26,12 @@ typedef struct{
 	u32 CR2;
 	u32 CR3;
 	u32 GTPR;
-}USART2_t;
+}USART6_t;
 
 /*****************************************************/
 /*****************************************************/
 /***************	MUSART2 registers ADRRESS		***************/
-#define MUSART2 ((volatile USART2_t*)(MUSART2_BASE_ADDRESS))
+#define MUSART6 ((volatile USART6_t*)(MUSART6_BASE_ADDRESS))
 
 /*****************************************************/
 /*****************************************************/

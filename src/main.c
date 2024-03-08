@@ -5,13 +5,14 @@
 #include "MCAL/MGPIO/MGPIO_interface.h"
 #include "MCAL/MEXTI/MEXTI_interface.h"
 #include "MCAL/MSTK/MSTK_interface.h"
-#include "MCAL/MUART/MUART_interface.h"
-#include "MCAL/MUART2/MUART2_interface.h"
 #include "MCAL/MNVIC/MNVIC_interface.h"
+#include "MCAL/MTIM1/MTIM1_interface.h"
 #include "MCAL/MTIM2_5/MTIM2_5_interface.h"
 #include "HAL/Ultrasonic/Ultrasonic_interface.h"
 #include "HAL/SERVO/SERVO_interface.h"
 #include "HAL/DCMOTOR/DCMOTOR_interface.h"
+#include "MCAL/MUART1/MUART1_interface.h"
+#include "MCAL/MUART6/MUART6_interface.h"
 
 #define TX	9
 #define RX	10
@@ -31,23 +32,23 @@ void Obstacle_SenseForward(void);
 int main()
 {
 	MRCC_voidInitializeSystemClock();
-	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM1_EN);
+	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_TIM1_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM3_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM4_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_TIM5_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOA_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOB_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART1_EN);
-	MRCC_voidEnablePeripheralClock(MRCC_APB1,MRCC_USART2_EN);
+	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART6_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_SYSCFG_EN);
 	//LD_Init();
-	//MSTK_voidIntialize();
-	//MNVIC_voidEnableInterrupt(USART2_POS);
+	MSTK_voidIntialize();
+//	MNVIC_voidEnableInterrupt(USART6_POS);
 
 //	DCMOTOR_voidInit();
 //	Obstacle_Init();
 //	SERVO_voidInit();
-//	Ultrasonic_voidInit();
+	Ultrasonic_voidInit();
 
 
 	//	u8 var1=0,var2=0;
@@ -56,12 +57,12 @@ int main()
 
 	// PIN MODES
 		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8ALTFUNC);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8ALTFUNC);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,11,MGPIO_u8ALTFUNC);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,12,MGPIO_u8ALTFUNC);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);
 
 
 //		MGPIO_voidSetPullType(MGPIO_u8PORTA,4,MGPIO_u8PullUP);
@@ -69,24 +70,26 @@ int main()
 
 
 
-		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,2,GPIO_u8AF7);
-		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,3,GPIO_u8AF7);
+//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,11,GPIO_u8AF8);
+//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,12,GPIO_u8AF8);
 
-//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,9,GPIO_u8AF7);
-//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,10,GPIO_u8AF7);
+		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,9,GPIO_u8AF7);
+		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,10,GPIO_u8AF7);
 
-		MUSART2_voidInit();
+		MUSART1_voidInit();
+		//MUSART6_voidInit();
 
-		MUSART2_voidEnable();
+		MUSART1_voidEnable();
+		//MUSART6_voidEnable();
 
-		//MUSART2_voidEnableInterrupt();
+//		MUSART6_voidEnableInterrupt();
+//
+//		MUSART6_voidSetCallBack(&Car_Control);
 
-		MUSART2_voidSendData('1');
-
-		//MUSART2_voidSetCallBack(&Car_Control);
 	while(1)
 	{
-
+		Ultrasonic_voidRead();
+		MSTK_voidDelayMS(2000);
 
 //		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 //		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
@@ -144,7 +147,7 @@ int main()
 void Car_Control(void)
 {
 	u8 data;
-	data = MUSART2_voidRecieveAsynchronous();
+	data = MUSART6_voidRecieveAsynchronous();
 	switch(data)
 	{
 		case 'F'://Forward

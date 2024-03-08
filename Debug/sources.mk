@@ -44,8 +44,8 @@ src/MCAL/MSPI \
 src/MCAL/MSTK \
 src/MCAL/MTIM1 \
 src/MCAL/MTIM2_5 \
-src/MCAL/MUART \
-src/MCAL/MUART2 \
+src/MCAL/MUART1 \
+src/MCAL/MUART6 \
 src \
 system/src/cmsis \
 system/src/cortexm \

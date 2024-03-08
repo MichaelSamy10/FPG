@@ -32,8 +32,10 @@ typedef enum{
 #define TIMER2_POS	28
 #define TIMER3_POS	29
 #define TIMER4_POS	30
+#define TIMER5_POS	50
 #define USART1_POS	37
 #define USART2_POS	38
+#define USART6_POS	71
 
 
 
