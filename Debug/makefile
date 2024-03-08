@@ -32,6 +32,7 @@ RM := rm -rf
 -include src/HAL/LDIR/subdir.mk
 -include src/HAL/LCD/subdir.mk
 -include src/HAL/DCMOTOR/subdir.mk
+-include src/HAL/BT/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk

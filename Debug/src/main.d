@@ -5,7 +5,7 @@ src/main.o: ../src/main.c ../src/LIB/BIT_MATH.h ../src/LIB/STD_TYPES.h \
  ../src/MCAL/MTIM2_5/MTIM2_5_interface.h \
  ../src/HAL/Ultrasonic/Ultrasonic_interface.h \
  ../src/HAL/SERVO/SERVO_interface.h \
- ../src/HAL/DCMOTOR/DCMOTOR_interface.h \
+ ../src/HAL/DCMOTOR/DCMOTOR_interface.h ../src/HAL/BT/BT_interface.h \
  ../src/MCAL/MUART1/MUART1_interface.h \
  ../src/MCAL/MUART6/MUART6_interface.h
 
@@ -32,6 +32,8 @@ src/main.o: ../src/main.c ../src/LIB/BIT_MATH.h ../src/LIB/STD_TYPES.h \
 ../src/HAL/SERVO/SERVO_interface.h:
 
 ../src/HAL/DCMOTOR/DCMOTOR_interface.h:
+
+../src/HAL/BT/BT_interface.h:
 
 ../src/MCAL/MUART1/MUART1_interface.h:
 

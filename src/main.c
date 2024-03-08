@@ -11,11 +11,11 @@
 #include "HAL/Ultrasonic/Ultrasonic_interface.h"
 #include "HAL/SERVO/SERVO_interface.h"
 #include "HAL/DCMOTOR/DCMOTOR_interface.h"
+#include "HAL/BT/BT_interface.h"
 #include "MCAL/MUART1/MUART1_interface.h"
 #include "MCAL/MUART6/MUART6_interface.h"
 
-#define TX	9
-#define RX	10
+
 #define MOTOR_FREQ				10000
 #define MOTOR_DUTY_CYCLE		4000
 #define MOTOR_DELAY				100
@@ -41,28 +41,23 @@ int main()
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART1_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART6_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_SYSCFG_EN);
+
+	/***************Initialization**********************************/
 	//LD_Init();
 	MSTK_voidIntialize();
-	MNVIC_voidEnableInterrupt(USART6_POS);
-
 	DCMOTOR_voidInit();
-//	Obstacle_Init();
-//	SERVO_voidInit();
-//	Ultrasonic_voidInit();
+	Obstacle_Init();
+	SERVO_voidInit();
+	Ultrasonic_voidInit();
+	BT_voidInit();
 
 
-	//	u8 var1=0,var2=0;
-	//	u8 distance;
+		/*************** PIN MODES *****************************/
 
-
-	// PIN MODES
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,11,MGPIO_u8ALTFUNC);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,12,MGPIO_u8ALTFUNC);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);
+
 
 
 //		MGPIO_voidSetPullType(MGPIO_u8PORTA,4,MGPIO_u8PullUP);
@@ -70,73 +65,51 @@ int main()
 
 
 
-		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,11,GPIO_u8AF8);
-		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,12,GPIO_u8AF8);
 
+
+		/************ UART1 for BOOTLOADER***************/
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);
 //		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,9,GPIO_u8AF7);
 //		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,10,GPIO_u8AF7);
+//		MUSART1_voidInit();
+//		MUSART1_voidEnable();
 
-		//MUSART1_voidInit();
-		MUSART6_voidInit();
-
-		//MUSART1_voidEnable();
-		MUSART6_voidEnable();
-
-		MUSART6_voidEnableInterrupt();
 
 		MUSART6_voidSetCallBack(&Car_Control);
+
+		//TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2500);
+
 	while(1)
 	{
-//		Ultrasonic_voidRead();
-//		MSTK_voidDelayMS(100);
+		/*****************TEST MOTORS**********************/
 
 //		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 //		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
-//		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,2000);
-//		DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,2000);
-//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,1);
-//		MSTK_voidDelayMS(3000);
-//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,0);
-//		MSTK_voidDelayMS(3000);
+//		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,4000);
+//		DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,4000);
+
 
 
 		/******************** ULTRASONIC & SERVO**********************/
 
-		//distance = Ultrasonic_u8GetDistance();
-//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,250);
+//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,250);
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
 //
-//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,1000);
+//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
 //
-//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,2000);
+//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2000);
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
 //
-//		TIM2_5_voidSetPWM(MTIM_4,MTIM2_5_ch1,19999,1000);
+//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
 
 
-//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,1);
-//		MSTK_voidDelayMS(3000);
-//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,0,0);
-//		MSTK_voidDelayMS(3000);
-
-//		var1 = (distance / 10) + '0';
-//		var2 = (distance % 10) + '0';
-//
-//		  MUSART_voidSendData(var1);
-//		  MUSART_voidSendData(var2);
-//		  if(distance > 20){
-//				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,1);
-//		  }
-//		  else
-//		  {
-//				MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,0);
-//		  }
 
 	}
 
