@@ -26,7 +26,7 @@ peri		: for the developer in MCAL only not for the user
 #define TIM2_PWM_PRESCALER    0
 #define TIM3_PWM_PRESCALER    16
 #define TIM4_PWM_PRESCALER    16
-#define TIM5_PWM_PRESCALER    0
+#define TIM5_PWM_PRESCALER    16
 
 /**********************************************/
 /*
