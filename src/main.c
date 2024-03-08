@@ -43,12 +43,12 @@ int main()
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_SYSCFG_EN);
 	//LD_Init();
 	MSTK_voidIntialize();
-//	MNVIC_voidEnableInterrupt(USART6_POS);
+	MNVIC_voidEnableInterrupt(USART6_POS);
 
-//	DCMOTOR_voidInit();
+	DCMOTOR_voidInit();
 //	Obstacle_Init();
 //	SERVO_voidInit();
-	Ultrasonic_voidInit();
+//	Ultrasonic_voidInit();
 
 
 	//	u8 var1=0,var2=0;
@@ -57,12 +57,12 @@ int main()
 
 	// PIN MODES
 		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,11,MGPIO_u8ALTFUNC);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,12,MGPIO_u8ALTFUNC);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,11,MGPIO_u8ALTFUNC);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,12,MGPIO_u8ALTFUNC);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);
 
 
 //		MGPIO_voidSetPullType(MGPIO_u8PORTA,4,MGPIO_u8PullUP);
@@ -70,26 +70,25 @@ int main()
 
 
 
-//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,11,GPIO_u8AF8);
-//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,12,GPIO_u8AF8);
+		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,11,GPIO_u8AF8);
+		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,12,GPIO_u8AF8);
 
-		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,9,GPIO_u8AF7);
-		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,10,GPIO_u8AF7);
+//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,9,GPIO_u8AF7);
+//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,10,GPIO_u8AF7);
 
-		MUSART1_voidInit();
-		//MUSART6_voidInit();
+		//MUSART1_voidInit();
+		MUSART6_voidInit();
 
-		MUSART1_voidEnable();
-		//MUSART6_voidEnable();
+		//MUSART1_voidEnable();
+		MUSART6_voidEnable();
 
-//		MUSART6_voidEnableInterrupt();
-//
-//		MUSART6_voidSetCallBack(&Car_Control);
+		MUSART6_voidEnableInterrupt();
 
+		MUSART6_voidSetCallBack(&Car_Control);
 	while(1)
 	{
-		Ultrasonic_voidRead();
-		MSTK_voidDelayMS(2000);
+//		Ultrasonic_voidRead();
+//		MSTK_voidDelayMS(100);
 
 //		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 //		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);

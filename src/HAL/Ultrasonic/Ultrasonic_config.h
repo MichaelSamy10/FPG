@@ -10,10 +10,10 @@
 
 
 #define TRIG_PORT 			MGPIO_u8PORTA
-#define TRIG_PIN  			7
+#define TRIG_PIN  			6
 
 #define ECHO_PORT 			MGPIO_u8PORTA
-#define ECHO_PIN  			8
+#define ECHO_PIN  			7
 
 #define US_TIMER_CHANNEL	MTIM1_CH1
 
