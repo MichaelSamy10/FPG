@@ -75,7 +75,7 @@ int main()
 //		MUSART1_voidInit();
 //		MUSART1_voidEnable();
 
-
+		/*********** Bluetooth Car Control ****************/
 		MUSART6_voidSetCallBack(&Car_Control);
 
 		//TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2500);
