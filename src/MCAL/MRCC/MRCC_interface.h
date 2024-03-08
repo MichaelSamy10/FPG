@@ -31,6 +31,7 @@ peri		: for the developer in MCAL only not for the user
 #define		MRCC_TIM3_EN			1
 #define		MRCC_TIM4_EN			2
 #define		MRCC_TIM5_EN			3
+#define		MRCC_USART2_EN			17
 
 /*	APB2 Peripherals*/
 #define		MRCC_TIM1_EN			0
