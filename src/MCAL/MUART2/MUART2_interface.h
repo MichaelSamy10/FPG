@@ -6,8 +6,8 @@ description : MUSART2_interface.h -> functions prototypes
 peri		: for the developer in MCAL only not for the user
 */
 
-#ifndef MUART_MUART_INTERFACE_H_
-#define MUART_MUART_INTERFACE_H_
+#ifndef MUART2_MUART2_INTERFACE_H_
+#define MUART2_MUART2_INTERFACE_H_
 /*********************************************/
 /*********************************************/
 
@@ -53,6 +53,24 @@ u8 MUSART2_voidRecieveAsynchronous(void);
 /* @PreRequsteis :->	@ the Prepheral clock must be enabled in the RCC 					*/
 /********************************************************************************************/
 void MUSART2_voidEnable(void);
+/********************************************************************************************/
+/* @Name  	  :->		@ MUSART2_voidEnableInterrupt								 	*/
+/* @Brief 	  :->		@ used to enable USART2 interrupt					 				*/
+/* @parameters   :-> 	@ void																*/
+/* @PreRequsteis :->	@ the Peripheral clock must be enabled in the RCC 					*/
+/*						@ USART2 must be initialized										*/
+/*						@ USART2 interrupt must be enabled using NVIC						*/
+/********************************************************************************************/
+void MUSART2_voidEnableInterrupt(void);
+/********************************************************************************************/
+/* @Name  	  :->		@ MUSART2_voidDisableInterrupt								 	*/
+/* @Brief 	  :->		@ used to enable USART2 interrupt					 				*/
+/* @parameters   :-> 	@ void																*/
+/* @PreRequsteis :->	@ the Peripheral clock must be enabled in the RCC 					*/
+/*						@ USART2 must be initialized										*/
+/*						@ USART2 interrupt must be enabled using NVIC						*/
+/********************************************************************************************/
+void MUSART2_voidDisableInterrupt(void);
 /********************************************************************************************/
 /* @Name  	  :->		@ MUSART2_voidDisable											 	*/
 /* @Brief 	  :->		@ used to Disable USART 2 registers	 							 	*/

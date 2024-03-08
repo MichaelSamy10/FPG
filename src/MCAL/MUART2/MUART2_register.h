@@ -6,8 +6,8 @@ description : MUSART2_register.h -> registers address
 peri		: for the developer in MCAL only not for the user
 */
 
-#ifndef MUART_MUART_REGISTER_H_
-#define MUART_MUART_REGISTER_H_
+#ifndef MUART2_MUART2_REGISTER_H_
+#define MUART2_MUART2_REGISTER_H_
 /*****************************************************/
 /*****************************************************/
 

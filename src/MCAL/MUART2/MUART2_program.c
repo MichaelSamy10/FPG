@@ -14,8 +14,8 @@ peri		: for the developer in MCAL only not for the user
 #include "../../LIB/STD_TYPES.h"
 #include "../../LIB/BIT_MATH.h"
 /*MUSART2 files*/
-#include "MUART2_config.h"
 #include "MUART2_interface.h"
+#include "MUART2_config.h"
 #include "MUART2_private.h"
 #include "MUART2_register.h"
 /*********************************************/
@@ -34,8 +34,8 @@ void (*Gpv_MUSART2_CallBACK_Func)(void)= NULL;
 /* @PreRequsteis :->	@ the Prepheral clock must be enabled in the RCC 					*/
 /********************************************************************************************/
 void MUSART2_voidInit(void){
-	/*set bud rate to 115200 Bp/s*/
-		MUSART2->BRR =0x0000008B;
+	/*set bud rate to 9600 Bp/s*/
+		MUSART2->BRR =MUSART2_BAUD_RATE;
 	/*set stop bit*/
 		CLR_BIT(MUSART2->CR2,12);
 		CLR_BIT(MUSART2->CR2,13);
@@ -58,10 +58,10 @@ void MUSART2_voidInit(void){
 /*						@ USART2 must be initialized										*/
 /********************************************************************************************/
 void MUSART2_voidSendData(u8 Copy_u8Data){
-MUSART2->DR=Copy_u8Data;
-while(GET_BIT(MUSART2->SR,7)==0){
-		asm("NOP");
-	}
+	MUSART2->DR=Copy_u8Data;
+	while(GET_BIT(MUSART2->SR,7)==0){
+			asm("NOP");
+		}
 }
 /********************************************************************************************/
 /* @Name  	  :->		@ MUSART2_voidReciveData										 	*/
@@ -88,8 +88,32 @@ return (u8) MUSART2->DR;
 /*						@ USART2 interrupt must be enabled using NVIC						*/
 /********************************************************************************************/
 u8 MUSART2_voidRecieveAsynchronous(void){
-	SET_BIT(MUSART2->CR1,5);
+	//SET_BIT(MUSART2->CR1,5);
 	return (u8) MUSART2->DR;
+}
+/********************************************************************************************/
+/* @Name  	  :->		@ MUSART2_voidEnableInterrupt								 	*/
+/* @Brief 	  :->		@ used to enable USART2 interrupt					 				*/
+/* @parameters   :-> 	@ void																*/
+/* @PreRequsteis :->	@ the Peripheral clock must be enabled in the RCC 					*/
+/*						@ USART2 must be initialized										*/
+/*						@ USART2 interrupt must be enabled using NVIC						*/
+/********************************************************************************************/
+void MUSART2_voidEnableInterrupt(void)
+{
+	SET_BIT(MUSART2->CR1,5);
+}
+/********************************************************************************************/
+/* @Name  	  :->		@ MUSART2_voidDisableInterrupt								 	*/
+/* @Brief 	  :->		@ used to enable USART2 interrupt					 				*/
+/* @parameters   :-> 	@ void																*/
+/* @PreRequsteis :->	@ the Peripheral clock must be enabled in the RCC 					*/
+/*						@ USART2 must be initialized										*/
+/*						@ USART2 interrupt must be enabled using NVIC						*/
+/********************************************************************************************/
+void MUSART2_voidDisableInterrupt(void)
+{
+	CLR_BIT(MUSART2->CR1,5);
 }
 /********************************************************************************************/
 /* @Name  	  :->		@ MUSART2_voidEnable											 	*/
