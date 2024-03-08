@@ -70,7 +70,7 @@ void MUSART_voidSendData(u8 Copy_u8Data){
 /*						@ USART1 must be initialized										*/
 /********************************************************************************************/
 u8 MUSART_voidReciveData(void){
-	while(!(GET_BIT(MUSART1->SR,5))){
+	while((GET_BIT(MUSART1->SR,5))!=1){
 			asm("NOP");
 	}
 	return (u8) MUSART1->DR;
@@ -90,7 +90,7 @@ u8 MUSART_voidRecieveAsynchronous(void){
 }
 
 /********************************************************************************************/
-/* @Name  	  :->		@ MUSART_voidRecieveAsynchronous								 	*/
+/* @Name  	  :->		@ MUSART_voidEnableInterrupt								 	*/
 /* @Brief 	  :->		@ used to enable USART1 interrupt					 				*/
 /* @parameters   :-> 	@ void																*/
 /* @PreRequsteis :->	@ the Peripheral clock must be enabled in the RCC 					*/
@@ -103,13 +103,12 @@ void MUSART_voidEnableInterrupt(void)
 }
 
 /********************************************************************************************/
-/* @Name  	  :->		@ MUSART_voidRecieveAsynchronous								 	*/
+/* @Name  	  :->		@ MUSART_voidDisbleInterrupt								 		*/
 /* @Brief 	  :->		@ used to disable USART1 interrupt					 				*/
 /* @parameters   :-> 	@ void																*/
 /* @PreRequsteis :->	@ the Peripheral clock must be enabled in the RCC 					*/
 /*						@ USART1 must be initialized										*/
 /********************************************************************************************/
-
 void MUSART_voidDisbleInterrupt(void)
 {
 	SET_BIT(MUSART1->CR1,5);
