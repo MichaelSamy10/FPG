@@ -40,7 +40,7 @@ int main()
 	MSTK_voidIntialize();
 	MNVIC_voidEnableInterrupt(USART1_POS);
 
-	DCMOTOR_voidInit();
+	//DCMOTOR_voidInit();
 	//Obstacle_Init();
 	/**********SERVO******************/
 	// TIMER 4 for SERVO
@@ -50,7 +50,7 @@ int main()
 	/**********ULTRASONIC************/
 	// TIMER 3 for ULTRASONIC
 
-	//Ultrasonic_voidInit();
+	Ultrasonic_voidInit();
 	//	u8 var1=0,var2=0;
 	//	u8 distance;
 
@@ -58,7 +58,7 @@ int main()
 	/*********BLUETOOTH********************/
 
 	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
-	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
 	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
 	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8OUTPUT);
 	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
@@ -78,6 +78,8 @@ int main()
 
 	while(1)
 	{
+		Ultrasonic_voidRead();
+		MSTK_voidDelayMS(100);
 
 //		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 //		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
