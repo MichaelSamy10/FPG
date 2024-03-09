@@ -26,7 +26,7 @@ typedef enum{
 
 #define EXTI4_POS	10
 #define EXTI9_5_POS	23
-
+#define EXTI10_15_POS	40
 
 #define TIMER1_POS	27
 #define TIMER2_POS	28

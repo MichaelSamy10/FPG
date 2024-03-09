@@ -40,13 +40,12 @@ int main()
 	MSTK_voidIntialize();
 	DCMOTOR_voidInit();
 	OBS_voidInit(MGPIO_u8PORTA,4,EXTI4_POS,Obstacle_SenseForward);
-	OBS_voidInit(MGPIO_u8PORTA,5,EXTI9_5_POS,Obstacle_SenseBack);
-	LDIR_voidInit(MGPIO_u8PORTB,4,EXTI4_POS,LD_IRsenseRight);
-	LDIR_voidInit(MGPIO_u8PORTB,5,EXTI9_5_POS,LD_IRsenseLeft);
+	//OBS_voidInit(MGPIO_u8PORTA,13,EXTI10_15_POS,Obstacle_SenseBack);
+	LDIR_voidInit(MGPIO_u8PORTA,8,EXTI9_5_POS,LD_IRsenseLeft);
+	LDIR_voidInit(MGPIO_u8PORTB,13,EXTI10_15_POS,LD_IRsenseRight);
 	SERVO_voidInit();
 	Ultrasonic_voidInit();
 	BT_voidInit();
-
 
 		/************ UART1 for BOOTLOADER***************/
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);

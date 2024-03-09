@@ -4,22 +4,24 @@
  *  Created on: Mar 9, 2024
  *      Author: BROTHERS
  */
-#include "MCAL/MRCC/MRCC_interface.h"
-#include "MCAL/MGPIO/MGPIO_interface.h"
-#include "MCAL/MEXTI/MEXTI_interface.h"
-#include "MCAL/MSTK/MSTK_interface.h"
-#include "MCAL/MNVIC/MNVIC_interface.h"
-#include "MCAL/MTIM1/MTIM1_interface.h"
-#include "MCAL/MTIM2_5/MTIM2_5_interface.h"
-#include "MCAL/MUART1/MUART1_interface.h"
-#include "MCAL/MUART6/MUART6_interface.h"
-#include "HAL/Ultrasonic/Ultrasonic_interface.h"
-#include "HAL/SERVO/SERVO_interface.h"
-#include "HAL/DCMOTOR/DCMOTOR_interface.h"
-#include "HAL/BT/BT_interface.h"
-#include "HAL/OBS/OBS_interface.h"
-#include "HAL/LDIR/LDIR_interface.h"
-#include "HAL/LCD/LCD_interface.h"
+#include "../LIB/STD_TYPES.h"
+#include "../LIB/BIT_MATH.h"
+#include "../MCAL/MRCC/MRCC_interface.h"
+#include "../MCAL/MGPIO/MGPIO_interface.h"
+#include "../MCAL/MEXTI/MEXTI_interface.h"
+#include "../MCAL/MSTK/MSTK_interface.h"
+#include "../MCAL/MNVIC/MNVIC_interface.h"
+#include "../MCAL/MTIM1/MTIM1_interface.h"
+#include "../MCAL/MTIM2_5/MTIM2_5_interface.h"
+#include "../MCAL/MUART1/MUART1_interface.h"
+#include "../MCAL/MUART6/MUART6_interface.h"
+#include "../HAL/Ultrasonic/Ultrasonic_interface.h"
+#include "../HAL/SERVO/SERVO_interface.h"
+#include "../HAL/DCMOTOR/DCMOTOR_interface.h"
+#include "../HAL/BT/BT_interface.h"
+#include "../HAL/OBS/OBS_interface.h"
+#include "../HAL/LDIR/LDIR_interface.h"
+#include "../HAL/LCD/LCD_interface.h"
 #include "APP_interface.h"
 #include "APP_config.h"
 
@@ -92,20 +94,26 @@ void Car_Control(void)
 
 
 void LD_IRsenseRight(void){
-	while(MGPIO_u8GetPinValue(MGPIO_u8PORTB,4)==0){
+	DCMOTOR_voidStop(DCMOTOR_1);
+	DCMOTOR_voidStop(DCMOTOR_2);
+	while(MGPIO_u8GetPinValue(MGPIO_u8PORTB,13)==0){
 		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
-		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,1200);
 		DCMOTOR_voidStop(DCMOTOR_2);
 	}
+	DCMOTOR_voidStop(DCMOTOR_1);
+		DCMOTOR_voidStop(DCMOTOR_2);
 }
 void LD_IRsenseLeft(void){
-	while(MGPIO_u8GetPinValue(MGPIO_u8PORTB,5)==0){
-		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
+	DCMOTOR_voidStop(DCMOTOR_1);
+	DCMOTOR_voidStop(DCMOTOR_2);
+	while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,8)==0){
 		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
-		DCMOTOR_voidStop(DCMOTOR_1);
 		DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,1200);
+		DCMOTOR_voidStop(DCMOTOR_1);
 	}
+	DCMOTOR_voidStop(DCMOTOR_1);
+		DCMOTOR_voidStop(DCMOTOR_2);
 }
 
 
@@ -116,7 +124,7 @@ void Obstacle_SenseBack(void)
 
 void Obstacle_SenseForward(void)
 {
-	while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,5)==0){
+	while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,4)==0){
 		DCMOTOR_voidStop(DCMOTOR_1);
 		DCMOTOR_voidStop(DCMOTOR_2);
 	}
