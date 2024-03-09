@@ -46,7 +46,7 @@ int main()
 	SERVO_voidInit();
 	Ultrasonic_voidInit();
 	BT_voidInit();
-
+ /**/
 		/************ UART1 for BOOTLOADER***************/
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);

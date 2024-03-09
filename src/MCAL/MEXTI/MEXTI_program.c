@@ -165,6 +165,7 @@ void EXTI3_IRQHandler(void){
 	}
 	SET_BIT(MEXTI->PR,0);
 }
+/**/
 /********************************************************************************************/
 /* @Name  	  :->		@ EXTI4_IRQHandler												 	*/
 /* @Brief 	  :->		@ used to handle ISR Function									 	*/

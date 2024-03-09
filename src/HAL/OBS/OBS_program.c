@@ -12,7 +12,7 @@
 #include "../../MCAL/MNVIC/MNVIC_interface.h"
 #include "OBS_interface.h"
 #include "OBS_config.h"
-
+ /**/
 void OBS_voidInit(u8 Copy_u8Port,u8 Copy_u8PIN,u8 Copy_u8EXTI_Num,void(*Copy_pvCallBackFunc)(void))
 {
 		MGPIO_voidSetPinMode(Copy_u8Port,Copy_u8PIN,MGPIO_u8INPUT);
@@ -23,3 +23,4 @@ void OBS_voidInit(u8 Copy_u8Port,u8 Copy_u8PIN,u8 Copy_u8EXTI_Num,void(*Copy_pvC
 		MEXTI_voidSetCallBack(Copy_u8PIN,Copy_pvCallBackFunc);
 		MNVIC_voidEnableInterrupt(Copy_u8EXTI_Num);
 }
+/**/

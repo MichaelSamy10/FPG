@@ -10,6 +10,6 @@
 
 
 
-
+ /**/
 
 #endif /* HAL_LDIR_LDIR_CONFIG_H_ */

@@ -104,6 +104,7 @@ void LD_IRsenseRight(void){
 	DCMOTOR_voidStop(DCMOTOR_1);
 		DCMOTOR_voidStop(DCMOTOR_2);
 }
+/**/
 void LD_IRsenseLeft(void){
 	DCMOTOR_voidStop(DCMOTOR_1);
 	DCMOTOR_voidStop(DCMOTOR_2);

@@ -12,6 +12,7 @@
 #include "../../MCAL/MNVIC/MNVIC_interface.h"
 #include "LDIR_interface.h"
 #include "LDIR_config.h"
+ /**/
 void LDIR_voidInit(u8 Copy_u8Port,u8 Copy_u8PIN,u8 Copy_u8EXTI_Num,void(*Copy_pvCallBackFunc)(void))
 {
 		MGPIO_voidSetPinMode(Copy_u8Port,Copy_u8PIN,MGPIO_u8INPUT);
