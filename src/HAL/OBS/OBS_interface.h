@@ -9,7 +9,7 @@
 #define HAL_OBS_OBS_INTERFACE_H_
 
 
-
+void OBS_voidInit(u8 Copy_u8Port,u8 Copy_u8PIN,u8 Copy_u8EXTI_Num,void(*Copy_pvCallBackFunc)(void));
 
 
 #endif /* HAL_OBS_OBS_INTERFACE_H_ */

@@ -8,14 +8,17 @@
 #include "../../LIB/STD_TYPES.h"
 
 #include "../../MCAL/MGPIO/MGPIO_interface.h"
-
-
-
-void LDIR_voidInit(void)
+#include "../../MCAL/MEXTI/MEXTI_interface.h"
+#include "../../MCAL/MNVIC/MNVIC_interface.h"
+#include "LDIR_interface.h"
+#include "LDIR_config.h"
+void LDIR_voidInit(u8 Copy_u8Port,u8 Copy_u8PIN,u8 Copy_u8EXTI_Num,void(*Copy_pvCallBackFunc)(void))
 {
-
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8INPUT);
-		MGPIO_voidSetPullType(MGPIO_u8PORTA,1,MGPIO_u8PullUP);
-
-
+		MGPIO_voidSetPinMode(Copy_u8Port,Copy_u8PIN,MGPIO_u8INPUT);
+		MGPIO_voidSetPullType(Copy_u8Port,Copy_u8PIN,MGPIO_u8PullUP);
+		MEXTI_voidEnableEXTI(Copy_u8PIN);
+		MEXTI_voidTriggerSource(Copy_u8PIN,MEXTI_FALLING_EDGE);
+		MEXTI_voidSelectPort(Copy_u8PIN,Copy_u8Port);
+		MEXTI_voidSetCallBack(Copy_u8PIN,Copy_pvCallBackFunc);
+		MNVIC_voidEnableInterrupt(Copy_u8EXTI_Num);
 }
