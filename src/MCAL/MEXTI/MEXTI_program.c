@@ -165,6 +165,7 @@ void EXTI3_IRQHandler(void){
 	}
 	SET_BIT(MEXTI->PR,0);
 }
+/**/
 /********************************************************************************************/
 /* @Name  	  :->		@ EXTI4_IRQHandler												 	*/
 /* @Brief 	  :->		@ used to handle ISR Function									 	*/
@@ -184,9 +185,21 @@ void EXTI4_IRQHandler(void){
 /* @PreRequsteis :->	@ the interrupt must be triggered									*/
 /********************************************************************************************/
 void EXTI9_5_IRQHandler(void){
-	if(MEXTI_GpvCallBackFunc[GlobalFlag] != NULL){
-		MEXTI_GpvCallBackFunc[GlobalFlag]();
+	if(MEXTI_GpvCallBackFunc[5] != NULL){
+		MEXTI_GpvCallBackFunc[5]();
 	}
+	else if(MEXTI_GpvCallBackFunc[6] != NULL){
+		MEXTI_GpvCallBackFunc[6]();
+	}
+	else if(MEXTI_GpvCallBackFunc[7] != NULL){
+			MEXTI_GpvCallBackFunc[7]();
+		}
+	else if(MEXTI_GpvCallBackFunc[8] != NULL){
+			MEXTI_GpvCallBackFunc[8]();
+		}
+	else if(MEXTI_GpvCallBackFunc[9] != NULL){
+			MEXTI_GpvCallBackFunc[9]();
+		}
 	SET_BIT(MEXTI->PR,0);
 }
 /********************************************************************************************/
