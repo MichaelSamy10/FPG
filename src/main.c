@@ -11,6 +11,7 @@
 #include "HAL/Ultrasonic/Ultrasonic_interface.h"
 #include "HAL/SERVO/SERVO_interface.h"
 #include "HAL/DCMOTOR/DCMOTOR_interface.h"
+#include "HAL/LCD/LCD_interface.h"
 
 #define TX	9
 #define RX	10
@@ -38,7 +39,7 @@ int main()
 	//MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_SYSCFG_EN);
 	//LD_Init();
 	MSTK_voidIntialize();
-	MNVIC_voidEnableInterrupt(USART1_POS);
+	//MNVIC_voidEnableInterrupt(USART1_POS);
 
 	//DCMOTOR_voidInit();
 	//Obstacle_Init();
@@ -50,36 +51,39 @@ int main()
 	/**********ULTRASONIC************/
 	// TIMER 3 for ULTRASONIC
 
-	Ultrasonic_voidInit();
+	//Ultrasonic_voidInit();
 	//	u8 var1=0,var2=0;
 	//	u8 distance;
 
 
 	/*********BLUETOOTH********************/
 
-	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
 		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
-	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
-	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,3,MGPIO_u8OUTPUT);
-	//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,6,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,7,MGPIO_u8OUTPUT);
 
 	/***************UART********************/
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
-	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
-	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
-	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
-
-	MUSART_voidInit();
-	MUSART_voidEnable();
-
-		MUSART_voidEnableInterrupt();
-
-		MUSART_voidSetCallBack(&Car_Control);
-
+//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
+//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
+//	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
+//	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
+//
+//	MUSART_voidInit();
+//	MUSART_voidEnable();
+//
+//		MUSART_voidEnableInterrupt();
+//
+//		MUSART_voidSetCallBack(&Car_Control);
+		CLCD_voidInit();
+		CLCD_voidSendCharacter('M');
 	while(1)
 	{
-		Ultrasonic_voidRead();
-		MSTK_voidDelayMS(100);
+//		Ultrasonic_voidRead();
+//		MSTK_voidDelayMS(100);
 
 //		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 //		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);

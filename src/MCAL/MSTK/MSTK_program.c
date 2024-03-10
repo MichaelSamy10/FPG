@@ -199,6 +199,24 @@ u8 Local_VAR=0;
 	}
 }
 
+void MSTK_voidSetBusyWait(u32 Copy_u32TicksNUM){
+	MSTK->CTRL = 0;
+	CLR_BIT(MSTK->CTRL,1);
+
+	//u32 Copy_32TicksNumber = (Copy_u32TicksNUM * 2000);
+	/*load value in load register*/
+	MSTK->LOAD = Copy_u32TicksNUM;
+	/*reset timer */
+	MSTK->VAL = 0;
+	/*Start timer*/
+	SET_BIT(MSTK->CTRL,MSTK_CTRL_ENABLE);
+	/*wait for timer*/
+	while(GET_BIT(MSTK->CTRL,MSTK_CTRL_COUNTFLAG)!=1){
+		asm("NOP");
+	}
+	/*stop timer*/
+	CLR_BIT(MSTK->CTRL,MSTK_CTRL_ENABLE);
+}
 
 /*********************************************/
 /*********************************************/

@@ -44,7 +44,8 @@ void CLCD_voidSendCommand(u8 copy_u8Command)
 		MGPIO_voidSetPinValue(CLCD_DATA_PORT, D7_ID, GET_BIT(copy_u8Command, 7));
 		MGPIO_voidSetPinValue(CLCD_CTRL_PORT,CLCD_E_PIN,MGPIO_u8HIGH);
 
-		MSTK_voidSetBusyWait(16000);
+		//MSTK_voidSetBusyWait(16000);
+		MSTK_voidDelayMS(1);
 		//_delay_ms(1);
 		/*Sending the lower nibble*/
 		MGPIO_voidSetPinValue(CLCD_CTRL_PORT,CLCD_E_PIN,MGPIO_u8LOW); /*Falling edge to perform the instruction*/
@@ -54,7 +55,8 @@ void CLCD_voidSendCommand(u8 copy_u8Command)
 		MGPIO_voidSetPinValue(CLCD_DATA_PORT, D6_ID, GET_BIT(copy_u8Command, 2));
 		MGPIO_voidSetPinValue(CLCD_DATA_PORT, D7_ID, GET_BIT(copy_u8Command, 3));
 		MGPIO_voidSetPinValue(CLCD_CTRL_PORT,CLCD_E_PIN,MGPIO_u8HIGH);
-		MSTK_voidSetBusyWait(32000);
+		//MSTK_voidSetBusyWait(32000);
+		MSTK_voidDelayMS(2);
 		//_delay_ms(2);
 
 		MGPIO_voidSetPinValue(CLCD_CTRL_PORT,CLCD_E_PIN,MGPIO_u8LOW); /*Falling edge to perform the instruction*/
@@ -90,7 +92,8 @@ void CLCD_voidSendCharacter(u8 copy_u8Char)
 		/* Enable */
 		MGPIO_voidSetPinValue(CLCD_CTRL_PORT,CLCD_E_PIN,MGPIO_u8HIGH);
 		/* delay */
-		MSTK_voidSetBusyWait(16000);
+		//MSTK_voidSetBusyWait(16000);
+		MSTK_voidDelayMS(1);
 		//_delay_ms(1);
 
 		MGPIO_voidSetPinValue(CLCD_CTRL_PORT,CLCD_E_PIN,MGPIO_u8LOW);
@@ -103,7 +106,8 @@ void CLCD_voidSendCharacter(u8 copy_u8Char)
 		/* Enable */
 		MGPIO_voidSetPinValue(CLCD_CTRL_PORT,CLCD_E_PIN,MGPIO_u8HIGH);
 		/* delay */
-		MSTK_voidSetBusyWait(32000);
+		//MSTK_voidSetBusyWait(32000);
+		MSTK_voidDelayMS(2);
 		//_delay_ms(2);
 
 		MGPIO_voidSetPinValue(CLCD_CTRL_PORT,CLCD_E_PIN,MGPIO_u8LOW);
@@ -115,7 +119,8 @@ void CLCD_voidSendCharacter(u8 copy_u8Char)
 void CLCD_voidInit(void)
 {
 	//_delay_ms(35);
-	MSTK_voidSetBusyWait(560000);
+	MSTK_voidDelayMS(35);
+	//MSTK_voidSetBusyWait(560000);
 
 	#if (CLCD_MODE == EIGHT_BIT)
 		/* Function set (8 bits mode ,2 lines , 5*7) */
@@ -135,7 +140,8 @@ void CLCD_voidInit(void)
 
 		/* Clear display  */
 		CLCD_voidSendCommand(0b0000001);
-		MSTK_voidSetBusyWait(16000);
+		//MSTK_voidSetBusyWait(16000);
+		MSTK_voidDelayMS(1);
 		//_delay_ms(1);
 
 
@@ -158,7 +164,8 @@ void CLCD_voidClearDisplay(void)
 		CLCD_voidSendCommand(0b00000001);
 	#else
 		CLCD_voidSendCommand(0b0000001);
-		MSTK_voidSetBusyWait(16000);
+		//MSTK_voidSetBusyWait(16000);
+		MSTK_voidDelayMS(1);
 		//_delay_ms(1);
 	#endif
 }
