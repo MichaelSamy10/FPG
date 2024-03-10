@@ -47,7 +47,7 @@ void Ultrasonic_voidInit(void)
 	static u32 L_u32Difference = 0;
 	static u8 Is_First_Captured = 0;  // is the first value captured ?
 
-	MUSART1_voidSendData(' ');
+	//MUSART1_voidSendData(' ');
 		if (Is_First_Captured==0) // if the first value is not captured
 		{
 			//L_u32FirstCapt = MTIM1_u32ReturnICU_value(US_TIMER_CHANNEL); // read the first value
@@ -108,7 +108,7 @@ void Ultrasonic_voidRead(void)
 	// Set callBack for ICU Timer1
 	//MTIM1_voidSetCallBacK_ICU(&Ultrasonic_voidSetCallBackICU);
 	MTIM4_setCALLBACK(&Ultrasonic_voidSetCallBackICU);
-	MSTK_voidDelayMS(200);
+	MSTK_voidDelayMS(10);
 
 
 	if(G_u8Distance > 20)

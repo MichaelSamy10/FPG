@@ -54,7 +54,7 @@ int main()
 
 		/*************** PIN MODES *****************************/
 
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
 
@@ -78,10 +78,11 @@ int main()
 		/*********** Bluetooth Car Control ****************/
 		MUSART6_voidSetCallBack(&Car_Control);
 
-		//TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2500);
 
 	while(1)
 	{
+//		Ultrasonic_voidRead();
+//		MSTK_voidDelayMS(10);
 		/*****************TEST MOTORS**********************/
 
 //		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
@@ -93,21 +94,24 @@ int main()
 
 		/******************** ULTRASONIC & SERVO**********************/
 
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,250);
-//		Ultrasonic_voidRead();
-//		MSTK_voidDelayMS(2000);
-//
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
-//		Ultrasonic_voidRead();
-//		MSTK_voidDelayMS(2000);
-//
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2000);
-//		Ultrasonic_voidRead();
-//		MSTK_voidDelayMS(2000);
-//
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
-//		Ultrasonic_voidRead();
-//		MSTK_voidDelayMS(2000);
+		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,300);
+		Ultrasonic_voidRead();
+		MSTK_voidDelayMS(2000);
+
+		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
+		Ultrasonic_voidRead();
+		MSTK_voidDelayMS(2000);
+
+
+		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2000);
+		Ultrasonic_voidRead();
+		MSTK_voidDelayMS(2000);
+
+
+		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
+		Ultrasonic_voidRead();
+		MSTK_voidDelayMS(2000);
+
 
 
 
