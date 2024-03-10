@@ -19,9 +19,13 @@
 #include "HAL/LCD/LCD_interface.h"
 #include "APP/APP_interface.h"
 
+enum{
+	SEARCHING,
+	PARKING,
+	PARKED
+}SELFPARKING_t;
 
-
-
+SELFPARKING_t PARKING_STATE = SEARCHING;
 
 int main()
 {
@@ -94,5 +98,7 @@ int main()
 	}
 
 }
+
+
 
 

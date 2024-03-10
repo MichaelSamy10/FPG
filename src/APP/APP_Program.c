@@ -81,6 +81,9 @@ void Car_Control(void)
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_BACKWARD_DIRECTION);
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
 			break;
+		case 'P':
+			AutoParking();
+			break;
 		case 'S'://Stop
 			DCMOTOR_voidStop(DCMOTOR_1);
 			DCMOTOR_voidStop(DCMOTOR_2);
@@ -101,8 +104,10 @@ void LD_IRsenseRight(void){
 		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,1200);
 		DCMOTOR_voidStop(DCMOTOR_2);
 	}
-	DCMOTOR_voidStop(DCMOTOR_1);
-		DCMOTOR_voidStop(DCMOTOR_2);
+			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,MOTOR_DUTY_CYCLE);
+			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,MOTOR_DUTY_CYCLE);
+			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
+			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 }
 /**/
 void LD_IRsenseLeft(void){
@@ -113,8 +118,10 @@ void LD_IRsenseLeft(void){
 		DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,1200);
 		DCMOTOR_voidStop(DCMOTOR_1);
 	}
-	DCMOTOR_voidStop(DCMOTOR_1);
-		DCMOTOR_voidStop(DCMOTOR_2);
+	DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,MOTOR_DUTY_CYCLE);
+	DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,MOTOR_DUTY_CYCLE);
+	DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
+	DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 }
 
 
@@ -129,4 +136,40 @@ void Obstacle_SenseForward(void)
 		DCMOTOR_voidStop(DCMOTOR_1);
 		DCMOTOR_voidStop(DCMOTOR_2);
 	}
+	DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,MOTOR_DUTY_CYCLE);
+	DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,MOTOR_DUTY_CYCLE);
+	DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
+	DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
+}
+
+void AutoParking(void){
+	while(PARKING_STATE!= PARKED)
+	switch (PARKING_STATE){
+	case SEARCHING: /*ultrasonic search for slot*/
+
+		PARKING_STATE= PARKING
+		break;
+	case PARKING: /*logic for manuvaring*/
+		while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_BACKWARD_PIN)==1){
+		DCMOTOR_voidSetSpeed(DCMOTOR_1,10000,2500);
+		DCMOTOR_voidSetSpeed(DCMOTOR_2,10000,8000);
+		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_BACKWARD_DIRECTION);
+		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
+		}
+		DCMOTOR_voidStop(DCMOTOR_1);
+		DCMOTOR_voidStop(DCMOTOR_2);
+		while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_FORWARD_PIN)==1){
+		DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,4000);
+		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
+		}
+		DCMOTOR_voidStop(DCMOTOR_1);
+		DCMOTOR_voidStop(DCMOTOR_2);
+		PARKING_STATE= PARKED;
+		break;
+
+	}
+	PARKING_STATE=SEARCHING;
+	DCMOTOR_voidStop(DCMOTOR_1);
+	DCMOTOR_voidStop(DCMOTOR_2);
+
 }
