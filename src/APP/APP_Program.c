@@ -33,7 +33,6 @@ typedef enum{
 
 SELFPARKING_t PARKING_STATE = SEARCHING;
 
-void AutoParking(void);
 
 void Car_Control(void)
 {

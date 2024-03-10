@@ -17,4 +17,6 @@ void LD_IRsenseLeft(void);
 void Obstacle_SenseBack(void);
 void Obstacle_SenseForward(void);
 
+void AutoParking(void);
+
 #endif /* APP_APP_INTERFACE_H_ */

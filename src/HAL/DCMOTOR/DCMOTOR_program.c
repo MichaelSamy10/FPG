@@ -33,7 +33,7 @@ void DCMOTOR_voidInit()
 	/* Timer4 Alternate Function */
 	MGPIO_voidSetAltFunc(MOTOR2_PORT,MOTOR2_PIN,GPIO_u8AF2);
 
-	/* Init Control Pins (PA0 - PA1 - PA2 - PA3) for Controlling direction */
+	/* Init Control Pins (PB0 - PB1 - PB2 - PB3) for Controlling direction */
 	MGPIO_voidSetPinMode(MOTOR1_CONTROL_PORT,MOTOR1_CONTROL_PIN0,MGPIO_u8OUTPUT);
 	MGPIO_voidSetPinMode(MOTOR1_CONTROL_PORT,MOTOR1_CONTROL_PIN1,MGPIO_u8OUTPUT);
 	MGPIO_voidSetPinMode(MOTOR2_CONTROL_PORT,MOTOR2_CONTROL_PIN0,MGPIO_u8OUTPUT);

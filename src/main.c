@@ -42,8 +42,8 @@ int main()
 	OBS_voidInit(MGPIO_u8PORTA,1,EXTI10_15_POS,Obstacle_SenseBack);
 //	LDIR_voidInit(MGPIO_u8PORTA,8,EXTI9_5_POS,LD_IRsenseLeft);
 //	LDIR_voidInit(MGPIO_u8PORTB,13,EXTI10_15_POS,LD_IRsenseRight);
-//	SERVO_voidInit();
-//	Ultrasonic_voidInit();
+	SERVO_voidInit();
+	Ultrasonic_voidInit();
 	BT_voidInit();
 
 		/*************** PIN MODES *****************************/
