@@ -13,5 +13,5 @@
 #define MOTOR_DUTY_CYCLE		4000
 #define MOTOR_DELAY				100
 #define OBS_FORWARD_PIN			4
-#define OBS_BACKWARD_PIN		13
+#define OBS_BACKWARD_PIN		1
 #endif /* APP_APP_CONFIG_H_ */
