@@ -25,6 +25,14 @@
 #include "APP_interface.h"
 #include "APP_config.h"
 
+typedef enum{
+	SEARCHING,
+	PARKING,
+	PARKED
+}SELFPARKING_t;
+
+SELFPARKING_t PARKING_STATE = SEARCHING;
+
 void Car_Control(void)
 {
 	u8 data;
@@ -143,11 +151,11 @@ void Obstacle_SenseForward(void)
 }
 
 void AutoParking(void){
-	while(PARKING_STATE!= PARKED)
+	while(PARKING_STATE!= PARKED){
 	switch (PARKING_STATE){
 	case SEARCHING: /*ultrasonic search for slot*/
 
-		PARKING_STATE= PARKING
+		PARKING_STATE= PARKING;
 		break;
 	case PARKING: /*logic for manuvaring*/
 		while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_BACKWARD_PIN)==1){
@@ -172,4 +180,5 @@ void AutoParking(void){
 	DCMOTOR_voidStop(DCMOTOR_1);
 	DCMOTOR_voidStop(DCMOTOR_2);
 
+}
 }

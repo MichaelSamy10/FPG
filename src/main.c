@@ -19,13 +19,8 @@
 #include "HAL/LCD/LCD_interface.h"
 #include "APP/APP_interface.h"
 
-enum{
-	SEARCHING,
-	PARKING,
-	PARKED
-}SELFPARKING_t;
 
-SELFPARKING_t PARKING_STATE = SEARCHING;
+
 
 int main()
 {
@@ -44,28 +39,32 @@ int main()
 	MSTK_voidIntialize();
 	DCMOTOR_voidInit();
 	OBS_voidInit(MGPIO_u8PORTA,4,EXTI4_POS,Obstacle_SenseForward);
-	//OBS_voidInit(MGPIO_u8PORTA,13,EXTI10_15_POS,Obstacle_SenseBack);
-	LDIR_voidInit(MGPIO_u8PORTA,8,EXTI9_5_POS,LD_IRsenseLeft);
-	LDIR_voidInit(MGPIO_u8PORTB,13,EXTI10_15_POS,LD_IRsenseRight);
+	OBS_voidInit(MGPIO_u8PORTA,1,EXTI10_15_POS,Obstacle_SenseBack);
+//	LDIR_voidInit(MGPIO_u8PORTA,8,EXTI9_5_POS,LD_IRsenseLeft);
+//	LDIR_voidInit(MGPIO_u8PORTB,13,EXTI10_15_POS,LD_IRsenseRight);
 	SERVO_voidInit();
 	Ultrasonic_voidInit();
 	BT_voidInit();
- /**/
-		/************ UART1 for BOOTLOADER***************/
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,9,MGPIO_u8ALTFUNC);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,10,MGPIO_u8ALTFUNC);
-//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,9,GPIO_u8AF7);
-//		MGPIO_voidSetAltFunc(MGPIO_u8PORTA,10,GPIO_u8AF7);
-//		MUSART1_voidInit();
-//		MUSART1_voidEnable();
 
-		/*********** Bluetooth Car Control ****************/
-		MUSART6_voidSetCallBack(&Car_Control);
+		/*************** PIN MODES *****************************/
 
-		//TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2500);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
+
+
+
+//		MGPIO_voidSetPullType(MGPIO_u8PORTA,4,MGPIO_u8PullUP);
+//		MGPIO_voidSetPullType(MGPIO_u8PORTA,5,MGPIO_u8PullUP);
+
+
+
+
 
 	while(1)
 	{
+//		Ultrasonic_voidRead();
+//		MSTK_voidDelayMS(10);
 		/*****************TEST MOTORS**********************/
 
 //		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
@@ -77,28 +76,27 @@ int main()
 
 		/******************** ULTRASONIC & SERVO**********************/
 
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,250);
+//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,300);
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
 //
 //		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
+//
 //
 //		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2000);
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
 //
+//
 //		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
+
 
 
 
 	}
 
 }
-
-
-
-
