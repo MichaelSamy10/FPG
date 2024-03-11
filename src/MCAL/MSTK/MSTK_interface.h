@@ -80,6 +80,8 @@ void MSTK_voidSetIntervalSingle(u32 Copy_u32TicksNUM,void(*Copy_pvCallBackFuncti
 /********************************************************************************************/
 void MSTK_voidSetIntervalPeriodic(u32 Copy_u32TicksNUM,void(*Copy_pvCallBackFunction)(void));
 
+void MSTK_voidSetBusyWait(u32 Copy_u32TicksNUM);
+
 /*********************************************/
 /*********************************************/
 #endif /* MSTK_MSTK_INTERFACE_H_ */
