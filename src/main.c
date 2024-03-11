@@ -8,7 +8,19 @@
 
 int main()
 {
+	MRCC_voidInitializeSystemClock();
+	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOB_EN);
 
+	MGPIO_voidSetPinMode(MGPIO_u8PORTB,0,MGPIO_u8OUTPUT);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTB,1,MGPIO_u8OUTPUT);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTB,2,MGPIO_u8OUTPUT);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTB,4,MGPIO_u8OUTPUT);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTB,5,MGPIO_u8OUTPUT);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTB,6,MGPIO_u8OUTPUT);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTB,7,MGPIO_u8OUTPUT);
+
+	CLCD_voidInit();
+	CLCD_voidSendCharacter('M');
 	while(1)
 	{
 
