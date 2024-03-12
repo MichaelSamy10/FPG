@@ -33,8 +33,9 @@ peri		: for the developer in MCAL only not for the user
 #define		MRCC_TIM5_EN			3
 
 /*	APB2 Peripherals*/
-#define		MRCC_SYSCFG_EN			14
 #define		MRCC_USART1_EN			4
+#define 	MRCC_ADC1_EN			8
+#define		MRCC_SYSCFG_EN			14
 #define 	MRCC_FLITFLP_EN			15
 
 /******************************	user defined DATA TYPES		******************************/

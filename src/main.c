@@ -12,6 +12,7 @@
 #include "HAL/SERVO/SERVO_interface.h"
 #include "HAL/DCMOTOR/DCMOTOR_interface.h"
 #include "HAL/LCD/LCD_interface.h"
+#include "MCAL/MADC/MADC_interface.h"
 
 #define TX	9
 #define RX	10
@@ -36,11 +37,19 @@ int main()
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOA_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_AHB1,MRCC_GPIOB_EN);
 	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_USART1_EN);
+	MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_ADC1_EN);
 	//MRCC_voidEnablePeripheralClock(MRCC_APB2,MRCC_SYSCFG_EN);
 	//LD_Init();
 	MSTK_voidIntialize();
 	//MNVIC_voidEnableInterrupt(USART1_POS);
 
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8ANALOG);
+	MGPIO_voidSetPullType(MGPIO_u8PORTA,0,MGPIO_u8NOPushPull);
+
+
+	MADC_voidEnable();
+			TIM2_5_voidPWM_Init(MTIM_3,MTIM2_5_ch1);
+			TIM2_5_voidSetPWM(MTIM_3,MTIM2_5_ch1,5000,2500);
 	//DCMOTOR_voidInit();
 	//Obstacle_Init();
 	/**********SERVO******************/
@@ -55,33 +64,42 @@ int main()
 	//	u8 var1=0,var2=0;
 	//	u8 distance;
 
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,6,MGPIO_u8ALTFUNC);
+	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,6,GPIO_u8AF2);
 
-	/*********BLUETOOTH********************/
+		MGPIO_voidSetPinMode(MGPIO_u8PORTB,0,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTB,1,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTB,2,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTB,4,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTB,5,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTB,6,MGPIO_u8OUTPUT);
+		MGPIO_voidSetPinMode(MGPIO_u8PORTB,7,MGPIO_u8OUTPUT);
 
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,0,MGPIO_u8OUTPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8OUTPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8OUTPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,6,MGPIO_u8OUTPUT);
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,7,MGPIO_u8OUTPUT);
 
 	/***************UART********************/
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
-//	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
-//	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
-//	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,TX,MGPIO_u8ALTFUNC);
+	MGPIO_voidSetPinMode(MGPIO_u8PORTA,RX,MGPIO_u8ALTFUNC);
+	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,TX,GPIO_u8AF7);
+	MGPIO_voidSetAltFunc(MGPIO_u8PORTA,RX,GPIO_u8AF7);
 //
-//	MUSART_voidInit();
-//	MUSART_voidEnable();
-//
+	MUSART_voidInit();
+	MUSART_voidEnable();
+
 //		MUSART_voidEnableInterrupt();
 //
 //		MUSART_voidSetCallBack(&Car_Control);
-		CLCD_voidInit();
-		CLCD_voidSendCharacter('M');
+	CLCD_voidInit();
+
+	u16 temp, Digital;
 	while(1)
 	{
+		Digital = 	MADC_u16Read(0);
+
+		temp = Digital * (5000/1024.0) / 10;
+		temp = temp + '0';
+		MUSART_voidSendData(temp);
+		MSTK_voidDelayMS(2000);
+
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(100);
 
