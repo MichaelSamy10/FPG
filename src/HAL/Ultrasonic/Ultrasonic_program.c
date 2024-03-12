@@ -111,14 +111,14 @@ void Ultrasonic_voidRead(void)
 	MSTK_voidDelayMS(10);
 
 
-	if(G_u8Distance > 20)
-	{
-		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,1);
-	}
-    else
-    {
-		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,0);
-    }
+//	if(G_u8Distance > 20)
+//	{
+//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,1);
+//	}
+//    else
+//    {
+//		MGPIO_voidSetPinValue(MGPIO_u8PORTA,1,0);
+//    }
 
 
 //	var1 = (G_u8Distance / 10) + '0';

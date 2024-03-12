@@ -76,7 +76,7 @@ int main()
 
 		/******************** ULTRASONIC & SERVO**********************/
 
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,300);
+//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,300);	//Right
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
 //
@@ -85,7 +85,7 @@ int main()
 //		MSTK_voidDelayMS(2000);
 //
 //
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2000);
+//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2000);	//Left
 //		Ultrasonic_voidRead();
 //		MSTK_voidDelayMS(2000);
 //
