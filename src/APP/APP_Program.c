@@ -146,12 +146,16 @@ void Obstacle_SenseBack(void)
 void Obstacle_SenseForward(void)
 {
 	u8 distance;
+	DCMOTOR_voidStop(DCMOTOR_1);
+	DCMOTOR_voidStop(DCMOTOR_2);
 	//Move Servo to right
 	TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,300);
-	distance = Ultrasonic_u8GetDistance;
+	MSTK_voidDelayMS(2000);
+	Ultrasonic_voidRead();
+	distance = Ultrasonic_u8GetDistance();
 	if(distance > 10)
 	{
-		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
+		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1200);
 		Move_Car_To(RIGHT);
 		MSTK_voidDelayMS(1000);
 		Move_Car_To(FORWARD);
@@ -160,25 +164,29 @@ void Obstacle_SenseForward(void)
 	{
 		//Move Servo to left
 		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2000);
-		distance = Ultrasonic_u8GetDistance;
+		MSTK_voidDelayMS(2000);
+		Ultrasonic_voidRead();
+		distance = Ultrasonic_u8GetDistance();
 		if(distance > 10)
 		{
+			TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1200);
 			Move_Car_To(LEFT);
 			MSTK_voidDelayMS(1000);
 			Move_Car_To(FORWARD);
 		}
 		else
 		{
-			//Move_Car_To(BACKWARD);
+			DCMOTOR_voidStop(DCMOTOR_1);
+			DCMOTOR_voidStop(DCMOTOR_2);
 		}
+		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1200);
+
 	}
-
-
-
 
 }
 
 void AutoParking(void){
+	u8 senseFlag = 1;
 	while(PARKING_STATE!= PARKED)
 	{
 		switch (PARKING_STATE){
@@ -186,20 +194,39 @@ void AutoParking(void){
 				PARKING_STATE= PARKING;
 				break;
 			case PARKING: /*logic for manuvaring*/
-				while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_FORWARD_PIN)!=0){
-				DCMOTOR_voidSetSpeed(DCMOTOR_1,10000,2500);
-				DCMOTOR_voidSetSpeed(DCMOTOR_2,10000,8000);
+			//	while(senseFlag !=0){
+
+				DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,3250);
+				DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,5000);
+				DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
+				DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_BACKWARD_DIRECTION);
+				MSTK_voidDelayMS(600);
+				DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,3200);
+				DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,3200);
 				DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_BACKWARD_DIRECTION);
 				DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
-				}
+				//senseFlag = MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_FORWARD_PIN);
+				while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_BACKWARD_PIN)!=0);
 				DCMOTOR_voidStop(DCMOTOR_1);
 				DCMOTOR_voidStop(DCMOTOR_2);
-				while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_FORWARD_PIN)!=0){
-				DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,4000);
-				DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
-				}
+				MSTK_voidDelayMS(2000);
+			//	senseFlag = 1;
+			//	while(senseFlag !=0){
+					DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,2000);
+					DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,4000);
+					DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
+					DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
+					MSTK_voidDelayMS(600);
+					DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,2000);
+					DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,2000);
+					DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
+					DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
+									//senseFlag = MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_FORWARD_PIN);
+					//	senseFlag = MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_BACKWARD_PIN);
+					while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_FORWARD_PIN)!=0);
 				DCMOTOR_voidStop(DCMOTOR_1);
 				DCMOTOR_voidStop(DCMOTOR_2);
+
 				PARKING_STATE= PARKED;
 				break;
 		}
@@ -228,12 +255,12 @@ void Move_Car_To(u8 Copy_u8Direction)
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
 			break;
 		case LEFT://Left
-			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,6000);
+			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,5000);
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 			DCMOTOR_voidStop(DCMOTOR_1);
 			break;
 		case RIGHT://Right
-			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,6000);
+			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,5000);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 			DCMOTOR_voidStop(DCMOTOR_2);
 			break;
@@ -244,8 +271,8 @@ void Move_Car_To(u8 Copy_u8Direction)
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 			break;
 		case FORWARD_RIGHT://Forward Right
-			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,6000);
-			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,2000);
+			DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,2000);
+			DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,6000);
 			DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
 			break;

@@ -47,21 +47,17 @@ void Ultrasonic_voidInit(void)
 	static u32 L_u32Difference = 0;
 	static u8 Is_First_Captured = 0;  // is the first value captured ?
 
-	//MUSART1_voidSendData(' ');
 		if (Is_First_Captured==0) // if the first value is not captured
 		{
-			//L_u32FirstCapt = MTIM1_u32ReturnICU_value(US_TIMER_CHANNEL); // read the first value
 			L_u32FirstCapt = TIM2_5_u32ReturnICUvalue(US_TIMER,US_TIMER_CHANNEL); // read the first value
 
 			Is_First_Captured = 1;  // set the first captured as true
 			// Now change the polarity to falling edge
-			//MTIM1_voidChangeICU_polarity(US_TIMER_CHANNEL,MTIM1_FallingEdge);
 			TIM2_5_ChangICUpolaritiy(US_TIMER,US_TIMER_CHANNEL,MTIM_FallingEdge);
 		}
 		else if (Is_First_Captured==1)   // if the first is already captured
 		{
 			// read second value
-			//L_u32SecondCapt = MTIM1_u32ReturnICU_value(US_TIMER_CHANNEL);
 			L_u32SecondCapt = TIM2_5_u32ReturnICUvalue(US_TIMER,US_TIMER_CHANNEL);
 
 			if (L_u32SecondCapt > L_u32FirstCapt)
@@ -78,9 +74,7 @@ void Ultrasonic_voidInit(void)
 			Is_First_Captured = 0; // set it back to false
 
 			// set polarity to rising edge
-			//MTIM1_voidChangeICU_polarity(US_TIMER_CHANNEL,MTIM1_RisingEdge);
 			TIM2_5_ChangICUpolaritiy(US_TIMER,US_TIMER_CHANNEL,MTIM_RisingEdge);
-			//MTIM1_voidDisableICU_interrupt(US_TIMER_CHANNEL);
 			TIM2_5_voidDisable_ICU_Interrupt(US_TIMER,US_TIMER_CHANNEL);
 		}
 }
