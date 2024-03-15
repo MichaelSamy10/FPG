@@ -42,7 +42,7 @@ int main()
 	 MNVIC_voidSetInterruptPeriority(TIMER4_POS,0,0,MNVIC_GROUPMODE_G8S2);
 	 MNVIC_voidSetInterruptPeriority(EXTI4_POS,1,0,MNVIC_GROUPMODE_G8S2);
 
-	OBS_voidInit(MGPIO_u8PORTA,4,EXTI4_POS,Obstacle_SenseForward);
+OBS_voidInit(MGPIO_u8PORTA,4,EXTI4_POS,Obstacle_SenseForward);
 	OBS_voidInit(MGPIO_u8PORTA,1,EXTI10_15_POS,Obstacle_SenseBack);
 //	LDIR_voidInit(MGPIO_u8PORTA,8,EXTI9_5_POS,LD_IRsenseLeft);
 //	LDIR_voidInit(MGPIO_u8PORTB,13,EXTI10_15_POS,LD_IRsenseRight);

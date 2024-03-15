@@ -124,7 +124,8 @@ void LD_IRsenseLeft(void){
 
 void Obstacle_SenseBack(void)
 {
-
+	MNVIC_voidEnableInterrupt(EXTI10_15_POS);
+	MEXTI_voidEnableEXTI(1);
 }
 
 void Obstacle_SenseForward(void)
@@ -171,6 +172,8 @@ void Obstacle_SenseForward(void)
 
 void AutoParking(void){
 	MEXTI_voidDisableEXTI(4);
+	MNVIC_voidDisableInterrupt(EXTI10_15_POS);
+	MEXTI_voidDisableEXTI(1);
 	while(PARKING_STATE!= PARKED)
 	{
 		switch (PARKING_STATE){
@@ -215,6 +218,8 @@ void AutoParking(void){
 	PARKING_STATE=SEARCHING;
 
 	//MGPIO_voidSetPinValue(MGPIO_u8PORTA,OBS_FORWARD_PIN,1);
+	MNVIC_voidEnableInterrupt(EXTI10_15_POS);
+	MEXTI_voidEnableEXTI(1);
 
 }
 
