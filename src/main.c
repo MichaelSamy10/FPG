@@ -50,102 +50,12 @@ int main()
 	Ultrasonic_voidInit();
 	BT_voidInit();
 
-		/*************** PIN MODES *****************************/
-
-<<<<<<< HEAD
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,1,MGPIO_u8OUTPUT);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
 
 
 
-//		MGPIO_voidSetPullType(MGPIO_u8PORTA,4,MGPIO_u8PullUP);
-//		MGPIO_voidSetPullType(MGPIO_u8PORTA,5,MGPIO_u8PullUP);
-
-
-
-
-=======
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
-//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
->>>>>>> branch 'Temp' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard
-
-
-
-//		MGPIO_voidSetPullType(MGPIO_u8PORTA,4,MGPIO_u8PullUP);
-//		MGPIO_voidSetPullType(MGPIO_u8PORTA,5,MGPIO_u8PullUP);
-
-
-
-	DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
-	DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
-	DCMOTOR_voidSetSpeed(DCMOTOR_1,10000,2500);
-	DCMOTOR_voidSetSpeed(DCMOTOR_2,10000,2500);
-
-	u8 distance;
 	while(1)
 	{
-<<<<<<< HEAD
-//		Ultrasonic_voidRead();
-=======
-//		 Ultrasonic_voidRead();
-//		distance = Ultrasonic_u8GetDistance();
-//		if(distance > 10)
-//		{
-//			MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8HIGH);
-//		}
-//		else
-//		{
-//			MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8LOW);
-//
-//		}
->>>>>>> branch 'Temp' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard
-//		MSTK_voidDelayMS(10);
-		/*****************TEST MOTORS**********************/
 
-//		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
-//		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
-//		DCMOTOR_voidSetSpeed(DCMOTOR_1,5000,4000);
-//		DCMOTOR_voidSetSpeed(DCMOTOR_2,5000,4000);
-
-
-
-		/******************** ULTRASONIC & SERVO**********************/
-
-<<<<<<< HEAD
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,300);
-//		Ultrasonic_voidRead();
-=======
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,300);	//Right
-//		//Ultrasonic_voidRead();
->>>>>>> branch 'Temp' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard
-//		MSTK_voidDelayMS(2000);
-//
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
-//		//Ultrasonic_voidRead();
-//		MSTK_voidDelayMS(2000);
-//
-//
-//
-<<<<<<< HEAD
-//
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
-//		Ultrasonic_voidRead();
-=======
-//		TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,2000);	//Left
-//		//Ultrasonic_voidRead();
->>>>>>> branch 'Temp' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard
-//		MSTK_voidDelayMS(2000);
-
-<<<<<<< HEAD
-=======
-
-	//	TIM2_5_voidSetPWM(MTIM_5,MTIM2_5_ch1,19999,1000);
-		//Ultrasonic_voidRead();
-	//	MSTK_voidDelayMS(2000);
-
->>>>>>> branch 'Temp' of https://github.com/MichaelSamy10/FPG_FOTA_Parking_Guard
 
 
 

@@ -73,9 +73,17 @@ void Car_Control(void)
 		break;
 		case 'O': // Obstacle ON
 			MNVIC_voidEnableInterrupt(EXTI4_POS);
+			MEXTI_voidEnableEXTI(4);
+				DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
+				DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_FORWARD_DIRECTION);
+				DCMOTOR_voidSetSpeed(DCMOTOR_1,10000,2500);
+				DCMOTOR_voidSetSpeed(DCMOTOR_2,10000,2500);
 			break;
 		case 'Z': // Obstacle OFF
 			MNVIC_voidDisableInterrupt(EXTI4_POS);
+			MEXTI_voidDisableEXTI(4);
+			DCMOTOR_voidStop(DCMOTOR_1);
+			DCMOTOR_voidStop(DCMOTOR_2);
 			break;
 		default:
 			DCMOTOR_voidStop(DCMOTOR_1);
@@ -162,11 +170,7 @@ void Obstacle_SenseForward(void)
 }
 
 void AutoParking(void){
-
-	while(PARKING_STATE!= PARKED){
-	switch (PARKING_STATE){
-	case SEARCHING: /*ultrasonic search for slot*/
-
+	MEXTI_voidDisableEXTI(4);
 	while(PARKING_STATE!= PARKED)
 	{
 		switch (PARKING_STATE){
@@ -184,31 +188,10 @@ void AutoParking(void){
 				DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_BACKWARD_DIRECTION);
 				DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
 
-		PARKING_STATE= PARKING;
-		break;
-	case PARKING: /*logic for manuvaring*/
-		while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_BACKWARD_PIN)==1){
-		DCMOTOR_voidSetSpeed(DCMOTOR_1,10000,2500);
-		DCMOTOR_voidSetSpeed(DCMOTOR_2,10000,8000);
-		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_BACKWARD_DIRECTION);
-		DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
-		}
-		DCMOTOR_voidStop(DCMOTOR_1);
-		DCMOTOR_voidStop(DCMOTOR_2);
-		while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_FORWARD_PIN)==1){
-		DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,4000);
-		DCMOTOR_voidSetDirection(DCMOTOR_1,DCMOTOR_FORWARD_DIRECTION);
-		}
-		DCMOTOR_voidStop(DCMOTOR_1);
-		DCMOTOR_voidStop(DCMOTOR_2);
-		PARKING_STATE= PARKED;
-		break;
-
 				while(MGPIO_u8GetPinValue(MGPIO_u8PORTA,OBS_BACKWARD_PIN)!=0);
 				DCMOTOR_voidStop(DCMOTOR_1);
 				DCMOTOR_voidStop(DCMOTOR_2);
 				MSTK_voidDelayMS(2000);
-
 
 				DCMOTOR_voidSetSpeed(DCMOTOR_1,MOTOR_FREQ,2000);
 				DCMOTOR_voidSetSpeed(DCMOTOR_2,MOTOR_FREQ,4000);
@@ -230,6 +213,8 @@ void AutoParking(void){
 	DCMOTOR_voidStop(DCMOTOR_1);
 	DCMOTOR_voidStop(DCMOTOR_2);
 	PARKING_STATE=SEARCHING;
+
+	//MGPIO_voidSetPinValue(MGPIO_u8PORTA,OBS_FORWARD_PIN,1);
 
 }
 
@@ -286,5 +271,4 @@ void Move_Car_To(u8 Copy_u8Direction)
 			DCMOTOR_voidSetDirection(DCMOTOR_2,DCMOTOR_BACKWARD_DIRECTION);
 			break;
 	}
-
 }
