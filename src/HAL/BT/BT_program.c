@@ -10,6 +10,8 @@
 #include "../../MCAL/MNVIC/MNVIC_interface.h"
 #include "../../MCAL/MGPIO/MGPIO_interface.h"
 #include "../../MCAL/MUART6/MUART6_interface.h"
+#include "../../APP/APP_interface.h"
+
 #include "BT_interface.h"
 #include "BT_config.h"
 
@@ -32,6 +34,8 @@ void BT_voidInit(void)
 
 	MUSART6_voidEnableInterrupt();
 
+	/*********** Bluetooth Car Control ****************/
+	MUSART6_voidSetCallBack(&Car_Control);
 
 }
 
