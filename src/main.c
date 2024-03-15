@@ -52,7 +52,7 @@ int main()
 
 		/*************** PIN MODES *****************************/
 
-		MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
+//		MGPIO_voidSetPinMode(MGPIO_u8PORTA,2,MGPIO_u8OUTPUT);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,4,MGPIO_u8INPUT);
 //		MGPIO_voidSetPinMode(MGPIO_u8PORTA,5,MGPIO_u8INPUT);
 
@@ -71,17 +71,17 @@ int main()
 	u8 distance;
 	while(1)
 	{
-		 Ultrasonic_voidRead();
-		distance = Ultrasonic_u8GetDistance();
-		if(distance > 10)
-		{
-			MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8HIGH);
-		}
-		else
-		{
-			MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8LOW);
-
-		}
+//		 Ultrasonic_voidRead();
+//		distance = Ultrasonic_u8GetDistance();
+//		if(distance > 10)
+//		{
+//			MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8HIGH);
+//		}
+//		else
+//		{
+//			MGPIO_voidSetPinValue(MGPIO_u8PORTA,2,MGPIO_u8LOW);
+//
+//		}
 //		MSTK_voidDelayMS(10);
 		/*****************TEST MOTORS**********************/
 
